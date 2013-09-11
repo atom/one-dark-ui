@@ -1,0 +1,19 @@
+{
+  "name": "atom-ui-dark",
+  "theme": true,
+  "version": "0.0.0",
+  "description": "Default dark theme for interface components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atom/atom-dark-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/atom/atom-dark-ui/issues"
+  },
+  "engines": {
+    "atom": ">26.0"
+  },
+  "publishConfig": {
+    "registry": "https://atom.iriscouch.com/registry/_design/app/_rewrite"
+  }
+}
