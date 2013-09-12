@@ -1,5 +1,5 @@
 {
-  "name": "atom-ui-light",
+  "name": "atom-light-ui",
   "theme": true,
   "version": "0.1.0",
   "description": "Default light theme for interface components",
