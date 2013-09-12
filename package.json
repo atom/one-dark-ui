@@ -1,5 +1,5 @@
 {
-  "name": "atom-ui-dark",
+  "name": "atom-dark-ui",
   "theme": true,
   "version": "0.1.0",
   "description": "Default dark theme for interface components",
