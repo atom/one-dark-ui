@@ -6,10 +6,6 @@
   &.bordered {
     border: 1px solid @base-border-color;
     border-radius: @component-border-radius;
-
-    .panel-heading {
-      border-radius: @component-border-radius @component-border-radius 0 0;
-    }
   }
 }
 
@@ -52,23 +48,13 @@
 }
 
 .panel-heading {
-  margin: 0;
   border-bottom: none;
   padding: @component-padding - 2px @component-padding;
-
-  font-size: @font-size;
-  line-height: 1;
 
   background-color: transparent;
   background-image: -webkit-linear-gradient(@panel-heading-background-color, darken(@panel-heading-background-color, 10%));
 
-  border-radius: @component-border-radius @component-border-radius 0 0;
-
   .btn {
-    padding: 1px 5px;
-    font-size: 10px;
-    position: relative; top: -1px;
-
     @bg: lighten(@button-background-color, 10%);
     @hover: lighten(@button-background-color-hover, 10%);
     @selected: lighten(@button-background-color-selected, 10%);
