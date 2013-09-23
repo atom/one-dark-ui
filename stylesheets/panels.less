@@ -13,12 +13,7 @@
   .text(normal);
   position: relative;
 
-  opacity: 0.8;
   background-color: @tool-panel-background-color;
-
-  &:focus {
-    opacity: 1;
-  }
 
   &.panel-bottom {
     border-top: 1px solid @tool-panel-border-color;
@@ -32,6 +27,13 @@
     border-radius: @component-border-radius;
 
     border: 1px solid @tool-panel-border-color;
+  }
+}
+
+.focusable-panel {
+  opacity: 0.8;
+  &:focus {
+    opacity: 1;
   }
 }
 
