@@ -10,11 +10,12 @@
   padding-left: @component-padding/2;
 
   .cursor { border-color: #000; }
-  .selection .region { background-color: #afc4da; }
+  .selection .region { background-color: rgba(0, 0, 0, .2); }
 }
 
 .editor.editor-colors.mini.is-focused {
   background-color: lighten(@input-background-color, 5%);
+  .selection .region { background-color: lighten(@background-color-info, 30%); }
 }
 
 // FIXME: these should go in syntax themes?
