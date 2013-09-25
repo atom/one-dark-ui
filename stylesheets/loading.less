@@ -9,6 +9,10 @@
   background-image: url(images/octocat-spinner-128.gif);
   background-repeat: no-repeat;
   background-size: cover;
+
+  &.inline-block {
+    display: inline-block;
+  }
 }
 
 .loading-spinner-medium {
@@ -17,4 +21,8 @@
 
 .loading-spinner-small {
   .loading-spinner(32px);
+}
+
+.loading-spinner-tiny {
+  .loading-spinner(16px);
 }
