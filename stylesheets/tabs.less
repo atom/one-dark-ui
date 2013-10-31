@@ -1,42 +1,66 @@
 @import "ui-variables";
+@tab-radius: 4px;
 
 .tab-bar {
-  height: @tab-height + 5px;
-  box-shadow:
-    inset 0 5px 3px -4px fadeout(@base-border-color, 10%),
-    inset 0 -5px 3px -4px fadeout(@base-border-color, 10%),
-    inset 0 -1px 0 0 @base-border-color,
-    0 1px 0 rgba(0, 0, 0, 0.15);
-  margin-bottom: 1px;
-  background-color: @tab-bar-background-color;
+  height: @tab-height + 4px;
+  background-image: -webkit-linear-gradient(top, #aeaeae, #a8a8a8);
 
-  border-bottom: 4px solid @tab-bar-border-color;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    left: 0px;
+    width: 100%;
+    background-color: #eaece8;
+    z-index: 10;
+  }
 }
 
 .tab {
+  position: relative;
   height: @tab-height;
-  line-height: @tab-height;
+  line-height: @tab-height + 4px;
   color: @text-color;
-  margin: 0;
-  background-image: -webkit-linear-gradient(@tab-background-color, darken(@tab-background-color, 10%));
-  box-shadow:
-    inset 0 5px 3px -4px fadeout(@base-border-color, 10%),
-    inset 0 -5px 3px -4px fadeout(@base-border-color, 10%);
-  border-right: 1px solid @tab-border-color;
+  z-index: 5;
+  transition: color .1s ease-in;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    height: @tab-height;
+    border-top-left-radius: @tab-radius;
+    border-top-right-radius: @tab-radius;
+    border-left: 1px solid @base-border-color;
+    border-right: 1px solid @base-border-color;
+    border-top: 1px solid @base-border-color;
+    background-image: -webkit-linear-gradient(top, #d1d1d1, #bebebe);
+    -webkit-transform: perspective(100px) rotateX(30deg);
+    z-index: -1;
+    box-shadow: inset 0 -3px 4px rgba(0,0,0, .05), 0 0 2px rgba(0,0,0,.05);
+  }
+
+  &:first-child {
+    margin-left: 6px;
+  }
+}
+
+.tab.active {
+  z-index: 20;
+  color: @text-color-highlight;
+
+  &:before {
+    background: #eaece8;
+    height: @tab-height + 1px;
+    margin-bottom: -2px;
+    box-shadow: none;
+  }
 }
 
 .tab:hover {
   color: @text-color-highlight;
-}
-
-.tab.active {
-  height: @tab-height + 1px;
-  background-image: -webkit-linear-gradient(@tab-background-color-active, @tab-bar-border-color);
-  color: @text-color-highlight;
-  z-index: 2;
-  box-shadow:
-    inset 0 1px 2px 0 #ffffff,
-    0 -2px 2px 0 @base-border-color;
 }
 
 .tab.active:hover .close-icon {
