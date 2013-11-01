@@ -48,6 +48,9 @@
       margin-left: 8px;
     }
 
+    .close-icon {
+      z-index: 20;
+    }
     &.modified:not(:hover) .close-icon {
       top: @tab-height/2 - @modified-icon-width/2 + 3px;
       right: 14px;
@@ -61,7 +64,7 @@
   }
 
   .tab.active {
-    z-index: 20;
+    z-index: 10;
     color: @text-color-highlight;
 
     .title{
