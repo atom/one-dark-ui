@@ -1,9 +1,11 @@
 @import "ui-variables";
 @tab-radius: 4px;
+@modified-icon-width: 8px;
 
 .tab-bar {
-  height: @tab-height + 4px;
-  background-image: -webkit-linear-gradient(top, #aeaeae, #a8a8a8);
+  height: @tab-height + 3px;
+  background-image: -webkit-linear-gradient(top, #d8d8d8, #eee);
+  box-shadow: inset 0 -8px 8px -4px rgba(0,0,0, .15);
 
   &:after {
     content: "";
@@ -12,57 +14,75 @@
     height: 4px;
     left: 0px;
     width: 100%;
-    background-color: #eaece8;
+    background-color: #f0f0f0;
     z-index: 10;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid lighten(@base-border-color, 10%);
   }
-}
 
-.tab {
-  position: relative;
-  height: @tab-height;
-  line-height: @tab-height + 4px;
-  color: @text-color;
-  z-index: 5;
-  transition: color .1s ease-in;
-
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0px;
-    right: 0px;
+  .tab {
+    position: relative;
     height: @tab-height;
-    border-top-left-radius: @tab-radius;
-    border-top-right-radius: @tab-radius;
-    border-left: 1px solid @base-border-color;
-    border-right: 1px solid @base-border-color;
-    border-top: 1px solid @base-border-color;
-    background-image: -webkit-linear-gradient(top, #d1d1d1, #bebebe);
-    -webkit-transform: perspective(100px) rotateX(30deg);
-    z-index: -1;
-    box-shadow: inset 0 -3px 4px rgba(0,0,0, .05), 0 0 2px rgba(0,0,0,.05);
+    line-height: @tab-height + 4px;
+    color: @text-color;
+    z-index: 5;
+    transition: color .1s ease-in;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      height: @tab-height;
+      border-top-left-radius: @tab-radius;
+      border-top-right-radius: @tab-radius;
+      border-left: 1px solid @base-border-color;
+      border-right: 1px solid @base-border-color;
+      border-top: 1px solid @base-border-color;
+      background-image: -webkit-linear-gradient(top, #e8e8e8, #d8d8d8);
+      -webkit-transform: perspective(100px) rotateX(30deg);
+      z-index: -1;
+      box-shadow: inset 0 -2px 4px rgba(0,0,0, .05), 0 0 2px rgba(0,0,0,.05);
+    }
+
+    &:first-child {
+      margin-left: 6px;
+    }
+
+    &.modified:not(:hover) .close-icon {
+      top: @tab-height/2 - @modified-icon-width/2 + 3px;
+      right: 13px;
+      width: @modified-icon-width;
+      height: @modified-icon-width;
+    }
+
+    .title{
+      padding-left: 3px;
+    }
   }
 
-  &:first-child {
-    margin-left: 6px;
+  .tab.active {
+    z-index: 20;
+    color: @text-color-highlight;
+
+    .title{
+      position: relative;
+      top: 1px;
+    }
+
+    &:before {
+      background: #f0f0f0;
+      height: @tab-height + 1px;
+      margin-bottom: -2px;
+      box-shadow: none;
+    }
   }
-}
 
-.tab.active {
-  z-index: 20;
-  color: @text-color-highlight;
-
-  &:before {
-    background: #eaece8;
-    height: @tab-height + 1px;
-    margin-bottom: -2px;
-    box-shadow: none;
+  .tab:hover {
+    color: @text-color-highlight;
   }
-}
 
-.tab:hover {
-  color: @text-color-highlight;
-}
-
-.tab.active:hover .close-icon {
-  color: @text-color-highlight;
+  .tab.active:hover .close-icon {
+    color: @text-color-highlight;
+  }
 }
