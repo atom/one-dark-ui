@@ -1,8 +1,9 @@
 @import "ui-variables";
-@tab-radius: 4px;
+@tab-radius: 3px;
 @modified-icon-width: 8px;
 @tab-skew: 30deg;
 @tab-top-padding: 4px;
+@tab-bottom-border-height: 4px;
 @tab-border: 1px solid @base-border-color;
 
 .tab-bar {
@@ -14,7 +15,7 @@
     content: "";
     position: absolute;
     bottom: 0;
-    height: 4px;
+    height: @tab-bottom-border-height;
     left: 0px;
     width: 100%;
     background-color: #f0f0f0;
@@ -105,5 +106,12 @@
 
   .tab.active:hover .close-icon {
     color: @text-color-highlight;
+  }
+
+  .placeholder {
+    height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    &:after {
+      top: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    }
   }
 }
