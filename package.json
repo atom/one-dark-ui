@@ -1,7 +1,7 @@
 {
   "name": "atom-light-ui",
   "theme": true,
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Default light theme for interface components",
   "repository": {
     "type": "git",
