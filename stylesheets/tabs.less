@@ -2,12 +2,12 @@
 @tab-radius: 3px;
 @modified-icon-width: 8px;
 @tab-skew: 30deg;
-@tab-top-padding: 4px;
-@tab-bottom-border-height: 4px;
+@tab-top-padding: 5px;
+@tab-bottom-border-height: 5px;
 @tab-border: 1px solid @base-border-color;
 
 .tab-bar {
-  height: @tab-height + @tab-top-padding + 4px;
+  height: @tab-height + @tab-top-padding + 5px;
   background-image: -webkit-linear-gradient(top, #d8d8d8, #eee);
   box-shadow: inset 0 -8px 8px -4px rgba(0,0,0, .15);
 
@@ -29,15 +29,11 @@
     height: @tab-height;
     line-height: @tab-height;
     color: @text-color;
-
     padding-left: 0;
     margin-left: 15px;
-
     border-top-right-radius: @tab-radius;
     border-right: @tab-border;
-
     box-shadow: inset -1px -1px 1px rgba(0,0,0, .05);
-
     -webkit-transform: skewX(@tab-skew);
     transition: color .1s ease-in;
 
@@ -53,10 +49,8 @@
       left: -16px;
       height: @tab-height;
       width: 30px;
-
       border-top-left-radius: @tab-radius;
       border-left: @tab-border;
-
       box-shadow: inset 1px -1px 1px rgba(0,0,0, .05);
       -webkit-transform: skewX(133deg);
     }
@@ -70,6 +64,7 @@
 
     .close-icon {
       z-index: 3;
+      line-height: @tab-height;
       -webkit-transform: skewX(-@tab-skew);
     }
     &.modified:not(:hover) .close-icon {
@@ -86,11 +81,16 @@
 
   .tab.active {
     z-index: 10;
+    line-height: @tab-height - 2px;
     color: @text-color-highlight;
 
     .title{
       position: relative;
       top: 1px;
+    }
+
+    .close-icon {
+      line-height: @tab-height - 1px;
     }
 
     &, &:before {
