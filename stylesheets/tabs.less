@@ -1,65 +1,111 @@
 @import "ui-variables";
-@import "ui-mixins";
+@tab-radius: 3px;
+@modified-icon-width: 8px;
+@tab-skew: 30deg;
+@tab-top-padding: 5px;
+@tab-bottom-border-height: 5px;
+@tab-border: 1px solid @tab-border-color;
 
 .tab-bar {
-  height: @tab-height + 6px;
-  border-bottom: 4px solid @tab-bar-border-color;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.2), 0 1px 0 rgba(0, 0, 0, 0.5);
-  margin-bottom: 1px;
-  background-color: @tab-bar-background-color;
-}
+  height: @tab-height + @tab-top-padding + 5px;
+  background-image: -webkit-linear-gradient(top, @tab-bar-background-color, lighten(@tab-bar-background-color, 9%));
+  box-shadow: inset 0 -8px 8px -4px rgba(0,0,0, .15);
+  padding: 0 10px;
 
-.tab {
-  height: @tab-height;
-  line-height: @tab-height;
-  color: @text-color;
-  margin: 0;
-  background-image: -webkit-linear-gradient(@tab-background-color, darken(@tab-background-color, 10%));
-  box-shadow:
-    inset 0 2px 0 rgba(255, 255, 255, 0.1),
-    inset 0 1px 0 rgba(0, 0, 0, 1),
-    inset 1px 0 0 @background-color-highlight,
-    inset -1px 0 0 @background-color-highlight;
-}
-
-.tab:hover {
-  color: @text-color-highlight;
-}
-
-.tab.active {
-  height: @tab-height + 1px;
-  background-image: -webkit-linear-gradient(@tab-background-color-active, @tab-bar-border-color);
-  color: @text-color-highlight;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
-  z-index: 2;
-  box-shadow:
-    inset 0 1px 0 rgba(0, 0, 0, 0.5),
-    inset 0 2px 0 rgba(255, 255, 255, 0.1),
-    inset 1px 0 0 rgba(255, 255, 255, 0.1),
-    inset -1px 0 0 rgba(255, 255, 255, 0.1)
-}
-
-.tab.active:hover .close-icon {
-  color: @text-color-highlight;
-}
-
-// Bootstrap nav tabs.
-.nav.nav-tabs {
-  border-bottom-color: @tab-background-color-active;
-
-  > li {
-    margin-bottom: 0;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: @tab-bottom-border-height;
+    left: 0px;
+    width: 100%;
+    background-color: @tab-background-color-active;
+    border-bottom: 1px solid @tab-bar-border-color;
+    border-top: 1px solid @tab-border-color;
   }
 
-  > li > a {
-    border: none;
+  .tab {
+    position: relative;
+    top: @tab-top-padding;
+    height: @tab-height;
+    line-height: @tab-height;
+    color: @text-color;
+    padding-left: 0;
+    margin-left: 15px;
+    border-top-right-radius: @tab-radius;
+    border-right: @tab-border;
+    box-shadow: inset -1px -1px 1px rgba(0,0,0, .05);
+    -webkit-transform: skewX(@tab-skew);
+    transition: color .1s ease-in;
+
+    &, &:before {
+      background-image: -webkit-linear-gradient(top, @tab-background-color, darken(@tab-background-color, 6%));
+      border-top: @tab-border;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: -18px;
+      height: @tab-height;
+      width: 34px;
+      border-top-left-radius: @tab-radius;
+      border-left: @tab-border;
+      box-shadow: inset 1px -1px 1px rgba(0,0,0, .05);
+      -webkit-transform: skewX(133deg);
+    }
+
+    .close-icon {
+      z-index: 3;
+      line-height: @tab-height;
+      -webkit-transform: skewX(-@tab-skew);
+    }
+    &.modified:not(:hover) .close-icon {
+      top: @tab-height/2 - @modified-icon-width/2 + 1px;
+      right: 14px;
+      width: @modified-icon-width;
+      height: @modified-icon-width;
+    }
+
+    .title{
+      -webkit-transform: skewX(-@tab-skew);
+    }
   }
 
-  > li.active > a {
-    .text(highlight);
-    border: none;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    background-color: @background-color-highlight;
+  .tab.active {
+    z-index: 10;
+    line-height: @tab-height - 2px;
+    color: @text-color-highlight;
+
+    .title{
+      position: relative;
+      top: 1px;
+    }
+
+    .close-icon {
+      line-height: @tab-height - 1px;
+    }
+
+    &, &:before {
+      background: @tab-background-color-active;
+      height: @tab-height + 1px;
+      box-shadow: none;
+    }
+  }
+
+  .tab:hover {
+    color: @text-color-highlight;
+  }
+
+  .tab.active:hover .close-icon {
+    color: @text-color-highlight;
+  }
+
+  .placeholder {
+    height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    &:after {
+      top: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    }
   }
 }
