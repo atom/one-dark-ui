@@ -21,7 +21,7 @@
     left: 0px;
     width: 100%;
     background-color: @tab-background-color-active;
-    border-top: 1px solid @tab-border-color;
+    border-top: 1px solid lighten(@tab-border-color, 5%);
   }
 
   .tab {
@@ -75,10 +75,9 @@
 
   .tab.active {
     z-index: 10;
-    line-height: @tab-height - 4px;
+    line-height: @tab-height - 3px;
     color: @text-color-highlight;
-    box-shadow: inset -1px -1px 0 @tab-border-color;
-    border: none;
+    box-shadow: inset -1px 1px 0 lighten(@tab-border-color, 5%);
 
     .title{
       position: relative;
@@ -92,8 +91,10 @@
     &, &:before {
       background-image: -webkit-linear-gradient(top, lighten(@tab-background-color-active, 7%), @tab-background-color-active);
       height: @tab-height + 1px;
-      box-shadow: inset 1px 1px 0 @tab-border-color;
-      border: none;
+    }
+
+    &:before {
+      box-shadow: inset 1px 1px 0 lighten(@tab-border-color, 5%);
     }
   }
 
