@@ -33,6 +33,11 @@
   .generate-list-item-status-color(warning, modified);
   .generate-list-item-status-color(error, removed);
 
+  li:not(.list-nested-item).selected,
+  li.list-nested-item.selected > .list-item {
+    .text(selected);
+  }
+
   li:not(.list-nested-item):hover,
   li.list-nested-item:hover > .list-item, // i.e. highlight directory when hover child file
   li.list-nested-item .list-item:hover,
@@ -47,13 +52,16 @@
 &.select-list ol.list-group {
   li.two-lines {
     .secondary-line { color: @text-color-subtle; }
-    &.selected .secondary-line { color: lighten(@text-color-subtle, 10%); }
+    &.selected .secondary-line {
+      color: lighten(@text-color-subtle, 10%);
+      text-shadow: none;
+    }
   }
 
   // We want to highlight the background of the list items because we dont
   // know their size.
   li.selected {
-    background-color: @background-color-highlight;
+    background-color: @background-color-selected;
     &:before{ display: none; }
   }
 
@@ -87,7 +95,7 @@
 
 .select-list.popover-list {
   background-color: @overlay-background-color;
-  -webkit-box-shadow: 0 0 3px 3px @base-border-color;
+  box-shadow: 0 0 10px @base-border-color;
   padding: @component-padding/2;
   border-radius: @component-border-radius;
   border: 1px solid @overlay-border-color;
@@ -109,7 +117,7 @@
   // For sortable lists in the settings view
   li.ui-sortable-placeholder {
     visibility: visible !important;
-    background-color: darken(@pane-item-background-color, 3%);
+    background-color: darken(@pane-item-background-color, 10%);
   }
 }
 

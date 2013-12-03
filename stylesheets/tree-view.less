@@ -1,0 +1,60 @@
+@import "ui-variables";
+
+.tree-view, {
+	font-size: @font-size;
+	background: @tree-view-background-color;
+
+	.selected:before {
+		background: #333;
+		box-shadow: inset -3px 0px 0 rgba(0,0,0, .05);
+	}
+}
+
+.focusable-panel {
+	opacity: 1;
+	background: #222;
+	box-shadow: inset -3px 0px 0 rgba(0,0,0, .05);
+
+	.icon:before {
+		color: #ccc;
+	}
+
+	.name {
+		color: #999;
+	}
+
+	&:focus {
+
+		.icon:before {
+			color: #ccc;
+		}
+
+		.name {
+			color: #fff;
+		}
+
+		.selected:before {
+			box-shadow: inset 0 1px 0 darken(@background-color-selected, 20%), inset 0 -1px 0 darken(@background-color-selected, 20%);
+			background: @background-color-selected;
+		}
+
+		.selected > .list-item > .name,
+		.selected  > .list-item > .name:before,
+		.selected > .name,
+		.selected > .name:before {
+			color: #fff !important;
+		}
+	}
+}
+
+.status-modified .name, .status-modified .name:before {
+	color: @text-color-modified !important;
+}
+
+.status-added .name, .status-added .name:before {
+	color: @text-color-added !important;
+}
+
+.status-renamed .name, .status-renamed .name:before {
+	color: @text-color-renamed !important;
+}
