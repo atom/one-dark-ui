@@ -1,6 +1,6 @@
 @import "ui-variables";
 
-.tree-view, {
+.tree-view {
 	font-size: @font-size;
 	background: @tree-view-background-color;
 
@@ -22,10 +22,10 @@
 			background: @background-color-selected;
 		}
 
-		.selected > .list-item > .name,
-		.selected  > .list-item > .name:before,
 		.selected > .name,
-		.selected > .name:before {
+		.selected > .name:before,
+		.selected > .list-item > .name,
+		.selected > .list-item > .name:before {
 			color: #fff !important;
 		}
 	}
