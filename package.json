@@ -3,7 +3,7 @@
   "theme": true,
   "version": "0.10.0",
   "description": "Default dark theme for interface components",
-  "repository": "https://github.com/atom/atom-dark-ui.git",
+  "repository": "https://github.com/atom/atom-dark-ui",
   "engines": {
     "atom": ">26.0"
   }
