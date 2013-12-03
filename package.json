@@ -3,17 +3,8 @@
   "theme": true,
   "version": "0.10.0",
   "description": "Default dark theme for interface components",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/atom/atom-dark-ui.git"
-  },
-  "bugs": {
-    "url": "https://github.com/atom/atom-dark-ui/issues"
-  },
+  "repository": "https://github.com/atom/atom-dark-ui.git",
   "engines": {
     "atom": ">26.0"
-  },
-  "publishConfig": {
-    "registry": "https://atom.cloudant.com/registry/_design/app/_rewrite"
   }
 }
