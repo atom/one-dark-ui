@@ -14,25 +14,9 @@
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#e8ecf1), to(#ebebeb));
 	background-image: -webkit-linear-gradient(top, #e8ecf1, #ebebeb);
 
-	.icon:before {
-		color: #666;
-	}
-
-	.name {
-		color: #222;
-	}
-
 	&:focus {
 		background-image: -webkit-gradient(linear, left top, left bottom, from(#e8ecf1),to(#d1d8e0));
 		background-image: -webkit-linear-gradient(top, #e8ecf1, #d1d8e0);
-
-		.icon:before {
-			color: #666;
-		}
-
-		.name {
-			color: #222;
-		}
 
 		.selected:before {
 			background: @background-color-selected;
@@ -45,16 +29,4 @@
 			color: #fff !important;
 		}
 	}
-}
-
-.status-modified .name, .status-modified .name:before {
-	color: @text-color-modified !important;
-}
-
-.status-added .name, .status-added .name:before {
-	color: @text-color-added !important;
-}
-
-.status-renamed .name, .status-renamed .name:before {
-	color: @text-color-renamed !important;
 }
