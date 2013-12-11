@@ -42,10 +42,19 @@ code {
 .text-subtle { .text(subtle); }
 .text-highlight { .text(highlight); }
 
-.text-info { .text(info); }
-.text-warning { .text(warning); }
-.text-success { .text(success); }
 .text-error { .text(error); }
+.text-info {
+  .text(info);
+  &:hover { color: @text-color-info; }
+}
+.text-warning {
+  .text(warning);
+  &:hover { color: @text-color-warning; }
+}
+.text-success {
+  .text(success);
+  &:hover { color: @text-color-success; }
+}
 
 .highlight {
   color: @text-color-highlight;
