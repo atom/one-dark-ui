@@ -9,6 +9,14 @@
 }
 
 .panes {
+  .pane {
+    background-color: lighten(@app-background-color, 4%);
+
+    &:focus {
+      background-color: @app-background-color;
+    }
+  }
+
   .pane-row .pane {
     border-right: 1px solid @pane-item-border-color;
     &:last-child { border-right: none; }
