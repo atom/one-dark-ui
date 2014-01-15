@@ -11,6 +11,10 @@
 .panes {
   .pane {
     background-color: @app-background-color;
+
+    &:focus .item-views {
+      box-shadow: inset 0 0 7px #6aa5e9;
+    }
   }
 
   .pane-row .pane {
