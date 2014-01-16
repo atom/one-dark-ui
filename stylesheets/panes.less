@@ -17,8 +17,13 @@
     }
   }
 
-  .pane-row .pane {
+  .pane-row > * {
     border-right: 1px solid @pane-item-border-color;
     &:last-child { border-right: none; }
+  }
+
+  .pane-column > * {
+    border-bottom: 1px solid @pane-item-border-color;
+    &:last-child { border-bottom: none; }
   }
 }
