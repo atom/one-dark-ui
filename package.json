@@ -1,6 +1,6 @@
 {
   "name": "atom-dark-ui",
-  "theme": true,
+  "theme": "ui",
   "version": "0.21.0",
   "description": "Default dark theme for interface components",
   "repository": "https://github.com/atom/atom-dark-ui",
