@@ -1,7 +1,7 @@
 {
   "name": "atom-dark-ui",
   "theme": "ui",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "Default dark theme for interface components",
   "repository": "https://github.com/atom/atom-dark-ui",
   "engines": {
