@@ -4,6 +4,7 @@
   "version": "0.21.0",
   "description": "Default light theme for interface components",
   "repository": "https://github.com/atom/atom-light-ui.git",
+  "license": "MIT",
   "engines": {
     "atom": ">26.0"
   }
