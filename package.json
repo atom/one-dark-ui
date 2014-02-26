@@ -3,6 +3,7 @@
   "theme": "ui",
   "version": "0.22.0",
   "description": "Default dark theme for interface components",
+  "license": "MIT",
   "repository": "https://github.com/atom/atom-dark-ui",
   "engines": {
     "atom": ">0.40.0"
