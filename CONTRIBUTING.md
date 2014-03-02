@@ -1,2 +1,2 @@
-See [here](https://github.com/atom/atom/blob/master/CONTRIBUTING.md) for the
+See [here](https://atom.io/docs/latest/contributing) for the
 contributing guidelines.
