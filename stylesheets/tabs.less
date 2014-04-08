@@ -60,7 +60,13 @@
       z-index: 3;
       line-height: @tab-height;
       -webkit-transform: skewX(-@tab-skew);
+      color: @text-color;
+
+      &:hover {
+        color: inherit;
+      }
     }
+
     &.modified:not(:hover) .close-icon {
       top: @tab-height/2 - @modified-icon-width/2 + 1px;
       right: 14px;
@@ -68,7 +74,11 @@
       height: @modified-icon-width;
     }
 
-    .title{
+    &.modified:hover .close-icon:hover {
+      color: @text-color-highlight;
+    }
+
+    .title {
       -webkit-transform: skewX(-@tab-skew);
     }
   }
@@ -85,6 +95,7 @@
 
     .close-icon {
       line-height: @tab-height - 1px;
+      color: @text-color;
     }
 
     &, &:before {
@@ -99,7 +110,11 @@
   }
 
   .tab.active:hover .close-icon {
-    color: @text-color-highlight;
+    color: @text-color;
+
+    &:hover {
+      color: inherit;
+    }
   }
 
   .placeholder {
