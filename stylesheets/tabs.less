@@ -3,7 +3,7 @@
 @modified-icon-width: 8px;
 @tab-skew: 30deg;
 @tab-top-padding: 5px;
-@tab-bottom-border-height: 8px;
+@tab-bottom-border-height: 5px;
 @tab-border: 1px solid @tab-border-color;
 @tab-bar-bottom-border-color: #111;
 
@@ -11,7 +11,7 @@
   height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
   background: @tab-bar-background-color;
   box-shadow: inset 0 -8px 8px -4px rgba(0,0,0, .15);
-  padding: 0 13px 0 10px;
+  padding: 0 10px 0 10px;
   box-sizing: border-box;
 
   &:after {
@@ -49,9 +49,9 @@
       content: '';
       position: absolute;
       top: 0;
-      left: -18px;
+      left: -16px;
       height: @tab-height;
-      width: 40px;
+      width: 30px;
       border-top-left-radius: @tab-radius;
       -webkit-transform: skewX(133deg);
       box-shadow: inset 1px 1px 0 @tab-border-color, -4px 0px 4px rgba(0,0,0,.1);
@@ -90,7 +90,7 @@
 
   .tab.active {
     z-index: 1;
-    line-height: @tab-height - 3px;
+    line-height: @tab-height - 2px;
     color: @text-color-highlight;
     box-shadow: inset -1px 1px 0 @tab-border-color, 4px -4px 4px rgba(0,0,0,.1);
     border: none;
