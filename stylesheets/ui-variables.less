@@ -1,17 +1,16 @@
 // Base Colors
 
-@base-hue-color: hsl(210,100%,50%);
-@base-background-color: hsl(hue(@base-hue-color), 6%, 12%);
-@base-border-color: hsla(0,0%,0%,.6);
+@base-hue: 220;
+@base-background-color: hsl(@base-hue, 12%, 14%);
+@base-border-color: hsla(0,0%,0%,.4);
 
 
 // Level Colors
 
 @level-1-color: lighten(@base-background-color, 12%);
-@level-2-color: lighten(@base-background-color, 8%);
-@level-3-color: lighten(@base-background-color, 4%);
-@level-4-color: @base-background-color;
-@level-5-color: darken(@base-background-color, 4%);
+@level-2-color: lighten(@base-background-color, 4%);
+@level-3-color: @base-background-color;
+@level-4-color: darken(@base-background-color, 4%);
 
 
 // Site Colors
@@ -31,21 +30,21 @@
 @background-color-error: #c00;
 
 @background-color-selected: #4182C4;
-@background-color-highlight: hsla(0,0%,100%,.04);
+@background-color-highlight: transparent;
 
 
 // Component Colors
 
-@app-background-color: @level-5-color;
+@app-background-color: @level-4-color;
 
 @tree-view-background-color: @level-2-color;
 @tree-view-border-color: @base-border-color;
 
-@tab-bar-background-color: @level-2-color;
-@tab-bar-border-color: @base-border-color;
-@tab-background-color: @level-2-color;
+@tab-background-color: transparent;
 @tab-background-color-active: @level-1-color;
+@tab-bar-background-color: @level-2-color;
 @tab-border-color: @base-border-color;
+@tab-bar-border-color: @base-border-color;
 
 @pane-item-background-color: @base-background-color;
 @pane-item-border-color: @base-border-color;
@@ -53,7 +52,7 @@
 @tool-panel-background-color: @level-2-color;
 @tool-panel-border-color: @base-border-color;
 
-@inset-panel-background-color: #161719;
+@inset-panel-background-color: @level-2-color;
 @inset-panel-border-color: @base-border-color;
 
 @panel-heading-background-color: #43484d;
@@ -76,10 +75,10 @@
 
 // Text Colors
 
-@text-color: #aaa;
-@text-color-subtle: #555;
-@text-color-highlight: #fff;
-@text-color-selected: @text-color-highlight;
+@text-color: hsl(@base-hue, 8%, 60%);
+@text-color-subtle: darken(@text-color, 24%);
+@text-color-highlight: hsl(@base-hue, 100%, 88%);
+@text-color-selected: white;
 
 @text-color-info: #5293d8;
 @text-color-success: #26c26a;
@@ -106,7 +105,7 @@
 @component-line-height: 25px;
 @component-border-radius: 2px;
 
-@tab-height: 26px;
+@tab-height: 30px;
 
 
 // Font
