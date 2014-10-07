@@ -1,40 +1,56 @@
-// Colors
+// Base Colors
 
-@text-color: #aaa;
-@text-color-subtle: #555;
-@text-color-highlight: #fff;
-@text-color-selected: @text-color-highlight;
+@base-hue-color: hsl(210,100%,50%);
+@base-background-color: hsl(hue(@base-hue-color), 6%, 12%);
+@base-border-color: hsla(0,0%,0%,.6);
 
-@text-color-info: #5293d8;
-@text-color-success: #26c26a;
-@text-color-warning: #ff982d;
-@text-color-error: #c00;
 
-@text-color-ignored: @text-color-subtle;
-@text-color-added: @text-color-success;
-@text-color-renamed: @text-color-info;
-@text-color-modified: @text-color-warning;
-@text-color-removed: @text-color-error;
+// Level Colors
+
+@level-1-color: lighten(@base-background-color, 12%);
+@level-2-color: lighten(@base-background-color, 8%);
+@level-3-color: lighten(@base-background-color, 4%);
+@level-4-color: @base-background-color;
+@level-5-color: darken(@base-background-color, 4%);
+
+
+// Site Colors
+
+@ui-site-color-1: @background-color-success; // green
+@ui-site-color-2: @background-color-info; // blue
+@ui-site-color-3: @background-color-warning; // orange
+@ui-site-color-4: #db2ff4; // purple
+@ui-site-color-5: #f5e11d; // yellow
+
+
+// Var + State Background Colors
 
 @background-color-info: #0098ff;
 @background-color-success: #17ca65;
 @background-color-warning: #ffaa2c;
 @background-color-error: #c00;
-@background-color-highlight: rgba(255, 255, 255, 0.07);
+
 @background-color-selected: #4182C4;
+@background-color-highlight: hsla(0,0%,100%,.04);
 
-@app-background-color: #333;
 
-@base-background-color: lighten(@tool-panel-background-color, 5%);
-@base-border-color: rgba(0, 0, 0, 0.5);
+// Component Colors
+
+@app-background-color: @level-5-color;
+
+@tree-view-background-color: @level-2-color;
+@tree-view-border-color: @base-border-color;
+
+@tab-bar-background-color: @level-2-color;
+@tab-bar-border-color: @base-border-color;
+@tab-background-color: @level-2-color;
+@tab-background-color-active: @level-1-color;
+@tab-border-color: @base-border-color;
 
 @pane-item-background-color: @base-background-color;
-@pane-item-border-color: rgba(0, 0, 0, 0.5);
+@pane-item-border-color: @base-border-color;
 
-@input-background-color: #212224;
-@input-border-color: @base-border-color;
-
-@tool-panel-background-color: #1d1f21;
+@tool-panel-background-color: @level-2-color;
 @tool-panel-border-color: @base-border-color;
 
 @inset-panel-background-color: #161719;
@@ -51,23 +67,30 @@
 @button-background-color-selected: #5c6064;
 @button-border-color: @base-border-color;
 
-@tab-bar-background-color: #222;
-@tab-bar-border-color: darken(@tab-background-color-active, 10%);
-@tab-background-color: #333;
-@tab-background-color-active: #222;
-@tab-border-color: #484848;
-
-@tree-view-background-color: @tool-panel-background-color;
-@tree-view-border-color: @tool-panel-border-color;
+@input-background-color: #212224;
+@input-border-color: @base-border-color;
 
 @scrollbar-background-color: rgba(42, 42, 42, 0.5);
 @scrollbar-color: rgba(92, 92, 92, 0.5);
 
-@ui-site-color-1: @background-color-success; // green
-@ui-site-color-2: @background-color-info; // blue
-@ui-site-color-3: @background-color-warning; // orange
-@ui-site-color-4: #db2ff4; // purple
-@ui-site-color-5: #f5e11d; // yellow
+
+// Text Colors
+
+@text-color: #aaa;
+@text-color-subtle: #555;
+@text-color-highlight: #fff;
+@text-color-selected: @text-color-highlight;
+
+@text-color-info: #5293d8;
+@text-color-success: #26c26a;
+@text-color-warning: #ff982d;
+@text-color-error: #c00;
+
+@text-color-ignored: @text-color-subtle;
+@text-color-added: @text-color-success;
+@text-color-renamed: @text-color-info;
+@text-color-modified: @text-color-warning;
+@text-color-removed: @text-color-error;
 
 
 // Sizes
@@ -86,6 +109,6 @@
 @tab-height: 26px;
 
 
-// Other
+// Font
 
 @font-family: 'Lucida Grande', 'Segoe UI', sans-serif;
