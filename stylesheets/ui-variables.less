@@ -1,7 +1,10 @@
 // Base Colors
 
-@base-hue: 220;
-@base-background-color: hsl(@base-hue, 12%, 14%);
+@base-hue:         220; // value from 0 to 360
+@base-saturation:  12%; // keep it moderate < 20%
+@base-lightness:   14%; // keep it moderate < 20%
+
+@base-background-color: hsl(@base-hue, @base-saturation, @base-lightness);
 @base-border-color: hsla(0,0%,0%,.4);
 
 
