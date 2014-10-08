@@ -1,6 +1,8 @@
 @import "ui-variables";
 @import "ui-mixins";
 
+// Spinner
+
 .loading-spinner(@size) {
   width: @size;
   height: @size;
@@ -31,11 +33,13 @@
   .loading-spinner(20px);
 }
 
+
+// Progress Bar
+
 // Much learning from:
 // http://css-tricks.com/html5-progress-element/
 
-@progress-height: 16px;
-@progress-shine-gradient: -webkit-linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .15));
+@progress-height: 8px;
 
 progress {
   height: @progress-height;
@@ -46,28 +50,24 @@ progress::-webkit-progress-bar {
   height: @progress-height;
   border-radius: @component-border-radius;
 
-  background-color: #666;
+  background-color: hsla(0,0%,0%,.2);
+  box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.2);
 
   background-image:
-	   -webkit-linear-gradient(-30deg,
-	                           transparent 33%, rgba(0, 0, 0, .1) 33%,
-	                           rgba(0,0, 0, .1) 66%, transparent 66%),
-	   @progress-shine-gradient;
-
-  border-radius: 2px;
+	   linear-gradient(-45deg, transparent 33%, hsla(0,0%,100%,.08) 33%,
+	                           hsla(0,0%,100%,.08) 66%, transparent 66%);
   background-size: 25px @progress-height, 100% 100%, 100% 100%;
   -webkit-animation: animate-stripes 5s linear infinite;
-  animation: animate-stripes 5s linear infinite;
+          animation: animate-stripes 5s linear infinite;
 }
 
 progress::-webkit-progress-value {
   border-radius: @component-border-radius;
-  background-image: @progress-shine-gradient;
   background-color: @background-color-success;
 }
 
 progress[value]::-webkit-progress-bar {
-  background-image: @progress-shine-gradient;
+  background-image: none;
   animation: none;
 }
 
