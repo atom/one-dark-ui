@@ -27,10 +27,10 @@
 
 // Var + State Background Colors
 
-@background-color-info: #0098ff;
-@background-color-success: #1BDB87;
-@background-color-warning: #EB8A3F;
-@background-color-error: #c00;
+@background-color-info:    hsl(208, 100%, 50%);
+@background-color-success: hsl(160, 70%, 42%);
+@background-color-warning: hsl(32, 60%, 50%);
+@background-color-error:   hsl(0, 70%, 50%);
 
 @background-color-selected: #386EA5;
 @background-color-highlight: hsla(0,0%,100%,.1);
@@ -64,10 +64,10 @@
 @overlay-background-color: #202123;
 @overlay-border-color: @background-color-highlight;
 
-@button-background-color: #43484d;
-@button-background-color-hover: lighten(@button-background-color, 5%);
-@button-background-color-selected: #5c6064;
-@button-border-color: @base-border-color;
+@button-background-color: @level-1-color;
+@button-background-color-hover: lighten(@button-background-color, 2%);
+@button-background-color-selected: darken(@button-background-color, 6%);
+@button-border-color: @base-border-color; // seems unused
 
 @input-background-color: @level-3-color;
 @input-border-color: @base-border-color;
@@ -83,10 +83,10 @@
 @text-color-highlight: hsl(@base-hue, 100%, 90%);
 @text-color-selected: white;
 
-@text-color-info: hsl(219, 79%, 66%);
-@text-color-success: hsl(140,44%,62%);
+@text-color-info:    hsl(219, 79%, 66%);
+@text-color-success: hsl(140, 44%, 62%);
 @text-color-warning: hsl(36, 60%, 72%);
-@text-color-error: hsl(9, 100%, 64%);
+@text-color-error:   hsl(9, 100%, 64%);
 
 @text-color-ignored: @text-color-subtle;
 @text-color-added: @text-color-success;
