@@ -67,12 +67,12 @@ code {
 
 .highlight-color(@name, @color, @text-color) {
   .highlight-@{name} {
-    color: lighten(saturate(@text-color, 0%), 30%);
+    color: lighten(saturate(@text-color, 0%), 24%);
     font-weight: bold;
     text-shadow: none;
-    background-color: fadeout(@color, 60%);
+    background-color: fadeout(@color, 50%);
     border-radius: @component-border-radius;
-    padding: 1px 3px;
+    padding: 1px 4px;
   }
 }
 .highlight-color(info, @background-color-info, @text-color-info);
