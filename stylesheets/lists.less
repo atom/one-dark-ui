@@ -48,7 +48,7 @@
       color: @text-color-subtle;
     }
     &.selected .secondary-line {
-      color: @text-color;
+      color: fade(@text-color-highlight, 50%);
       text-shadow: none;
     }
   }
@@ -90,7 +90,7 @@
 
 .select-list.popover-list {
   background-color: @overlay-background-color;
-  box-shadow: 0 0 10px @base-border-color;
+  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.4);
   padding: @component-padding/2;
   border-radius: @component-border-radius;
   border: 1px solid @overlay-border-color;
