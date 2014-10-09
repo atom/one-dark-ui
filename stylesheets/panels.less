@@ -12,7 +12,6 @@
 .tool-panel {
   .text(normal);
   position: relative;
-
   background-color: @tool-panel-background-color;
 
   &.panel-bottom {
@@ -31,22 +30,19 @@
 .inset-panel {
   position: relative;
   background-color: @inset-panel-background-color;
-}
-
-.is-blurred {
-  .tool-panel,
-  .inset-panel {
+  &.bordered {
+    border: 1px solid @base-border-color;
+    border-radius: @component-border-radius;
+  }
+  & .panel-heading {
+    border-color: @inset-panel-border-color;
   }
 }
 
 .panel-heading {
   .text(normal);
-
   border-bottom: 1px solid @panel-heading-border-color;
-  border-top: 1px solid @background-color-highlight;
-
-  background-color: transparent;
-  background-image: -webkit-linear-gradient(@panel-heading-background-color, darken(@panel-heading-background-color, 10%));
+  background-color: @panel-heading-background-color;
 
   .btn {
     padding-left: 8px;
