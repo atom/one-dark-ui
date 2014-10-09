@@ -2,7 +2,8 @@
 @import "ui-mixins";
 @import "octicon-mixins";
 
-.list-group, .list-tree {
+.list-group,
+.list-tree {
   li:not(.list-nested-item),
   li.list-nested-item > .list-item {
     .text(normal);
@@ -43,7 +44,9 @@
 .select-list ol.list-group,
 &.select-list ol.list-group {
   li.two-lines {
-    .secondary-line { color: @text-color-subtle; }
+    .secondary-line {
+      color: @text-color-subtle;
+    }
     &.selected .secondary-line {
       color: @text-color;
       text-shadow: none;
@@ -57,7 +60,7 @@
     &:before{ display: none; }
   }
 
-  &.mark-active{
+  &.mark-active {
     @active-icon-size: 14px;
 
     // pad in front of the text where the icon would be We'll pad the non-
@@ -113,7 +116,8 @@
   }
 }
 
-li.ui-draggable-dragging, li.ui-sortable-helper {
+li.ui-draggable-dragging,
+li.ui-sortable-helper {
   line-height: @component-line-height;
   height: @component-line-height;
   border: 0;

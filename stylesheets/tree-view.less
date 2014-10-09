@@ -5,7 +5,7 @@
   background: @tree-view-background-color;
 
   .selected:before {
-  	background: lighten(@tree-view-background-color, 8%);
+  	background: @level-1-color;
   }
 }
 
@@ -14,7 +14,8 @@
   background: @tree-view-background-color;
 
   &:focus {
-    background: lighten(@tree-view-background-color, 2%);
+    // Disabled for now. Might be better to move it to panes
+    //background: lighten(@tree-view-background-color, 2%);
 
     .selected:before {
       background: @background-color-selected;
