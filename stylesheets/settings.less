@@ -37,6 +37,11 @@ body .settings-view {
 		border: 1px solid @input-border-color;
 		border-radius: @component-border-radius;
 		padding-left: @component-padding/1.5;
+
+		.placeholder-text {
+			color: @text-color-subtle;
+		}
+
 		.text {
 			color: @text-color-highlight;
 		}
@@ -48,6 +53,10 @@ body .settings-view {
 		}
 		&.is-focused {
 			background-color: darken(@input-background-color, 2%);
+
+			.placeholder-text {
+				color: lighten(@text-color-subtle, 4%);
+			}
 			.selection .region {
 				background-color: @background-color-selected;
 			}

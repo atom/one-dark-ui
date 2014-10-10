@@ -1,0 +1,53 @@
+@import "ui-variables";
+@import "ui-mixins";
+
+.checkbox (@color) {
+  -webkit-appearance: none;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  width: 4em;
+  height: 2em;
+  font-size: .7em;
+  color: @color;
+  outline: none;
+  cursor: pointer;
+  border-radius: 2em;
+  background-color: @level-1-color;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transition: background-color 0.2s cubic-bezier(0.5, 0.15, 0.2, 1);
+  transition: background-color 0.2s cubic-bezier(0.5, 0.15, 0.2, 1);
+  &:focus {
+    outline: 0;
+    // TODO: better focus style
+    // box-shadow: 0 0 0 2px hsla(0,0%,0%,.5);
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: inline-block;
+    left: 0;
+    margin: 0;
+    width: 2em;
+    height: inherit;
+    border-radius: inherit;
+    border: 4px solid transparent;
+    background-clip: content-box;
+    background-color: @level-3-color;
+    transition: transform 0.2s cubic-bezier(0.5, 0.15, 0.2, 1);
+  }
+  &:checked {
+    background-color: @color;
+  }
+  &:checked:before {
+    background-color: hsl(@base-hue,100%,90%);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+input[type="checkbox"] {
+  .checkbox( hsl(@base-hue,100%,60%) );
+}
