@@ -5,7 +5,6 @@
   color: @text-color;
   background-color: @color;
   background-image: linear-gradient(lighten(@color, 2%), @color);
-  box-shadow: 0 1px 1px hsla(0,0%,0%,.2);
 
   &:hover {
     color: @text-color-highlight;
@@ -18,7 +17,6 @@
   &:active {
     color: @text-color;
     background: darken(@color, 2%);
-    box-shadow: none;
   }
   &.selected {
     color: @text-color;

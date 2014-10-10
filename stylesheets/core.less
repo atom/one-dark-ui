@@ -15,6 +15,10 @@
   padding: 16px 0; // stops jumping of the title when collapsing
 }
 
+.styleguide .overlay:after {
+  position: absolute;  // prevent overlay backdrop from leaking outside 
+}
+
 .example .example-rendered {
   background: @level-2-color;
 }
