@@ -25,6 +25,21 @@
     border-right: @tab-border;
     transition: color .1s;
 
+    // Active pane marker
+    &:before {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity .3s;
+      top: 0px;
+      left: 0px;
+      width: 2px;
+      height: 30px;
+      background: hsl(@base-hue,100%,60%);
+    }
+
     &:last-child {
       margin-right: -1px; // hide border when touching right edge
     }
@@ -71,6 +86,11 @@
       line-height: @tab-height;
       color: @text-color;
     }
+
+    .pane.active &:before {
+      opacity: 1;
+    }
+
   }
 
   .tab:hover {
