@@ -2,18 +2,18 @@
 
 @base-hue:         220; // value from 0 to 360
 @base-saturation:  12%;
-@base-lightness:   14%; // best < 20% for dark and > 90% for light
+@base-lightness:   18%; // best < 20% for dark and > 90% for light
 
 @base-background-color: hsl(@base-hue, @base-saturation, @base-lightness);
-@base-border-color: hsla(@base-hue, @base-saturation, @base-lightness/1.75, .3);
+@base-border-color: hsla(@base-hue, @base-saturation, @base-lightness*0.75, .3);
 
 
 // Level Colors
 
-@level-1-color: lighten(@base-background-color, 12%);
-@level-2-color: lighten(@base-background-color,  4%);
-@level-3-color:         @base-background-color;
-@level-4-color:  darken(@base-background-color,  2%);
+@level-1-color: lighten(@base-background-color, 4%);
+@level-2-color:         @base-background-color;
+@level-3-color:  darken(@base-background-color,  2%);
+@level-4-color:  darken(@base-background-color,  4%);
 
 
 // Site Colors
@@ -40,14 +40,14 @@
 
 @app-background-color: @level-4-color;
 
-@tree-view-background-color: @level-2-color;
+@tree-view-background-color: @level-3-color;
 @tree-view-border-color: @base-border-color;
 
 @tab-background-color: transparent;
-@tab-background-color-active: @level-1-color;
-@tab-bar-background-color: @level-2-color;
-@tab-border-color: @base-border-color;
+@tab-background-color-active: @level-2-color;
+@tab-bar-background-color: @level-4-color;
 @tab-bar-border-color: @base-border-color;
+@tab-border-color: darken(@tab-bar-background-color, 6%);
 
 @pane-item-background-color: @base-background-color;
 @pane-item-border-color: @base-border-color;
@@ -55,7 +55,7 @@
 @panel-heading-background-color: @level-1-color;
 @panel-heading-border-color: @base-border-color;
 
-@tool-panel-background-color: @level-2-color;
+@tool-panel-background-color: @level-4-color;
 @tool-panel-border-color: @base-border-color;
 
 @inset-panel-background-color: lighten(@level-2-color, 4%);
@@ -69,8 +69,8 @@
 @button-background-color-selected: darken(@button-background-color, 6%);
 @button-border-color: @base-border-color; // seems unused
 
-@input-background-color: @level-3-color;
-@input-border-color: @base-border-color;
+@input-background-color: hsla(0,0%,0%,.2);
+@input-border-color: hsla(0,0%,0%,.2);
 
 @scrollbar-color: @level-1-color;
 @scrollbar-background-color: transparent;
