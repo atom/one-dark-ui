@@ -122,7 +122,7 @@ body .settings-view {
 	}
 
 	.config-menu {
-		background: @level-3-color;
+		background: @level-2-color;
 		box-shadow: -1px 0px 1px -1px darken(@base-background-color, 50%) inset;
 		.nav > li > a {
 			color: @text-color;
@@ -152,6 +152,12 @@ body .settings-view {
 
 	.config-menu .panels-menu .panel-menu-separator {
 		border-color: @base-border-color;
+	}
+
+	.config-menu .panels-packages {
+		background: @level-3-color;
+		border-top: 1px solid @base-border-color;
+		border-bottom: 1px solid @base-border-color;
 	}
 
 	.config-menu .panels-packages li.active {
