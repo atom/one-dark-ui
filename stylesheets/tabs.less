@@ -21,7 +21,7 @@
     padding: 0;
     margin: 0;
     color: @tab-text-color;
-    background: transparent;
+    background: @tab-background-color;
     background-clip: padding-box;
     border-right: @tab-border;
     transition: color .1s;
@@ -34,14 +34,14 @@
       z-index: 2;
       opacity: 0;
       transition: opacity .3s;
-      top: 0px;
-      left: 0px;
-      right: 0px;
-      height: 2px;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: @tab-height;
       background: hsl(@base-hue,100%,60%);
     }
 
-    &:last-child {
+    &:last-of-type {
       margin-right: -1px; // hide border when touching right edge
     }
 
@@ -104,7 +104,6 @@
     }
 
     .pane.active & {
-      background: linear-gradient( saturate( lighten(@tab-background-color-active, 6%), 20%), @tab-background-color-active 50%);
       background-clip: padding-box;
     }
 
@@ -131,9 +130,27 @@
   }
 
   .placeholder {
-    height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    margin: 0;
+    height: @tab-height + @tab-top-padding;
+    background: hsl(@base-hue,100%,60%);
     &:after {
-      top: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+      top: @tab-height/2 + @tab-top-padding - 5px ;
+      width: 10px;
+      height: 10px;
+      margin: 0;
+      border-radius: 0;
+      border: 5px solid;
+      border-color: transparent transparent transparent hsl(@base-hue,100%,60%); // TODO: Var for color
+      background: transparent;
+    }
+
+    &:last-child {
+      margin-left: -2px;
+
+      &:after {
+        margin-left: -10px;
+        border-color: transparent hsl(@base-hue,100%,60%) transparent transparent; // TODO: Var for color
+      }
     }
   }
 }
