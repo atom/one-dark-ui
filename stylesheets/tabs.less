@@ -33,23 +33,22 @@
     border-bottom: 1px solid @tab-bar-border-color;
     transition: color .1s;
 
-    // Active pane marker
-    &:before {
-      content: "";
-      position: absolute;
-      pointer-events: none;
-      z-index: 2;
-      opacity: 0;
-      transition: opacity .3s;
-      top: 0;
-      left: 0;
-      width: 2px;
-      height: @tab-height;
-      background: hsl(@base-hue,100%,60%);
-    }
-
     &:last-of-type {
       border-right: none;
+    }
+
+    &:hover {
+      color: @text-color-highlight;
+
+      & .close-icon {
+        opacity: 1;
+      }
+    }
+
+    .title{
+      position: relative;
+      z-index: 1;
+      padding: 0 8px
     }
 
     .close-icon {
@@ -68,25 +67,20 @@
       }
     }
 
-    &.modified:not(:hover) .close-icon {
-      right: 0;
-      top: @tab-height/2 - @modified-icon-width/2 + 1px;
-      width: @modified-icon-width;
-      height: @modified-icon-width;
-      opacity: 1;
+    // Active pane marker
+    &:before {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity .3s;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: @tab-height;
+      background: hsl(@base-hue,100%,60%);
     }
-
-    &.modified:hover .close-icon:hover {
-      color: @text-color-highlight;
-    }
-
-    .title{
-      position: relative;
-      z-index: 1;
-      padding: 0 8px
-    }
-
-
   }
 
   .tab.active {
@@ -97,7 +91,16 @@
     border-bottom-color: transparent;
     background-color: @tab-background-color-active;
 
-    .close-icon {
+
+    &:hover .close-icon {
+      color: @text-color;
+
+      &:hover {
+        color: inherit;
+      }
+    }
+
+    & .close-icon {
       color: @text-color;
       opacity: 1;
     }
@@ -108,19 +111,17 @@
 
   }
 
-  .tab:hover {
-    color: @text-color-highlight;
-
-    .close-icon {
+  .tab.modified {
+    &:not(:hover) .close-icon {
+      right: 0;
+      top: @tab-height/2 - @modified-icon-width/2 + 1px;
+      width: @modified-icon-width;
+      height: @modified-icon-width;
       opacity: 1;
     }
-  }
 
-  .tab.active:hover .close-icon {
-    color: @text-color;
-
-    &:hover {
-      color: inherit;
+    &:hover .close-icon:hover {
+      color: @text-color-highlight;
     }
   }
 
