@@ -13,10 +13,7 @@
   outline: none;
   cursor: pointer;
   border-radius: 2em;
-  background-color: @level-1-color;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-transition: background-color 0.2s cubic-bezier(0.5, 0.15, 0.2, 1);
+  background-color: hsla(0,0%,100%,.15);
   transition: background-color 0.2s cubic-bezier(0.5, 0.15, 0.2, 1);
   &:focus {
     outline: 0;
@@ -49,5 +46,5 @@
 }
 
 input[type="checkbox"] {
-  .checkbox( hsl(@base-hue,100%,60%) );
+  .checkbox( @base-accent-color );
 }

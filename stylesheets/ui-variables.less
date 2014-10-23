@@ -2,110 +2,110 @@
 
 @base-hue:         220; // value from 0 to 360
 @base-saturation:  12%;
-@base-lightness:   18%; // best < 20% for dark and > 90% for light
+@base-lightness:   18%; // best < 20%
 
+@base-accent-color:     hsl(@base-hue, @base-saturation*8, 60%);
 @base-background-color: hsl(@base-hue, @base-saturation, @base-lightness);
-@base-border-color: hsla(@base-hue, @base-saturation, @base-lightness*0.75, .3);
+@base-border-color:    hsla(@base-hue, @base-saturation, @base-lightness*0.75, .3);
 
 
 // Level Colors
 
-@level-1-color: lighten(@base-background-color, 4%);
+@level-1-color: lighten(@base-background-color, 6%);
 @level-2-color:         @base-background-color;
-@level-3-color:  darken(@base-background-color,  2%);
-@level-4-color:  darken(@base-background-color,  4%);
+@level-3-color:  darken(@base-background-color, 3%);
 
 
 // Site Colors
 
 @ui-site-color-1: @background-color-success; // green
-@ui-site-color-2: @background-color-info; // blue
+@ui-site-color-2: @background-color-info;    // blue
 @ui-site-color-3: @background-color-warning; // orange
-@ui-site-color-4: #D831B0; // pink
-@ui-site-color-5: #EBDD5B; // yellow
+@ui-site-color-4: #D831B0;                   // pink
+@ui-site-color-5: #EBDD5B;                   // yellow
 
 
 // Var + State Background Colors
 
 @background-color-info:    hsl(208, 100%, 50%);
-@background-color-success: hsl(160, 70%, 42%);
-@background-color-warning: hsl(32, 60%, 50%);
-@background-color-error:   hsl(0, 70%, 50%);
+@background-color-success: hsl(160,  70%, 42%);
+@background-color-warning: hsl(32,   60%, 50%);
+@background-color-error:   hsl(0,    70%, 50%);
 
-@background-color-selected: hsl(@base-hue, 50%, 45%);
-@background-color-highlight: hsla(0,0%,100%,.1);
+@background-color-selected: lighten(@base-background-color, 8%);
+@background-color-highlight: lighten(@base-background-color, 3%);
 
 
 // Component Colors
 
-@app-background-color: @level-4-color;
+@app-background-color:             darken(@level-3-color, 2%);
 
-@tree-view-background-color: @level-3-color;
-@tree-view-border-color: @base-border-color;
+@tree-view-background-color:       @level-3-color;
+@tree-view-border-color:           @base-border-color;
 
-@tab-background-color: @level-4-color;
-@tab-background-color-active: @level-2-color;
-@tab-bar-background-color: @level-4-color;
-@tab-bar-border-color: @base-border-color;
-@tab-border-color: darken(@tab-bar-background-color, 6%);
+@tab-background-color:             @level-3-color;
+@tab-background-color-active:      @level-2-color;
+@tab-bar-background-color:         @level-3-color;
+@tab-bar-border-color:             @base-border-color;
+@tab-border-color:                 darken(@tab-bar-background-color, 6%);
 
-@pane-item-background-color: @base-background-color;
-@pane-item-border-color: @base-border-color;
+@pane-item-background-color:       @base-background-color;
+@pane-item-border-color:           @base-border-color;
 
-@panel-heading-background-color: @level-1-color;
-@panel-heading-border-color: @base-border-color;
+@panel-heading-background-color:   @level-1-color;
+@panel-heading-border-color:       @base-border-color;
 
-@tool-panel-background-color: @level-4-color;
-@tool-panel-border-color: @base-border-color;
+@tool-panel-background-color:      @level-3-color;
+@tool-panel-border-color:          @base-border-color;
 
-@inset-panel-background-color: lighten(@level-2-color, 4%);
-@inset-panel-border-color: fadeout(@base-border-color, 15%);
+@inset-panel-background-color:     lighten(@level-2-color, 4%);
+@inset-panel-border-color:         fadeout(@base-border-color, 15%);
 
-@overlay-background-color: @level-2-color;
-@overlay-border-color: @base-border-color;
+@overlay-background-color:         @level-2-color;
+@overlay-border-color:             @base-border-color;
 
-@button-background-color: @level-1-color;
-@button-background-color-hover: lighten(@button-background-color, 2%);
+@button-background-color:          @level-1-color;
+@button-background-color-hover:    lighten(@button-background-color, 2%);
 @button-background-color-selected: darken(@button-background-color, 6%);
-@button-border-color: @base-border-color; // seems unused
+@button-border-color:              @base-border-color; // seems unused
 
-@input-background-color: hsla(0,0%,0%,.2);
-@input-border-color: hsla(0,0%,0%,.2);
+@input-background-color:           hsla(0,0%,0%,.2);
+@input-border-color:               hsla(0,0%,0%,.2);
 
-@scrollbar-color: @level-1-color;
-@scrollbar-background-color: transparent;
+@scrollbar-color:                  @level-1-color;
+@scrollbar-background-color:       transparent;
 
 
 // Text Colors
 
-@text-color: hsl(@base-hue, 8%, 60%);
+@text-color: hsl(@base-hue, @base-saturation, @base-lightness*3);
 @text-color-subtle: darken(@text-color, 20%);
-@text-color-highlight: hsl(@base-hue, 100%, 90%);
+@text-color-highlight: hsl(@base-hue, @base-saturation*4, 80%);
 @text-color-selected: white;
 
-@text-color-info:    hsl(219, 79%, 66%);
-@text-color-success: hsl(140, 44%, 62%);
-@text-color-warning: hsl(36, 60%, 72%);
-@text-color-error:   hsl(9, 100%, 64%);
+@text-color-info:    hsl(219,  79%, 66%);
+@text-color-success: hsl(140,  44%, 62%);
+@text-color-warning: hsl( 36,  60%, 72%);
+@text-color-error:   hsl(  9, 100%, 64%);
 
-@text-color-ignored: @text-color-subtle;
-@text-color-added: @text-color-success;
-@text-color-renamed: @text-color-info;
+@text-color-ignored:  @text-color-subtle;
+@text-color-added:    @text-color-success;
+@text-color-renamed:  @text-color-info;
 @text-color-modified: @text-color-warning;
-@text-color-removed: @text-color-error;
+@text-color-removed:  @text-color-error;
 
 
 // Sizes
 
-@font-size: 11px;
+@font-size:       11px;
 @input-font-size: 14px;
 
 @disclosure-arrow-size: 12px;
 
-@component-padding: 10px;
-@component-icon-padding: 5px;
-@component-icon-size: 16px;
-@component-line-height: 25px;
+@component-padding:      10px;
+@component-icon-padding:  5px;
+@component-icon-size:    16px;
+@component-line-height:  25px;
 @component-border-radius: 2px;
 
 @tab-height: 30px;
