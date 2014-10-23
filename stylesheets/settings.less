@@ -158,11 +158,36 @@ body .settings-view {
 		background: @level-3-color;
 		border-top: 1px solid @base-border-color;
 		border-bottom: 1px solid @base-border-color;
+
+
+		.package-title {
+			color: @text-color-highlight;
+		}
+
+		.package-version {
+			color: @text-color;
+		}
+
+		.package-author {
+			color: @text-color;
+		}
 	}
 
 	.config-menu .panels-packages li.active {
 		a, a:hover {
 			box-shadow: 0 0 0 1px darken(@background-color-selected, 6%) !important;
+		}
+	}
+
+	.packages .available-package-view {
+		.package-name {
+			color: @text-color-highlight;
+		}
+		.downloads {
+			color: @text-color;
+		}
+		.description {
+			color: @text-color;
 		}
 	}
 
