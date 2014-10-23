@@ -5,7 +5,7 @@
 @tab-border: 1px solid @tab-border-color;
 @tab-max-width: 160px;
 @tab-min-width: 28px;
-@tab-text-color: @text-color;
+@tab-text-color: @text-color-highlight;
 @tab-icon-color: @text-color-subtle;
 
 .tab-bar {
@@ -31,18 +31,20 @@
     background: @tab-background-color;
     border-right: @tab-border;
     border-bottom: 1px solid @tab-bar-border-color;
-    transition: color .1s;
+    opacity: .5;
+    transition: opacity .3s;
 
     &:last-of-type {
       border-right: none;
     }
 
-    &:hover {
-      color: @text-color-highlight;
+    &:hover .close-icon {
+      transform: scale(1);
+    }
 
-      & .close-icon {
-        opacity: 1;
-      }
+    &:active {
+      opacity: .2;
+      transition-duration: .05s;
     }
 
     .title{
@@ -59,8 +61,8 @@
       line-height: @tab-height - 2px;
       color: @tab-icon-color;
       background: inherit;
-      opacity: 0;
-      transition: opacity .1s;
+      transform: scale(0);
+      transition: transform .1s;
 
       &:hover {
         color: inherit;
@@ -73,13 +75,13 @@
       position: absolute;
       pointer-events: none;
       z-index: 2;
-      opacity: 0;
-      transition: opacity .3s;
       top: 0;
       left: 0;
       width: 2px;
       height: @tab-height;
       background: hsl(@base-hue,100%,60%);
+      transform: scaleY(0);
+      transition: transform .08s;
     }
   }
 
@@ -87,10 +89,9 @@
     z-index: 1;
     flex: 2 0 auto;
     padding-right: @modified-icon-width + 2px;
-    color: @text-color-highlight;
     border-bottom-color: transparent;
     background-color: @tab-background-color-active;
-
+    opacity: 1;
 
     &:hover .close-icon {
       color: @text-color;
@@ -102,11 +103,12 @@
 
     & .close-icon {
       color: @text-color;
-      opacity: 1;
+      transform: scale(1);
     }
 
+    // Active pane marker
     .pane.active &:before {
-      opacity: 1;
+      transform: scaleY(1);
     }
 
   }
@@ -117,7 +119,7 @@
       top: @tab-height/2 - @modified-icon-width/2 + 1px;
       width: @modified-icon-width;
       height: @modified-icon-width;
-      opacity: 1;
+      transform: scale(1);
     }
 
     &:hover .close-icon:hover {
