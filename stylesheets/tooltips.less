@@ -1,7 +1,8 @@
 @import "ui-variables";
 
-@tip-background-color: hsl(@base-hue,50%,90%);
-@tip-text-color: hsl(@base-hue,30%,30%);
+@tip-background-color: @level-1-color;
+@tip-text-color: @text-color;
+@tip-text-key-color: @text-color-highlight;
 
 .tooltip {
   white-space: nowrap;
@@ -18,14 +19,18 @@
   .keystroke {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 13px;
-    color: hsl(@base-hue,30%,50%);
-    padding: 0 3px;
-    border: 1px solid hsl(@base-hue,30%,66%);
+    padding: 1px 3px;
+    margin: 0 -5px 0 3px;
+    color: @tip-text-key-color;
     border-radius: @component-border-radius;
+    border: 1px solid @base-border-color;
+    background: @level-2-color;
   }
 
   &.in {
     opacity: 1;
+    transition-timing-function: ease-out;
+    transition-duration: .2s;
   }
 
   &.top .tooltip-arrow {
