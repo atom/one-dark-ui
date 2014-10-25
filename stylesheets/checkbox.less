@@ -40,7 +40,7 @@
     background-color: @color;
   }
   &:checked:before {
-    background-color: hsl(@base-hue,100%,90%);
+    background-color: contrast(@color,@level-3-color,@text-color-highlight);
     transform: translate3d(100%, 0, 0);
   }
 }
