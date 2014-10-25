@@ -1,79 +1,98 @@
 @import "ui-variables";
-@tab-radius: 3px;
 @modified-icon-width: 8px;
-@tab-skew: 30deg;
-@tab-top-padding: 5px;
-@tab-bottom-border-height: 5px;
+@tab-top-padding: 0;
+@tab-bottom-border-height: 0px;
 @tab-border: 1px solid @tab-border-color;
 @tab-max-width: 160px;
+@tab-min-width: 28px;
+@tab-text-color: @text-color-highlight;
+@tab-icon-color: @text-color-subtle;
 
 .tab-bar {
   height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
-  background-image: -webkit-linear-gradient(top, @tab-bar-background-color, lighten(@tab-bar-background-color, 9%));
-  box-shadow: inset 0 -8px 8px -4px rgba(0,0,0, .15);
-  padding: 0 10px;
+  background: @tab-bar-background-color;
+  overflow-x: auto;
+  overflow-y: hidden;
 
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    height: @tab-bottom-border-height;
-    left: 0px;
-    width: 100%;
-    background-color: @tab-background-color-active;
-    border-bottom: 1px solid @tab-bar-border-color;
-    border-top: 1px solid @tab-border-color;
+  &::-webkit-scrollbar {
+    display: none;
   }
 
   .tab {
     position: relative;
     top: @tab-top-padding;
     max-width: @tab-max-width;
+    min-width: @tab-min-width;
     height: @tab-height;
     line-height: @tab-height;
-    color: @text-color;
     padding: 0;
-    margin: 0 20px 0 5px;
+    margin: 0;
+    color: @tab-text-color;
+    background: @tab-background-color;
+    border-right: @tab-border;
+    border-bottom: 1px solid @tab-bar-border-color;
+    opacity: .5;
+    transition: opacity .3s;
 
-    box-shadow: inset -1px -1px 1px rgba(0,0,0, .05);
-    transition: color .1s ease-in;
-
-    &, &:before, &:after {
-      background-image: -webkit-linear-gradient(top, @tab-background-color, darken(@tab-background-color, 6%));
-      border-top: @tab-border;
+    &:last-of-type {
+      border-right: none;
     }
 
-    &:before, &:after {
-      content: '';
-      position: absolute;
-      top: -1px;
-      width: 25px;
-      height: @tab-height;
+    &:hover .close-icon {
+      transform: scale(1);
     }
 
-    // left angled edge
-    &:before {
-      left: -14px;
-      border-top-left-radius: @tab-radius;
-      border-left: @tab-border;
-      box-shadow: inset 1px -1px 1px rgba(0,0,0, .05);
-      -webkit-transform: skewX(-@tab-skew);
-    }
-
-    // right angled edge
-    &:after {
-      right: -14px;
-      border-top-right-radius: @tab-radius;
-      border-right: @tab-border;
-      box-shadow: inset -1px -1px 1px rgba(0,0,0, .05);
-      -webkit-transform: skewX(@tab-skew);
+    .title{
+      position: relative;
+      z-index: 1;
+      padding: 0 8px
     }
 
     .close-icon {
       right: 0;
       z-index: 3;
+      margin-right: 8px;
       text-align: right;
-      line-height: @tab-height;
+      line-height: @tab-height - 2px;
+      color: @tab-icon-color;
+      background: inherit;
+      transform: scale(0);
+      transition: transform .1s;
+
+      &:hover {
+        color: inherit;
+      }
+
+      &:active {
+        opacity: .3;
+      }
+    }
+
+    // Active pane marker
+    &:before {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: @tab-height;
+      background: @base-accent-color;
+      transform: scaleY(0);
+      transition: transform .08s;
+    }
+  }
+
+  .tab.active {
+    z-index: 1;
+    flex: 2 0 auto;
+    padding-right: @modified-icon-width + 2px;
+    border-bottom-color: transparent;
+    background-color: @tab-background-color-active;
+    opacity: 1;
+
+    &:hover .close-icon {
       color: @text-color;
 
       &:hover {
@@ -81,60 +100,56 @@
       }
     }
 
-    &.modified:not(:hover) .close-icon {
+    & .close-icon {
+      color: @text-color;
+      transform: scale(1);
+    }
+
+    // Active pane marker
+    .pane.active &:before {
+      transform: scaleY(1);
+    }
+
+  }
+
+  .tab.modified {
+    &:not(:hover) .close-icon {
       right: 0;
       top: @tab-height/2 - @modified-icon-width/2 + 1px;
       width: @modified-icon-width;
       height: @modified-icon-width;
+      border-color: @base-accent-color;
+      transform: scale(1);
     }
 
-    &.modified:hover .close-icon:hover {
+    &:hover .close-icon:hover {
       color: @text-color-highlight;
-    }
-
-    .title {
-      position: relative;
-      z-index: 1;
-      padding-right: 10px
-    }
-
-    &:first-child {
-      margin-left: 20px;
-    }
-  }
-
-  .tab.active {
-    z-index: 1;
-    color: @text-color-highlight;
-
-    .close-icon {
-      line-height: @tab-height - 1px;
-      color: @text-color;
-    }
-
-    &, &:before, &:after {
-      background: @tab-background-color-active;
-      height: @tab-height + 1px;
-      box-shadow: none;
-    }
-  }
-
-  .tab:hover {
-    color: @text-color-highlight;
-  }
-
-  .tab.active:hover .close-icon {
-    color: @text-color;
-
-    &:hover {
-      color: inherit;
     }
   }
 
   .placeholder {
-    height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+    margin: 0;
+    height: @tab-height + @tab-top-padding;
+    background: @base-accent-color;
+    pointer-events: none;
     &:after {
-      top: @tab-height + @tab-top-padding + @tab-bottom-border-height;
+      top: @tab-height/2 + @tab-top-padding - 5px ;
+      width: 10px;
+      height: 10px;
+      margin: 0;
+      border-radius: 0;
+      border: 5px solid;
+      border-color: transparent transparent transparent @base-accent-color;
+      background: transparent;
+    }
+
+    &:last-child {
+      margin-left: -2px;
+
+      &:after {
+        margin-left: -10px;
+        border-color: transparent @base-accent-color transparent transparent;
+      }
     }
   }
 }

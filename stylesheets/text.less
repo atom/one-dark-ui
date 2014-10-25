@@ -65,17 +65,21 @@ code {
   padding: 1px 3px;
 }
 
-.highlight-color(@name, @color) {
+.highlight-color(@name, @color, @text-color) {
   .highlight-@{name} {
-    color: @text-color-highlight;
+    color: lighten(saturate(@text-color, 0%), 24%);
     font-weight: bold;
     text-shadow: none;
-    background-color: @color;
+    background-color: fadeout(@color, 50%);
     border-radius: @component-border-radius;
-    padding: 1px 3px;
+    padding: 1px 4px;
   }
 }
-.highlight-color(info, @background-color-info);
-.highlight-color(warning, @background-color-warning);
-.highlight-color(error, @background-color-error);
-.highlight-color(success, @background-color-success);
+.highlight-color(info, @background-color-info, @text-color-info);
+.highlight-color(warning, @background-color-warning, @text-color-warning);
+.highlight-color(error, @background-color-error, @text-color-error);
+.highlight-color(success, @background-color-success, @text-color-success);
+
+.results-view .path-details.list-item {
+  color: darken(@text-color-highlight, 18%);
+}

@@ -12,7 +12,6 @@
 .tool-panel {
   .text(normal);
   position: relative;
-
   background-color: @tool-panel-background-color;
 
   &.panel-bottom {
@@ -26,31 +25,33 @@
   &.panel-right {
     border-left: 1px solid @tool-panel-border-color;
   }
-
-  .inset-panel {
-    border-radius: @component-border-radius;
-
-    border: 1px solid @tool-panel-border-color;
-  }
 }
 
 .inset-panel {
   position: relative;
   background-color: @inset-panel-background-color;
+  &.bordered {
+    border: 1px solid @base-border-color;
+    border-radius: @component-border-radius;
+  }
+  & .panel-heading {
+    border-color: @inset-panel-border-color;
+  }
 }
 
 .panel-heading {
-  border-bottom: none;
-  padding: @component-padding - 2px @component-padding;
-
-  background-color: transparent;
-  background-image: -webkit-linear-gradient(@panel-heading-background-color, darken(@panel-heading-background-color, 10%));
+  .text(normal);
+  border-bottom: 1px solid @panel-heading-border-color;
+  background-color: @panel-heading-background-color;
 
   .btn {
+    padding-left: 8px;
+    padding-right: 8px;
+
     @bg: lighten(@button-background-color, 10%);
     @hover: lighten(@button-background-color-hover, 10%);
     @selected: lighten(@button-background-color-selected, 10%);
     @text: lighten(@text-color, 10%);
-    .btn-background(@bg, @hover, @selected, @button-border-color, @text, @text);
+    .btn-background(@bg, @hover, @selected, @text);
   }
 }

@@ -5,7 +5,7 @@
 .text(normal) {
   font-weight: normal;
   color: @text-color;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+  text-shadow: none;
 }
 .text(subtle) {
   font-weight: normal;
@@ -15,11 +15,10 @@
 .text(highlight) {
   font-weight: normal;
   color: @text-color-highlight;
+  text-shadow: 0 1px 0 rgba(0,0,0,.2);
 }
 .text(selected) {
-  font-weight: normal;
-  color: @text-color-selected;
-  text-shadow: none;
+  .text(highlight)
 }
 
 .text(info) {

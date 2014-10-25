@@ -1,32 +1,31 @@
 @import "ui-variables";
 
 .tree-view {
-	font-size: @font-size;
-	background: @tree-view-background-color;
+  font-size: @font-size;
+  background: @tree-view-background-color;
 
-	.selected:before {
-		background: #C1C1C1;
-	}
+  .selected:before {
+  	background: @background-color-highlight;
+  }
 }
 
 .focusable-panel {
-	opacity: 1;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#e8ecf1), to(#ebebeb));
-	background-image: -webkit-linear-gradient(top, #e8ecf1, #ebebeb);
+  opacity: 1;
+  background: @tree-view-background-color;
 
-	&:focus {
-		background-image: -webkit-gradient(linear, left top, left bottom, from(#e8ecf1),to(#d1d8e0));
-		background-image: -webkit-linear-gradient(top, #e8ecf1, #d1d8e0);
+  &:focus {
+    // Disabled for now. Might be better to move it to panes
+    //background: lighten(@tree-view-background-color, 2%);
 
-		.selected:before {
-			background: @background-color-selected;
-		}
+    .selected:before {
+      background: @background-color-selected;
+    }
 
-		.selected > .name,
-		.selected > .name:before,
-		.selected > .list-item > .name,
-		.selected > .list-item > .name:before {
-			color: #fff !important;
-		}
-	}
+    .selected > .name,
+    .selected > .name:before,
+    .selected > .list-item > .name,
+    .selected > .list-item > .name:before {
+      color: @text-color-selected;
+    }
+  }
 }

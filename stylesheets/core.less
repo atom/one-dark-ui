@@ -1,0 +1,28 @@
+// These might be better part of the Atom core.
+
+.preview-pane .results-view .path-match-number {
+  // show number also on selected item
+  color: inherit;
+  opacity: .6;
+}
+
+.checkbox input[type="checkbox"] {
+  margin-top: 2px;
+  margin-right: 6px;
+}
+
+
+// Styleguide
+
+.styleguide .section.bordered,
+.styleguide .section.collapsed {
+  padding: 16px 0; // stops jumping of the title when collapsing
+}
+
+.styleguide .overlay:after {
+  position: absolute;  // prevent overlay backdrop from leaking outside
+}
+
+.example .example-rendered {
+  background: @level-3-color;
+}

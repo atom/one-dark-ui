@@ -1,6 +1,28 @@
 @import "ui-variables";
 
+* {
+	box-sizing: border-box;
+}
+
 .workspace {
   background-color: @app-background-color;
-  border-top: 1px solid rgba(0, 0, 0, .4);
+}
+
+// Scrollbars
+.scrollbars-visible-always {
+  ::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: @scrollbar-background-color;
+	}
+
+	::-webkit-scrollbar-thumb {
+		border-radius: 4px;
+		border: 2px solid transparent;
+		background: @scrollbar-color;
+		background-clip: content-box;
+	}
 }

@@ -2,13 +2,17 @@
 @import "ui-variables";
 @import "buttons";
 
+.pane-item {
+  .panel {
+    // Not sure if this is still needed. Disabled for now
+    //border-color: fadeout(@inset-panel-border-color, 30%);
+  }
+}
+
 .panes {
   .pane {
-    background-color: lighten(@app-background-color, 3%);
-
-    &:focus {
-      background-color: @app-background-color;
-    }
+    position: relative;
+    background-color: @app-background-color;
   }
 
   .pane-row > * {

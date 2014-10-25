@@ -2,11 +2,12 @@
 
 .overlay {
   color: @text-color;
-  background-color: @overlay-background-color;
+  //background-color: @overlay-background-color;
+  background-color: transparent;
   padding: @component-padding;
-  border: 1px solid @overlay-border-color;
-  box-shadow: 0 0 10px @base-border-color;
-  border-radius: @component-border-radius;
+  //border: 1px solid @overlay-border-color;
+  //border-radius: @component-border-radius;
+  //box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.4);
 
   .editor.mini {
     margin-bottom: @component-padding;
@@ -15,19 +16,14 @@
   .select-list ol.list-group,
   &.select-list ol.list-group {
 
-    background-color: @inset-panel-background-color;
+    background-color: lighten(@overlay-background-color, 2%);
 
     li {
       padding: @component-padding;
-      border-top: 1px solid @inset-panel-border-color;
-      border-left: 1px solid @inset-panel-border-color;
-      border-right: 1px solid @inset-panel-border-color;
-      &:last-child { border-bottom: 1px solid @inset-panel-border-color; }
+      border-bottom: 1px solid @overlay-background-color;
 
-      &.two-lines { padding: @component-padding/2 @component-padding; }
-      &.selected {
-        color: @text-color;
-        background-color: @background-color-highlight;
+      &.two-lines {
+        padding: @component-padding/2 @component-padding;
       }
 
       .status.icon {
@@ -37,7 +33,48 @@
           margin-right: 0;
         }
       }
-    }
 
+      &.selected {
+        .status.icon {
+          color: @text-color-selected;
+        }
+      }
+    }
   }
+
+
+  // Backdrop
+  // TODO: Add extra wrapper to translate individually or easier positioning
+
+  &:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: hsla(@base-hue,@base-saturation,5%,.5);
+    -webkit-animation: overlay-fade .1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  @-webkit-keyframes overlay-fade {
+      0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: @overlay-background-color;
+    border: 1px solid hsla(0,0%,0%,.6);;
+    border-radius: 0 0 @component-border-radius*2 @component-border-radius*2;
+    box-shadow: 0 6px 12px -2px hsla(0,0%,0%,.4);
+  }
+
 }
