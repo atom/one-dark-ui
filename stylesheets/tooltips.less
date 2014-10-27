@@ -1,8 +1,8 @@
 @import "ui-variables";
 
-@tip-background-color: @level-1-color;
-@tip-text-color: @text-color;
-@tip-text-key-color: @text-color-highlight;
+@tip-background-color: hsv(@base-hue, @base-saturation, 24%);
+@tip-text-color: hsl(@base-hue, @base-saturation, 86%);
+@tip-text-key-color: hsl(@base-hue, @base-saturation, 90%);
 
 .tooltip {
   white-space: nowrap;
@@ -23,8 +23,8 @@
     margin: 0 -5px 0 3px;
     color: @tip-text-key-color;
     border-radius: @component-border-radius;
-    border: 1px solid @base-border-color;
-    background: @level-2-color;
+    border: 1px solid hsla(0,0%,100%,.1);
+    background: hsla(0,0%,100%,.2);
   }
 
   &.in {

@@ -2,24 +2,19 @@
 @import "ui-mixins";
 
 .btn-background (@color, @hover-color, @selected-color, @text-color) {
-  color: @text-color;
+  color: contrast(@color, @text-color, hsla(0,0%,100%,.8), 60% );
   background-color: @color;
   background-image: linear-gradient(lighten(@color, 2%), @color);
 
-  &:hover {
-    color: @text-color-highlight;
+  &:hover,
+  &:focus {
+    outline: none;
     background-image: linear-gradient(lighten(@hover-color, 2%), @hover-color);
   }
-  &:focus {
-    color: @text-color;
-    outline: none;
-  }
   &:active {
-    color: @text-color;
     background: darken(@color, 2%);
   }
   &.selected {
-    color: @text-color;
     background: @selected-color;
   }
   &.selected:hover {
@@ -29,14 +24,14 @@
 
 .btn-variant (@color) {
   @bg: darken(@color, 12%);
-  @hover: lighten(@bg, 2%);;
+  @hover: lighten(@bg, 2%);
   @selected: saturate(darken(@bg, 10%), 10%);
   text-shadow: 0 1px 0 hsla(0,0%,0%,.2);
   .btn-background(@bg, @hover, @selected, @text-color-highlight);
 }
 
 .btn {
-  .btn-background(
+  .btn-background (
     @button-background-color,
     @button-background-color-hover,
     @button-background-color-selected,
