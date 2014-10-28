@@ -1,6 +1,6 @@
 // Base Colors
 
-@theme-color:             hsl(50, 100%, 50%);
+@theme-color:             hsl(40, 100%, 50%);
 @theme-accent-color:      spin(@theme-color, 180);
 @theme-adjust-saturation: 0%; // -/+n%
 @theme-adjust-lightness:  0%;
@@ -9,11 +9,11 @@
 
 
 
-@base-hue:         hsvhue(@theme-color);
-@base-accent-hue:  hsvhue(@theme-accent-color);
-@base-saturation: max(0%, @theme-adjust-saturation + 2%); // limit to > 100%, default 20%
-@base-lightness:  min(100%, @theme-adjust-lightness  + 94%); // limit to > 100%, default 20%
-@base-contrast:           @theme-adjust-contrast * 0.1;
+@base-hue:          hsvhue(@theme-color);
+@base-accent-hue:   hsvhue(@theme-accent-color);
+@base-saturation:  max(0%, @theme-adjust-saturation + 2%); // limit to > 100%, default 20%
+@base-lightness: min(100%, @theme-adjust-lightness  + 98%); // limit to > 100%, default 20%
+@base-contrast:            @theme-adjust-contrast * -0.1;
 
 @base-accent-color:     hsl(@base-accent-hue, @theme-adjust-saturation + 90%, (@base-lightness + (@base-contrast*10) - 30%) );
 @base-background-color: hsv(@base-hue, @base-saturation, @base-lightness);
@@ -24,7 +24,7 @@
 
 @level-1-color: lighten(@base-background-color, @base-contrast + 4%);
 @level-2-color:  darken(@base-background-color, @base-contrast * 0.7 );
-@level-3-color:  darken(@base-background-color, @base-contrast + 6%);
+@level-3-color:  desaturate( darken(@base-background-color, @base-contrast + 8%), 20%);
 
 
 // Site Colors
