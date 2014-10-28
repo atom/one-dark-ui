@@ -23,6 +23,20 @@
   position: absolute;  // prevent overlay backdrop from leaking outside
 }
 
-.example .example-rendered {
-  background: @level-3-color;
+.example {
+  border: none;
+
+  .example-rendered {
+    border: 1px solid hsla(0,0%,0%,.1);
+    background: @level-3-color;
+  }
+
+  .example-code {
+    border: 1px solid hsla(0,0%,0%,.8);
+    border-radius: 0 @component-border-radius @component-border-radius 0;
+
+    .btn-group .btn.selected {
+      background: @level-3-color;
+    }
+  }
 }
