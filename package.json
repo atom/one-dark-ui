@@ -1,10 +1,10 @@
 {
-  "name": "mod-atom-dark-ui",
+  "name": "one-dark-ui",
   "theme": "ui",
-  "version": "0.35.0",
-  "description": "Modified Atom dark theme",
+  "version": "0.0.0",
+  "description": "Atom One dark UI theme",
   "license": "MIT",
-  "repository": "https://github.com/simurai/atom-dark-ui",
+  "repository": "https://github.com/atom/one-dark-ui",
   "engines": {
     "atom": ">0.40.0"
   }
