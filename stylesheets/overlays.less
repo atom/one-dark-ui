@@ -43,6 +43,27 @@
   }
 
 
+  & > * {
+    position: relative; // fixes stacking order
+  }
+
+
+  // Container
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: @overlay-background-color;
+    border-top: 1px solid hsla(0,0%,0%,.2);
+    border-radius: 0 0 @component-border-radius*2 @component-border-radius*2;
+    box-shadow: 0 6px 12px -2px hsla(0,0%,0%,.4);
+  }
+
   // Backdrop
   // TODO: Add extra wrapper to translate individually or easier positioning
 
@@ -61,22 +82,6 @@
   @-webkit-keyframes overlay-fade {
       0% { opacity: 0; }
     100% { opacity: 1; }
-  }
-
-  // Overlay box
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    background-color: @overlay-background-color;
-    border-top: 1px solid hsla(0,0%,0%,.2);
-    border-radius: 0 0 @component-border-radius*2 @component-border-radius*2;
-    box-shadow: 0 6px 12px -2px hsla(0,0%,0%,.4);
   }
 
 }
