@@ -23,6 +23,27 @@
   position: absolute;  // prevent overlay backdrop from leaking outside
 }
 
-.example .example-rendered {
-  background: @level-3-color;
+.styleguide .select-list .editor.mini,
+.styleguide .popover-list .editor.mini {
+  line-height: 25px;
+}
+
+
+.example {
+  border: none;
+
+  .example-rendered {
+    border: 1px solid hsla(0,0%,0%,.1);
+    border-right: none;
+    background: @level-3-color;
+  }
+
+  .example-code {
+    border: 1px solid hsla(0,0%,0%,.3);
+    border-radius: 0 @component-border-radius @component-border-radius 0;
+
+    .btn-group .btn.selected {
+      background: @level-3-color;
+    }
+  }
 }
