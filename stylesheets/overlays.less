@@ -2,12 +2,8 @@
 
 .overlay {
   color: @text-color;
-  //background-color: @overlay-background-color;
   background-color: transparent;
   padding: @component-padding;
-  //border: 1px solid @overlay-border-color;
-  //border-radius: @component-border-radius;
-  //box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.4);
 
   .editor.mini {
     margin-bottom: @component-padding;
@@ -43,6 +39,26 @@
   }
 
 
+  & > * {
+    position: relative; // fixes stacking order
+  }
+
+
+  // Container
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: @overlay-background-color;
+    border: 1px solid hsla(0,0%,0%,.6);;
+    border-radius: 0 0 @component-border-radius*2 @component-border-radius*2;
+    box-shadow: 0 6px 12px -2px hsla(0,0%,0%,.4);
+  }
+
   // Backdrop
   // TODO: Add extra wrapper to translate individually or easier positioning
 
@@ -61,20 +77,6 @@
   @-webkit-keyframes overlay-fade {
       0% { opacity: 0; }
     100% { opacity: 1; }
-  }
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    background-color: @overlay-background-color;
-    border: 1px solid hsla(0,0%,0%,.6);;
-    border-radius: 0 0 @component-border-radius*2 @component-border-radius*2;
-    box-shadow: 0 6px 12px -2px hsla(0,0%,0%,.4);
   }
 
 }
