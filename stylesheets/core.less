@@ -14,9 +14,20 @@
 
 // Styleguide
 
-.styleguide .section.bordered,
-.styleguide .section.collapsed {
-  padding: 16px 0; // stops jumping of the title when collapsing
+.styleguide section.bordered,
+.styleguide section.collapsed {
+  padding: @component-padding 0; // stops jumping of the title when collapsing
+}
+
+.styleguide .section-heading {
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+
+.styleguide h2 {
+  font-size: 1.4em;
+  line-height: 1.2;
+  margin-bottom: 0;
 }
 
 .styleguide .overlay:after {
@@ -36,11 +47,12 @@
 
   .example-rendered {
     border: 1px solid hsla(0,0%,0%,.1);
+    border-right: none;
     background: @level-3-color;
   }
 
   .example-code {
-    border: 1px solid hsla(0,0%,0%,.8);
+    border: 1px solid hsla(0,0%,0%,.15);
     border-radius: 0 @component-border-radius @component-border-radius 0;
 
     .btn-group .btn.selected {
