@@ -14,9 +14,27 @@
 
 // Styleguide
 
-.styleguide .section.bordered,
-.styleguide .section.collapsed {
-  padding: 16px 0; // stops jumping of the title when collapsing
+.styleguide section.bordered,
+.styleguide section.collapsed {
+  padding: @component-padding 0; // stops jumping of the title when collapsing
+}
+
+.styleguide .section-heading {
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+
+.styleguide h2 {
+  font-size: 1.4em;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.styleguide .overlay:after {
+  position: absolute;  // prevent overlay backdrop from leaking outside
+  left: -@component-padding/2;
+  right: -@component-padding/2;
+  bottom: -@component-padding/2;
 }
 
 .styleguide .overlay:after {
