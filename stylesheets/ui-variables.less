@@ -17,14 +17,14 @@
 
 @base-accent-color:     hsl(@base-accent-hue, @theme-adjust-saturation + 90%, (@base-lightness + (@base-contrast*10) - 30%) );
 @base-background-color: hsv(@base-hue, @base-saturation, @base-lightness);
-@base-border-color:    hsva(@base-hue, @base-saturation*4, @base-lightness*.88, 1);
+@base-border-color:    hsva(@base-hue, @base-saturation*2, @base-lightness*.85, 1);
 
 
 // Level Colors
 
 @level-1-color: lighten(@base-background-color, @base-contrast + 4%);
-@level-2-color:  darken(@base-background-color, @base-contrast * 0.7 );
-@level-3-color:  desaturate( darken(@base-background-color, @base-contrast + 8%), 20%);
+@level-2-color:  desaturate( darken(@base-background-color, @base-contrast * 0.7 ), 100%);
+@level-3-color:  desaturate( darken(@base-background-color, @base-contrast + 8%), 25%);
 
 
 // Site Colors
@@ -89,15 +89,15 @@
 
 // Text Colors
 
-@text-color: hsl(@base-hue, @base-saturation, min(70%, (@base-lightness + @base-contrast) / 2) );
-@text-color-subtle: fadeout(@text-color, 40%);
-@text-color-highlight: hsl(@base-hue, @base-saturation*2, @base-contrast + 30%);
+@text-color: hsl(@base-hue, @base-saturation, min(70%, (@base-lightness + @base-contrast) / 2.5) );
+@text-color-subtle: fadeout(@text-color, 30%);
+@text-color-highlight: hsl(@base-hue, @base-saturation + 20%, @base-contrast + 30%);
 @text-color-selected: darken(@text-color-highlight, 10%);
 
 @text-color-info:    hsl(208, 100%, 54%);
-@text-color-success: hsl(132,  50%, 48%);
-@text-color-warning: hsl( 37,  56%, 58%);
-@text-color-error:   hsl(  0,  66%, 64%);
+@text-color-success: hsl(132,  60%, 44%);
+@text-color-warning: hsl( 37,  90%, 44%);
+@text-color-error:   hsl(  0,  90%, 56%);
 
 @text-color-ignored:  @text-color-subtle;
 @text-color-added:    @text-color-success;
