@@ -1,4 +1,5 @@
 @import "ui-variables";
+
 @modified-icon-width: 8px;
 @tab-top-padding: 0;
 @tab-bottom-border-height: 1px;
@@ -34,9 +35,9 @@
     opacity: .66;
     transition: opacity .3s;
 
-    // &:last-of-type {
-    //   border-right: none;
-    // }
+    &:last-of-type {
+      border-right-color: transparent;
+    }
 
     &:hover .close-icon {
       transform: scale(1);
@@ -133,6 +134,17 @@
 
     &:hover .close-icon:hover {
       color: @text-color-highlight;
+    }
+  }
+
+  .tab.is-dragging {
+    background: darken(@tab-background-color, 10%);
+    border-color: transparent;
+    opacity: .5;
+    & .close-icon,
+    &:before,
+    &:after {
+      visibility: hidden;
     }
   }
 
