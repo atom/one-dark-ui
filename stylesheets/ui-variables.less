@@ -17,7 +17,7 @@
 
 @base-accent-color:     hsl(@base-accent-hue, @theme-adjust-saturation + 100%, (@base-lightness + (@base-contrast*10) - 42%) );
 @base-background-color: hsv(@base-hue, @base-saturation, @base-lightness);
-@base-border-color:    hsva(@base-hue, @base-saturation*2, @base-lightness*.85, 1);
+@base-border-color:    hsv(@base-hue, @base-saturation*2, @base-lightness*.85);
 
 
 // Level Colors
@@ -58,7 +58,7 @@
 @tab-background-color-active:      @level-2-color;
 @tab-bar-background-color:         @level-3-color;
 @tab-bar-border-color:             @base-border-color;
-@tab-border-color:                 darken(@tab-bar-background-color, 6%);
+@tab-border-color:                 @base-border-color;
 
 @pane-item-background-color:       @base-background-color;
 @pane-item-border-color:           @base-border-color;

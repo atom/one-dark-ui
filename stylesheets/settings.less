@@ -72,8 +72,21 @@ body .settings-view {
 
 
 	.config-menu {
+		position: relative;
 		background: @level-2-color;
-		box-shadow: -1px 0px 1px -1px darken(@base-background-color, 50%) inset;
+		box-shadow: none;
+		border-right: 1px solid @base-border-color;
+
+		// smoothen border with a gradient
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: -1px;
+			width: 1px;
+			height: 100px;
+			background: linear-gradient(@level-2-color 10%, @base-border-color);
+		}
 
 		.nav-stacked > li + li {
 			margin-top: 0;
@@ -84,14 +97,14 @@ body .settings-view {
 		.nav > li > a:hover {
 			background: lighten(@level-3-color, 4%);
 			color: @text-color;
-			box-shadow: -1px 0px 1px -1px darken(@base-background-color, 50%) inset;
+			box-shadow: none;
 		}
 		.nav > li > a:active {
 			background: darken(@level-3-color, 4%);
 		}
 		.nav > li.active > a {
 			color: @text-color-selected;
-			box-shadow: inset 0 1px 0 @base-border-color, inset 0 -1px 0 @base-border-color, inset -1px 0 0 @base-border-color;
+			box-shadow: inset 0 1px 0 @base-border-color, inset 0 -1px 0 @base-border-color;
 			background: @level-3-color;
 			.package-author {
 				color: @text-color-selected;
@@ -114,13 +127,13 @@ body .settings-view {
 	}
 
 	.config-menu .panels-menu .panel-menu-separator {
-		border-color: @base-border-color;
+		border: none;
 	}
 
 	.config-menu .panels-packages {
 		background: @level-3-color;
 		border: 1px solid @base-border-color;
-		border-left: none;
+		border-width: 1px 0;
 
 
 		.package-title {
@@ -136,9 +149,19 @@ body .settings-view {
 		}
 	}
 
-	.config-menu .panels-packages li.active {
-		a, a:hover {
-			box-shadow: inset 0 -1px 0 0 hsla(0,0%,0%,.15) !important;
+	.config-menu .panels-packages {
+		li {
+			&.active {
+				a, a:hover {
+					box-shadow: inset 0 -1px 0 0 hsla(0,0%,0%,.15) !important;
+				}
+			}
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 
