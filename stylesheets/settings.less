@@ -121,19 +121,38 @@ body .settings-view {
 	}
 
 	.config-menu {
+		position: relative;
 		background: @level-2-color;
-		box-shadow: -1px 0px 1px -1px darken(@base-background-color, 50%) inset;
+		box-shadow: none;
+		border-right: 1px solid @base-border-color;
+
+		// smoothen border with a gradient
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: -1px;
+			width: 1px;
+			height: 100px;
+			background: linear-gradient(@level-2-color 10%, @base-border-color);
+		}
+
+		.nav-stacked > li + li {
+			margin-top: 0;
+		}
+
 		.nav > li > a {
 			color: @text-color;
 		}
 		.nav > li > a:hover {
 			background: @background-color-highlight;
 			color: @text-color;
-			box-shadow: -1px 0px 1px -1px darken(@base-background-color, 50%) inset;
+			box-shadow: none;
 		}
 		.nav > li.active > a {
-			background: @background-color-selected;
 			color: @text-color-selected;
+			box-shadow: inset 0 1px 0 @base-border-color, inset 0 -1px 0 @base-border-color;
+			background: @background-color-selected;
 			.package-author {
 				color: @text-color-selected;
 			}
@@ -150,7 +169,7 @@ body .settings-view {
 	}
 
 	.config-menu .panels-menu .panel-menu-separator {
-		border-color: @base-border-color;
+		border: none;
 	}
 
 	.config-menu .panels-packages {
@@ -158,6 +177,25 @@ body .settings-view {
 		border-top: 1px solid @base-border-color;
 		border-bottom: 1px solid @base-border-color;
 
+		li {
+			a {
+				border-radius: 0 !important;
+			}
+			a:hover {
+				box-shadow: none !important;
+			}
+			&.active {
+				a, a:hover {
+					box-shadow: none !important;
+				}
+			}
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 
 		.package-title {
 			color: @text-color-highlight;
@@ -169,12 +207,6 @@ body .settings-view {
 
 		.package-author {
 			color: @text-color;
-		}
-	}
-
-	.config-menu .panels-packages li.active {
-		a, a:hover {
-			box-shadow: 0 0 0 1px darken(@background-color-selected, 6%) !important;
 		}
 	}
 
