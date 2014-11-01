@@ -1,7 +1,7 @@
 @import "ui-variables";
 
-@tip-text-color:       hsl(@base-hue, @base-saturation, 86%);
-@tip-background-color: hsv(@base-hue, @base-saturation, 24%);
+@tip-text-color:       white;
+@tip-background-color: @base-accent-color;
 @tip-text-key-color:       @tip-background-color;
 @tip-background-key-color: @tip-text-color;
 
@@ -21,7 +21,7 @@
     font-family: Helvetica, Arial, sans-serif;
     font-size: 13px;
     padding: 1px 3px;
-    margin: 0 -5px 0 3px;
+    margin: 0 -4px 0 3px;
     border-radius: max(2px, @component-border-radius / 2);
     color: @tip-text-key-color;
     background: @tip-background-key-color;
