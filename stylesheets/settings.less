@@ -135,6 +135,23 @@ body .settings-view {
 		border: 1px solid @base-border-color;
 		border-width: 1px 0;
 
+		li {
+			a {
+				border-radius: 0 !important;
+			}
+			&.active {
+				a, a:hover {
+					box-shadow: inset 0 -1px 0 0 hsla(0,0%,0%,.15) !important;
+					border-radius: 0 !important;
+				}
+			}
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 
 		.package-title {
 			color: @text-color-highlight;
@@ -146,22 +163,6 @@ body .settings-view {
 
 		.package-author {
 			color: @text-color !important;
-		}
-	}
-
-	.config-menu .panels-packages {
-		li {
-			&.active {
-				a, a:hover {
-					box-shadow: inset 0 -1px 0 0 hsla(0,0%,0%,.15) !important;
-				}
-			}
-			&:first-child {
-				margin-top: 0;
-			}
-			&:last-child {
-				margin-bottom: 0;
-			}
 		}
 	}
 
