@@ -1,7 +1,7 @@
 // Base Colors
 
 @theme-color:             hsl(40, 100%, 50%);
-@theme-accent-color:      spin(@theme-color, 180);
+@theme-accent-color:      spin(@theme-color, 168);
 @theme-adjust-saturation: 0%; // -/+n%
 @theme-adjust-lightness:  0%;
 @theme-adjust-contrast:   0%;
@@ -15,7 +15,7 @@
 @base-lightness: min(100%, @theme-adjust-lightness  + 98%); // limit to > 100%, default 20%
 @base-contrast:            @theme-adjust-contrast * -0.1;
 
-@base-accent-color:     hsl(@base-accent-hue, @theme-adjust-saturation + 90%, (@base-lightness + (@base-contrast*10) - 30%) );
+@base-accent-color:     hsl(@base-accent-hue, @theme-adjust-saturation + 100%, (@base-lightness + (@base-contrast*10) - 42%) );
 @base-background-color: hsv(@base-hue, @base-saturation, @base-lightness);
 @base-border-color:    hsva(@base-hue, @base-saturation*2, @base-lightness*.85, 1);
 
@@ -38,10 +38,10 @@
 
 // Var + State Background Colors
 
-@background-color-info:    hsl(208, 100%, 60%);
-@background-color-success: hsl(132,  50%, 54%);
-@background-color-warning: hsl( 40,  56%, 60%);
-@background-color-error:   hsl(  0,  60%, 66%);
+@background-color-info:    hsl(208, 100%, 56%);
+@background-color-success: hsl(132,  48%, 48%);
+@background-color-warning: hsl( 40,  60%, 52%);
+@background-color-error:   hsl(  0,  60%, 56%);
 
 @background-color-selected: lighten(@level-2-color, 4%);
 @background-color-highlight: hsla(@base-hue,@base-saturation + 30%, 50%,.15);
@@ -76,9 +76,9 @@
 @overlay-border-color:             @base-border-color;
 
 @button-background-color:          @level-1-color;
-@button-background-color-hover:    lighten(@button-background-color, 2%);
-@button-background-color-selected: darken(@button-background-color, 6%);
-@button-border-color:              @base-border-color; // seems unused
+@button-background-color-hover:    darken(@button-background-color, 4%);
+@button-background-color-selected: hsla(0,0%,0%,.06);
+@button-border-color:              @base-border-color;
 
 @input-background-color:           hsla(0,0%,0%,.06);
 @input-border-color:               hsla(0,0%,0%,.12);

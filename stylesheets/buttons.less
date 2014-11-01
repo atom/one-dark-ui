@@ -1,10 +1,10 @@
 @import "ui-variables";
 @import "ui-mixins";
 
-@btn-border: 1px solid hsla(0,0%,0%,.18);
+@btn-border: 1px solid @button-border-color;
 
 .btn-background (@color, @hover-color, @selected-color, @text-color) {
-  color: contrast(@color, @text-color, hsla(0,0%,100%,.92), 60% );
+  color: contrast(@color, @text-color, white, 70% );
   border: @btn-border;
   background-color: @color;
   background-image: linear-gradient(lighten(@color, 2%), @color);
@@ -15,22 +15,24 @@
     background-image: linear-gradient(lighten(@hover-color, 2%), @hover-color);
   }
   &:active {
-    background: darken(@color, 2%);
+    background: darken(@color, 4%);
+    box-shadow: none;
   }
   &.selected {
     background: @selected-color;
   }
   &.selected:hover {
-    background: lighten(@selected-color, 4%);
+    background: fadeout(@selected-color, 4%);
   }
 }
 
 .btn-variant (@color) {
-  @bg: darken(@color, 12%);
-  @hover: lighten(@bg, 2%);
-  @selected: saturate(darken(@bg, 10%), 20%);
+  @bg: @color;
+  @hover: lighten(@bg, 3%);
+  @selected: saturate(darken(@bg, 12%), 20%);
   text-shadow: 0 1px 0 hsla(0,0%,0%,.2);
   .btn-background(@bg, @hover, @selected, @text-color-highlight);
+  border-color: transparent;
 }
 
 .btn {
@@ -43,7 +45,7 @@
 }
 
 .btn.btn-primary {
-  .btn-variant(@background-color-info);
+  .btn-variant(@base-accent-color);
 }
 .btn.btn-info {
   .btn-variant(@background-color-info);
@@ -64,9 +66,11 @@
 }
 
 .btn-group > .btn {
+  &.selected:first-child,
   &:first-child {
       border-left: @btn-border;
   }
+  &.selected:last-child,
   &:last-child {
       border-right: @btn-border;
   }
