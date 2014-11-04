@@ -1,35 +1,45 @@
+
+@btn-border: 1px solid @button-border-color;
+
 .btn-background (@color, @hover-color, @selected-color, @text-color) {
   color: @text-color;
+  text-shadow: none;
+  border: @btn-border;
   background-color: @color;
   background-image: linear-gradient(lighten(@color, 2%), @color);
 
-  &:hover {
-    color: @text-color-highlight;
+  &:hover,
+  &:focus {
+    outline: none;
+    color: @text-color;
     background-image: linear-gradient(lighten(@hover-color, 2%), @hover-color);
   }
-  &:focus {
-    color: @text-color;
-    outline: none;
-  }
   &:active {
-    color: @text-color;
-    background: darken(@color, 2%);
+    background: darken(@color, 4%);
+    box-shadow: none;
   }
   &.selected {
-    color: @text-color;
     background: @selected-color;
   }
   &.selected:hover {
-    background: lighten(@selected-color, 2%);
+    background: fadeout(@selected-color, 4%);
   }
 }
 
 .btn-variant (@color) {
-  @bg: darken(@color, 12%);
-  @hover: lighten(@bg, 2%);;
-  @selected: saturate(darken(@bg, 10%), 10%);
-  text-shadow: 0 1px 0 hsla(0,0%,0%,.2);
+  @text-color: contrast(@color, hsl(0,0%,25%), white, 70% );
+  @bg: @color;
+  @hover: lighten(@bg, 3%);
+  @selected: saturate(darken(@bg, 12%), 20%);
   .btn-background(@bg, @hover, @selected, @text-color-highlight);
+  color: @text-color;
+  text-shadow: 0 1px 0 hsla(0,0%,0%,.2);
+  border-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: @text-color;
+  }
 }
 
 .btn {
@@ -42,7 +52,7 @@
 }
 
 .btn.btn-primary {
-  .btn-variant(@background-color-info);
+  .btn-variant(@base-accent-color);
 }
 .btn.btn-info {
   .btn-variant(@background-color-info);
@@ -57,6 +67,23 @@
   .btn-variant(@background-color-error);
 }
 
+
+// Button Group
+
+.btn-group > .btn {
+  border-color: @button-border-color;
+  &.selected:first-child,
+  &:first-child {
+      border-left: @btn-border;
+  }
+  &.selected:last-child,
+  &:last-child {
+      border-right: @btn-border;
+  }
+}
+
+
+// TODO: Move to a better place, not sure where it gets used
 .caret {
   border-top: 5px solid #fff;
   margin-top: -1px;
