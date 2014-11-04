@@ -84,8 +84,19 @@
 @input-background-color:           hsla(0,0%,0%,.2);
 @input-border-color:               hsla(0,0%,0%,.2);
 
+@tooltip-background-color:         @base-accent-color;
+@tooltip-text-color:               contrast(@tooltip-background-color, white, hsl(0,0%,20%) );
+@tooltip-text-key-color:           @tooltip-background-color;
+@tooltip-background-key-color:     @tooltip-text-color;
+
 @scrollbar-color:                  @level-1-color;
 @scrollbar-background-color:       transparent;
+
+
+// Utilities
+
+@key-binding-border-color:     hsla(0,0%,100%,.1);
+@key-binding-background-color: hsla(0,0%,100%,.1);
 
 
 // Text Colors
