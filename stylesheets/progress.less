@@ -37,6 +37,7 @@
 // http://css-tricks.com/html5-progress-element/
 
 @progress-height: 8px;
+@progress-buffer-color: fade(@progress-background-color, 20%);
 
 progress {
   height: @progress-height;
@@ -47,12 +48,12 @@ progress::-webkit-progress-bar {
   height: @progress-height;
   border-radius: @component-border-radius;
 
-  background-color: hsla(0,0%,0%,.2);
-  box-shadow: inset 0 0 0 1px hsla(0,0%,0%,.2);
+  background-color: @input-background-color;
+  box-shadow: inset 0 0 0 1px @input-border-color;
 
   background-image:
-	   linear-gradient(-45deg, transparent 33%, hsla(0,0%,100%,.08) 33%,
-	                           hsla(0,0%,100%,.08) 66%, transparent 66%);
+	   linear-gradient(-45deg, transparent 33%, @progress-buffer-color 33%,
+	                           @progress-buffer-color 66%, transparent 66%);
   background-size: 25px @progress-height, 100% 100%, 100% 100%;
   -webkit-animation: animate-stripes 5s linear infinite;
           animation: animate-stripes 5s linear infinite;
@@ -60,7 +61,7 @@ progress::-webkit-progress-bar {
 
 progress::-webkit-progress-value {
   border-radius: @component-border-radius;
-  background-color: @background-color-success;
+  background-color: @progress-background-color;
 }
 
 progress[value]::-webkit-progress-bar {
@@ -69,5 +70,5 @@ progress[value]::-webkit-progress-bar {
 }
 
 @-webkit-keyframes animate-stripes {
-   100% { background-position: 100px 0px; }
+   100% { background-position: -100px 0px; }
 }

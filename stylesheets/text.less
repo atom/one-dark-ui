@@ -53,23 +53,23 @@ code {
   &:hover { color: @text-color-success; }
 }
 
-.highlight {
-  color: @text-color-highlight;
+.highlight-mixin {
+  padding: 1px 4px;
   font-weight: bold;
   text-shadow: none;
-  background-color: @background-color-highlight;
   border-radius: @component-border-radius;
-  padding: 1px 3px;
+  color: @text-color-highlight;
+}
+
+.highlight {
+  .highlight-mixin();
+  background-color: @background-color-highlight;
 }
 
 .highlight-color(@name, @color, @text-color) {
   .highlight-@{name} {
-    color: lighten(saturate(@text-color, 0%), 24%);
-    font-weight: bold;
-    text-shadow: none;
+    .highlight-mixin();
     background-color: fadeout(@color, 50%);
-    border-radius: @component-border-radius;
-    padding: 1px 4px;
   }
 }
 .highlight-color(info, @background-color-info, @text-color-info);
