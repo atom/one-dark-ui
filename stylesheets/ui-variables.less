@@ -107,6 +107,7 @@
 
 @text-color: hsl(@base-hue, @base-saturation, max(30%, (@base-lightness + @base-contrast) * 3) );
 @text-color-subtle: fadeout(@text-color, 40%);
+@text-color-faded: fade(@text-color, 20%);
 @text-color-highlight: hsl(@base-hue, @base-saturation*8, @base-contrast*10 + 88%);
 @text-color-selected: white;
 

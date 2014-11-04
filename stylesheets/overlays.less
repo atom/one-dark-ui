@@ -9,13 +9,17 @@
 
   .select-list ol.list-group,
   &.select-list ol.list-group {
-
+    border: 1px solid @overlay-border-color;
     background-color: lighten(@overlay-background-color, 2%);
 
     li {
       padding: @component-padding;
       border-bottom: 1px solid @overlay-background-color;
 
+      &:last-of-type {
+        border-bottom: none;
+      }
+      
       &.two-lines {
         padding: @component-padding/2 @component-padding;
       }
@@ -52,7 +56,7 @@
     bottom: 0;
     z-index: 0;
     background-color: @overlay-background-color;
-    border: 1px solid hsla(0,0%,0%,.6);;
+    border-top: 1px solid hsla(0,0%,0%,.2);
     border-radius: 0 0 @component-border-radius*2 @component-border-radius*2;
     box-shadow: 0 6px 12px -2px hsla(0,0%,0%,.4);
   }
