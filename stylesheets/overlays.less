@@ -1,5 +1,3 @@
-@import "ui-variables";
-
 .overlay {
   color: @text-color;
   background-color: transparent;
@@ -12,16 +10,16 @@
   .select-list ol.list-group,
   &.select-list ol.list-group {
     border: 1px solid @overlay-border-color;
-    background-color: darken(@overlay-background-color, 4%);
+    background-color: lighten(@overlay-background-color, 2%);
 
     li {
       padding: @component-padding;
-      border-bottom: 1px solid @overlay-border-color;
+      border-bottom: 1px solid @overlay-background-color;
 
       &:last-of-type {
         border-bottom: none;
       }
-
+      
       &.two-lines {
         padding: @component-padding/2 @component-padding;
       }
@@ -49,7 +47,6 @@
 
 
   // Container
-
   &:before {
     content: "";
     position: absolute;

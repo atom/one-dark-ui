@@ -1,10 +1,9 @@
-@import "ui-variables";
-@import "ui-mixins";
 
 @btn-border: 1px solid @button-border-color;
 
 .btn-background (@color, @hover-color, @selected-color, @text-color) {
-  color: contrast(@color, @text-color, white, 70% );
+  color: @text-color;
+  text-shadow: none;
   border: @btn-border;
   background-color: @color;
   background-image: linear-gradient(lighten(@color, 2%), @color);
@@ -12,6 +11,7 @@
   &:hover,
   &:focus {
     outline: none;
+    color: @text-color;
     background-image: linear-gradient(lighten(@hover-color, 2%), @hover-color);
   }
   &:active {
@@ -27,16 +27,23 @@
 }
 
 .btn-variant (@color) {
+  @text-color: contrast(@color, hsl(0,0%,25%), white, 70% );
   @bg: @color;
   @hover: lighten(@bg, 3%);
   @selected: saturate(darken(@bg, 12%), 20%);
-  text-shadow: 0 1px 0 hsla(0,0%,0%,.2);
   .btn-background(@bg, @hover, @selected, @text-color-highlight);
+  color: @text-color;
+  text-shadow: 0 1px 0 hsla(0,0%,0%,.2);
   border-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: @text-color;
+  }
 }
 
 .btn {
-  .btn-background (
+  .btn-background(
     @button-background-color,
     @button-background-color-hover,
     @button-background-color-selected,
@@ -60,12 +67,11 @@
   .btn-variant(@background-color-error);
 }
 
-.caret {
-  border-top: 5px solid #fff;
-  margin-top: -1px;
-}
+
+// Button Group
 
 .btn-group > .btn {
+  border-color: @button-border-color;
   &.selected:first-child,
   &:first-child {
       border-left: @btn-border;
@@ -74,4 +80,11 @@
   &:last-child {
       border-right: @btn-border;
   }
+}
+
+
+// TODO: Move to a better place, not sure where it gets used
+.caret {
+  border-top: 5px solid #fff;
+  margin-top: -1px;
 }

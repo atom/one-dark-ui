@@ -37,22 +37,27 @@
   bottom: -@component-padding/2;
 }
 
+.styleguide .overlay:after {
+  position: absolute;  // prevent overlay backdrop from leaking outside
+}
+
 .styleguide .select-list .editor.mini,
 .styleguide .popover-list .editor.mini {
   line-height: 25px;
 }
 
+
 .example {
   border: none;
 
   .example-rendered {
-    border: 1px solid hsla(0,0%,0%,.1);
+    border: 1px solid @base-border-color;
     border-right: none;
     background: @level-3-color;
   }
 
   .example-code {
-    border: 1px solid hsla(0,0%,0%,.15);
+    border: 1px solid @base-border-color;
     border-radius: 0 @component-border-radius @component-border-radius 0;
 
     .btn-group .btn.selected {

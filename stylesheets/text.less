@@ -1,6 +1,3 @@
-@import "ui-mixins";
-@import "ui-variables";
-
 h1,
 h2,
 h3 {
@@ -56,23 +53,23 @@ code {
   &:hover { color: @text-color-success; }
 }
 
-.highlight {
-  color: @text-color-highlight;
+.highlight-mixin {
+  padding: 1px 4px;
   font-weight: bold;
   text-shadow: none;
-  background-color: @background-color-highlight;
   border-radius: @component-border-radius;
-  padding: 1px 3px;
+  color: @text-color-highlight;
+}
+
+.highlight {
+  .highlight-mixin();
+  background-color: @background-color-highlight;
 }
 
 .highlight-color(@name, @color, @text-color) {
   .highlight-@{name} {
-    color: hsla(0,0%,100%,.9);
-    font-weight: bold;
-    text-shadow: none;
-    background-color: @color;
-    border-radius: @component-border-radius;
-    padding: 1px 4px;
+    .highlight-mixin();
+    background-color: fadeout(@color, 50%);
   }
 }
 .highlight-color(info, @background-color-info, @text-color-info);
