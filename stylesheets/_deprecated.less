@@ -1,0 +1,24 @@
+
+// Deprecated Styles
+// Kept for backwards compatibilty but not actively used
+
+
+// Site Colors
+
+@ui-site-color-1: hsl(208, 100%, 50%); // green
+@ui-site-color-2: hsl(160,  70%, 42%); // blue
+@ui-site-color-3: hsl(32,   60%, 50%); // orange
+@ui-site-color-4: #D831B0;             // pink
+@ui-site-color-5: #EBDD5B;             // yellow
+
+.ui-site(@num, @color) {
+  .ui-site-@{num} {
+    background-color: @color;
+  }
+}
+
+.ui-site(1, @ui-site-color-1);
+.ui-site(2, @ui-site-color-2);
+.ui-site(3, @ui-site-color-3);
+.ui-site(4, @ui-site-color-4);
+.ui-site(5, @ui-site-color-5);
