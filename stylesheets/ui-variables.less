@@ -1,33 +1,36 @@
 
 // UI Variables for Atom Theme: One Light
 
-// Base Colors
+// Settings -----------------------------------
 
 @theme-color:             hsl(40, 100%, 50%);
 @theme-accent-color:      spin(@theme-color, 168);
+
 @theme-adjust-saturation: 0%; // -/+n%
-@theme-adjust-lightness:  0%;
 @theme-adjust-contrast:   0%;
 
 
+// Config -----------------------------------
+
+@ui-hue:          hsvhue(@theme-color);
+@ui-hue-accent:   hsvhue(@theme-accent-color);
+@ui-saturation:  max(0%, @theme-adjust-saturation + 2%); // limit to > 100%, default 20%
+@ui-brightness: min(100%, 98%); // limit to > 100%, default 20%
+@ui-contrast:            @theme-adjust-contrast * -0.1;
 
 
-@base-hue:          hsvhue(@theme-color);
-@base-accent-hue:   hsvhue(@theme-accent-color);
-@base-saturation:  max(0%, @theme-adjust-saturation + 2%); // limit to > 100%, default 20%
-@base-lightness: min(100%, @theme-adjust-lightness  + 98%); // limit to > 100%, default 20%
-@base-contrast:            @theme-adjust-contrast * -0.1;
+// Base colors -----------------------------------
 
-@base-accent-color:     hsl(@base-accent-hue, @theme-adjust-saturation + 100%, (@base-lightness + (@base-contrast*10) - 42%) );
-@base-background-color: hsv(@base-hue, @base-saturation, @base-lightness);
-@base-border-color:    hsv(@base-hue, @base-saturation*2, @base-lightness*.85);
+@base-accent-color:     hsl(@ui-hue-accent, @theme-adjust-saturation + 100%, (@ui-brightness + (@ui-contrast*10) - 42%) );
+@base-background-color: hsv(@ui-hue, @ui-saturation, @ui-brightness);
+@base-border-color:     hsv(@ui-hue, @ui-saturation*2, @ui-brightness*.85);
 
 
-// Level Colors
+// Level Colors -----------------------------------
 
-@level-1-color: lighten(@base-background-color, @base-contrast + 4%);
-@level-2-color:  desaturate( darken(@base-background-color, @base-contrast * 0.7 ), 100%);
-@level-3-color:  desaturate( darken(@base-background-color, @base-contrast + 8%), 25%);
+@level-1-color: lighten(@base-background-color, @ui-contrast + 4%);
+@level-2-color: desaturate( darken(@base-background-color, @ui-contrast * 0.7 ), 100%);
+@level-3-color: desaturate( darken(@base-background-color, @ui-contrast + 8%), 25%);
 
 
 // Site Colors
@@ -47,7 +50,7 @@
 @background-color-error:   hsl(  0,  60%, 56%);
 
 @background-color-selected: lighten(@level-2-color, 4%);
-@background-color-highlight: hsla(@base-hue,@base-saturation + 30%, 50%,.15);
+@background-color-highlight: hsla(@ui-hue,@ui-saturation + 30%, 50%,.15);
 
 
 // Component Colors
@@ -79,6 +82,7 @@
 
 @overlay-background-color:         @level-2-color;
 @overlay-border-color:             @base-border-color;
+@overlay-backdrop-color:           hsla(@ui-hue,@ui-saturation,5%,.5);
 
 @button-background-color:          @level-1-color;
 @button-background-color-hover:    darken(@button-background-color, 4%);
@@ -109,10 +113,10 @@
 
 // Text Colors
 
-@text-color: hsl(@base-hue, @base-saturation, min(70%, (@base-lightness + @base-contrast) / 2.5) );
+@text-color: hsl(@ui-hue, @ui-saturation, min(70%, (@ui-brightness + @ui-contrast) / 2.5) );
 @text-color-subtle: fadeout(@text-color, 30%);
 @text-color-faded: fade(@text-color, 30%);
-@text-color-highlight: hsl(@base-hue, @base-saturation + 20%, @base-contrast + 30%);
+@text-color-highlight: hsl(@ui-hue, @ui-saturation + 20%, @ui-contrast + 30%);
 @text-color-selected: darken(@text-color-highlight, 10%);
 
 @text-color-info:    hsl(208, 100%, 54%);
