@@ -40,8 +40,8 @@
 @background-color-warning: hsl( 40,  60%, 52%);
 @background-color-error:   hsl(  0,  60%, 56%);
 
-@background-color-highlight: hsla(@ui-hue, 30% + @ui-saturation, 50%,.12);
-@background-color-selected:  hsla(@ui-hue, 30% + @ui-saturation, 50%,.18);
+@background-color-highlight: hsla(@ui-hue, 10% + @ui-saturation, 50%,.12);
+@background-color-selected:  hsla(@ui-hue, 10% + @ui-saturation, 50%,.18);
 
 
 // Component Colors
@@ -81,8 +81,13 @@
 @button-background-color-selected: hsla(0,0%,0%,.06);
 @button-border-color:              @base-border-color;
 
-@input-background-color:           hsla(0,0%,0%,.06);
 @input-border-color:               hsla(0,0%,0%,.12);
+@input-background-color:           hsla(0,0%,0%,.05);
+@input-background-color-focus:     fadein(@input-background-color, 4%);
+@input-selection-color:            @background-color-selected;
+@input-selection-color-focus:      fadein(@background-color-selected, 6%);
+
+
 
 @tooltip-background-color:         @base-accent-color;
 @tooltip-text-color:               white;

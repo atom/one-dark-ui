@@ -28,8 +28,19 @@ body .settings-view {
 		}
 	}
 
-	.editor-container .editor.mini,
 	select.form-control {
+		.btn();
+		box-shadow: none;
+	}
+
+	.editor-container > .editor.mini,
+	.editor-container > .editor.mini.is-focused {
+		color: transparent;
+		background-color: transparent;
+	}
+
+	.editor.editor-colors.mini, // <- TODO: remove once Shadow DOM is default
+	atom-text-editor::shadow .editor.editor-colors.mini {
 		color: @text-color-highlight;
 		background-color: @input-background-color;
 		border: 1px solid @input-border-color;
@@ -38,7 +49,6 @@ body .settings-view {
 		.placeholder-text {
 			color: @text-color-subtle;
 		}
-
 		.text {
 			color: @text-color-highlight;
 		}
@@ -46,19 +56,19 @@ body .settings-view {
 			background-color: lighten(@input-background-color, 10%);
 		}
 		.cursor {
-			border-color: @text-color-highlight;
+			border-color: @base-accent-color;
 		}
 		&.is-focused {
 			background-color: darken(@input-background-color, 2%);
 
 			.placeholder-text {
-				color: lighten(@text-color-subtle, 4%);
+				color: @text-color-subtle;
 			}
 			.selection .region {
 				background-color: @background-color-selected;
 			}
 			.cursor {
-				border-color: @text-color-highlight;
+				border-color: @base-accent-color;
 			}
 		}
 
