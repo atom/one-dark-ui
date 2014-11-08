@@ -1,20 +1,23 @@
-.editor.mini {
-  color: @text-color-highlight;
-  background-color: @input-background-color;
-  border: 1px solid @input-border-color;
-  border-radius: @component-border-radius;
+.editor.editor-colors.mini, // <- TODO: remove once Shadow DOM is default
+atom-text-editor::shadow .editor.editor-colors.mini {
   padding-left: 0;
-  & .scroll-view {
-    padding-left: @component-padding/1.5;
-  }
-  .selection .region {
-    background-color: lighten(@input-background-color, 4%);
-  }
-}
+  border-radius: @component-border-radius;
+  color: @text-color-highlight;
+  border: 1px solid @input-border-color;
+  background-color: @input-background-color;
 
-.editor.editor-colors.mini.is-focused {
-  background-color: fadein(@input-background-color, 6%);
   .selection .region {
-    background-color: @background-color-selected;
+    background-color: @input-selection-color;
+  }
+
+  &.is-focused {
+    background-color: @input-background-color-focus;
+    .selection .region {
+      background-color: @input-selection-color-focus;
+    }
+  }
+
+  .scroll-view {
+    padding-left: @component-padding/1.5;
   }
 }

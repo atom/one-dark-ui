@@ -82,8 +82,11 @@
 @button-background-color-selected: darken(@button-background-color, 6%);
 @button-border-color:              lighten(@base-border-color, 2%);
 
-@input-background-color:           hsla(0,0%,0%,.2);
 @input-border-color:               hsla(0,0%,0%,.2);
+@input-background-color:           hsla(0,0%,0%,.2);
+@input-background-color-focus:     fadein(@input-background-color, 6%);
+@input-selection-color:            darken(@background-color-selected, 6%);
+@input-selection-color-focus:      @background-color-selected;
 
 @tooltip-background-color:         @base-accent-color;
 @tooltip-text-color:               contrast(@tooltip-background-color, white, hsl(0,0%,20%) );
