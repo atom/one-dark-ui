@@ -4,8 +4,6 @@
 // Settings -----------------------------------
 
 @theme-color:             hsl(40, 100%, 50%);
-@theme-accent-color:      spin(@theme-color, 168);
-
 @theme-adjust-saturation: 0%; // -/+n%
 @theme-adjust-contrast:   0%;
 
@@ -13,7 +11,6 @@
 // Config -----------------------------------
 
 @ui-hue:          hsvhue(@theme-color);
-@ui-hue-accent:   hsvhue(@theme-accent-color);
 @ui-saturation:  max(0%, @theme-adjust-saturation + 2%); // limit to > 100%, default 20%
 @ui-brightness: 98%;
 @ui-contrast:            @theme-adjust-contrast * -0.1;
@@ -21,7 +18,7 @@
 
 // Base colors -----------------------------------
 
-@base-accent-color:     hsl(@ui-hue-accent, @theme-adjust-saturation + 100%, (@ui-brightness + (@ui-contrast*10) - 42%) );
+@base-accent-color:     hsl(@ui-hue, @theme-adjust-saturation + 90%, (@ui-brightness + (@ui-contrast*10) - 40%) );
 @base-background-color: hsv(@ui-hue, @ui-saturation, @ui-brightness);
 @base-border-color:     hsv(@ui-hue, @ui-saturation*2, @ui-brightness*.85);
 
@@ -90,7 +87,7 @@
 
 
 @tooltip-background-color:         @base-accent-color;
-@tooltip-text-color:               white;
+@tooltip-text-color:               hsl(@ui-hue,100%,20%);
 @tooltip-text-key-color:           @tooltip-background-color;
 @tooltip-background-key-color:     @tooltip-text-color;
 
