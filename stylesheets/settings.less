@@ -205,6 +205,43 @@ body .settings-view {
 		}
 	}
 
+	.packages {
+		.theme-base-color,
+		.theme-saturation {
+			box-shadow: @theme-config-box-shadow;
+		}
+
+		.theme-base-color-selected,
+		.theme-saturation-selected,
+		.theme-contrast-selected {
+			border-color: @theme-config-border-selected;
+			box-shadow: @theme-config-box-shadow-selected;
+		}
+
+		.theme-contrast {
+			background-color: transparent;
+		}
+
+		// TODO: Remove once these get moved to inline styles
+		.theme-base-color-1 { background-color: @theme-base-color-1; }
+		.theme-base-color-2 { background-color: @theme-base-color-2; }
+		.theme-base-color-3 { background-color: @theme-base-color-3; }
+		.theme-base-color-4 { background-color: @theme-base-color-4; }
+		.theme-base-color-5 { background-color: @theme-base-color-5; }
+
+		.theme-saturation-1 { background-color: @theme-saturation-1; } //   40%
+		.theme-saturation-2 { background-color: @theme-saturation-2; } //   20%
+		.theme-saturation-3 { background-color: @theme-saturation-3; } //    0%
+		.theme-saturation-4 { background-color: @theme-saturation-4; } //  -10%
+		.theme-saturation-5 { background-color: @theme-saturation-5; } // -100%
+
+		.theme-contrast-1 { color: @theme-contrast-1; } //  40%
+		.theme-contrast-2 { color: @theme-contrast-2; } //  20%
+		.theme-contrast-3 { color: @theme-contrast-3; } //   0%
+		.theme-contrast-4 { color: @theme-contrast-4; } // -10%
+		.theme-contrast-5 { color: @theme-contrast-5; } // -20%
+	}
+
 	.error-message .error-details {
 		background: @inset-panel-background-color;
 		border: @inset-panel-border-color;
