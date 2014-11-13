@@ -214,4 +214,19 @@ body .settings-view {
 	.setting-description {
 		color: @text-color-subtle;
 	}
+
+
+	.alert (@color) {
+		@faded-color: fade(mix(@color, @level-1-color), 20%);
+		color: @color;
+		border-color: @faded-color;
+		background-color: @faded-color;
+	}
+
+	.alert         { .alert( @text-color ); }
+	.alert-success { .alert( @text-color-success ); }
+	.alert-info    { .alert( @text-color-info ); }
+	.alert-warning { .alert( @text-color-warning ); }
+	.alert-danger  { .alert( @text-color-error ); }
+
 }
