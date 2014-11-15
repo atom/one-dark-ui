@@ -7,6 +7,24 @@
   }
 }
 
+.tree-view-resizer {
+
+  // don't cut off right part of the resize-handle on tree-view hover
+  // adds larger drag area
+  &:hover {
+    overflow: initial;
+  }
+  .tree-view-resize-handle {
+    width: 8px;
+  }
+
+  // Expand thumb on active for better visual feedback
+  ::-webkit-scrollbar-thumb:active {
+    border-radius: 0;
+    border-left-width: 0;
+  }
+}
+
 .focusable-panel {
   opacity: 1;
   background: @tree-view-background-color;
