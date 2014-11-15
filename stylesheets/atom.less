@@ -17,9 +17,10 @@
 		background: @scrollbar-background-color;
 	}
 
-	::-webkit-scrollbar-thumb {
-		border-radius: 4px;
-		border: 2px solid transparent;
+	::-webkit-scrollbar-thumb,
+	::-webkit-scrollbar-corner {
+		border-radius: 9px;
+		border: 3px solid transparent;
 		background: @scrollbar-color;
 		background-clip: content-box;
 	}
