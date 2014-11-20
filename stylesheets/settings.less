@@ -33,32 +33,31 @@ body .settings-view {
 		box-shadow: none;
 	}
 
-	.editor-container > .editor.mini,
-	.editor-container > .editor.mini.is-focused {
-		color: transparent;
-		background-color: transparent;
-	}
-
-	.editor.editor-colors.mini, // <- TODO: remove once Shadow DOM is default
-	atom-text-editor::shadow .editor.editor-colors.mini {
+	atom-text-editor.mini.mini.mini {
 		color: @text-color-highlight;
 		background-color: @input-background-color;
 		border: 1px solid @input-border-color;
 		border-radius: @component-border-radius;
+		padding-left: @component-padding/2;
 
-		.placeholder-text {
-			color: @text-color-subtle;
+		&,
+		&::shadow {
+			.placeholder-text {
+				color: @text-color-subtle;
+			}
+			.text {
+				color: @text-color-highlight;
+			}
+			.selection .region {
+				background-color: lighten(@input-background-color, 10%);
+			}
+			.cursor {
+				border-color: @base-accent-color;
+			}
 		}
-		.text {
-			color: @text-color-highlight;
-		}
-		.selection .region {
-			background-color: lighten(@input-background-color, 10%);
-		}
-		.cursor {
-			border-color: @base-accent-color;
-		}
-		&.is-focused {
+
+		&.is-focused,
+		&.is-focused::shadow {
 			background-color: darken(@input-background-color, 2%);
 
 			.placeholder-text {
