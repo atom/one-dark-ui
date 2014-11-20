@@ -1,23 +1,23 @@
-.editor.editor-colors.mini, // <- TODO: remove once Shadow DOM is default
-atom-text-editor::shadow .editor.editor-colors.mini {
+atom-text-editor.mini {
   padding-left: 0;
   border-radius: @component-border-radius;
   color: @text-color-highlight;
   border: 1px solid @input-border-color;
   background-color: @input-background-color;
+  padding-left: @component-padding/2;
 
-  .selection .region {
-    background-color: @input-selection-color;
+  &,
+  &::shadow {
+    .selection .region {
+      background-color: @input-selection-color;
+    }
   }
 
-  &.is-focused {
+  &.is-focused,
+  &.is-focused::shadow {
     background-color: @input-background-color-focus;
     .selection .region {
       background-color: @input-selection-color-focus;
     }
-  }
-
-  .scroll-view {
-    padding-left: @component-padding/1.5;
   }
 }
