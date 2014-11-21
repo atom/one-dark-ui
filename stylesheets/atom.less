@@ -8,24 +8,24 @@ atom-workspace {
 
 // Scrollbars
 .scrollbars-visible-always {
-  ::-webkit-scrollbar {
+	/deep/ ::-webkit-scrollbar {
 		width: @component-padding;
 		height: @component-padding;
 	}
 
-	::-webkit-scrollbar-track {
+	/deep/ ::-webkit-scrollbar-track {
 		background: @scrollbar-background-color;
 	}
 
-	::-webkit-scrollbar-thumb,
-	::-webkit-scrollbar-corner {
+	/deep/ ::-webkit-scrollbar-thumb,
+	/deep/ ::-webkit-scrollbar-corner {
 		border-radius: @component-padding;
 		border: 3px solid transparent;
 		background: @scrollbar-color;
 		background-clip: content-box;
 	}
 
-	::-webkit-scrollbar-thumb:active {
+	/deep/ ::-webkit-scrollbar-thumb:active {
 		border-radius: 0;
 		border-left-width: 0;
 		border-right-width: 0;
