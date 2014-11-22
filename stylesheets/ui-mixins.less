@@ -1,5 +1,6 @@
 // Pattern matching; ish is cray.
 // http://lesscss.org/#-pattern-matching-and-guard-expressions
+
 .text(normal) {
   font-weight: normal;
   color: @text-color;
@@ -27,4 +28,9 @@
 }
 .text(error) {
   color: @text-color-error;
+}
+
+.focus() {
+  outline: none;
+  box-shadow: 0 0 0 2px @base-accent-color;
 }
