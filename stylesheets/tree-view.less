@@ -3,18 +3,17 @@
   background: @tree-view-background-color;
 
   .project-root {
-    &:before,
-    & > .header {
+    &:before {
       height: @tab-height + 1px; // + 1px border
       border-bottom: 1px solid @base-border-color;
-      .name {
+    }
+    & > .header .name {
         line-height: @tab-height + 1px; // + 1px border
-      }
     }
   }
 
   .selected:before {
-  	background: @background-color-highlight;
+    background: @background-color-highlight;
   }
 }
 
