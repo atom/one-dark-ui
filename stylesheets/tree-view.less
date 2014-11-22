@@ -3,13 +3,12 @@
   background: @tree-view-background-color;
 
   .project-root {
-    &:before,
-    & > .header {
+    &:before {
       height: @tab-height + 1px; // + 1px border
       border-bottom: 1px solid @base-border-color;
-      .name {
-        line-height: @tab-height + 1px; // + 1px border
-      }
+    }
+    & > .header .name {
+      line-height: @tab-height + 1px; // + 1px border
     }
   }
 
