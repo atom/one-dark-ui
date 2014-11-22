@@ -8,9 +8,11 @@
   background-color: @color;
   background-image: linear-gradient(lighten(@color, 2%), @color);
 
-  &:hover,
   &:focus {
-    outline: none;
+    .focus();
+  }
+  &:focus,
+  &:hover {
     color: @text-color;
     background-image: linear-gradient(lighten(@hover-color, 2%), @hover-color);
   }
@@ -43,12 +45,7 @@
 }
 
 .btn {
-  .btn-background(
-    @button-background-color,
-    @button-background-color-hover,
-    @button-background-color-selected,
-    @text-color
-  );
+  .btn-background(@button-background-color, @button-background-color-hover, @button-background-color-selected, @text-color);
 }
 
 .btn.btn-primary {
