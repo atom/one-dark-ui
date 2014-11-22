@@ -2,6 +2,17 @@
   font-size: @font-size;
   background: @tree-view-background-color;
 
+  .project-root {
+    &:before,
+    & > .header {
+      height: @tab-height + 1px; // + 1px border
+      border-bottom: 1px solid @base-border-color;
+      .name {
+        line-height: @tab-height + 1px; // + 1px border
+      }
+    }
+  }
+
   .selected:before {
   	background: @background-color-highlight;
   }
