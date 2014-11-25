@@ -38,15 +38,15 @@
 // Base colors -----------------------------------
 
 @base-accent-color:     hsl(@ui-hue, @theme-adjust-saturation + 90%, (@ui-brightness + (@ui-contrast*10) - 40%) );
-@base-background-color: hsv(@ui-hue, @ui-saturation, @ui-brightness + (@ui-contrast*-2) );
-@base-border-color:     hsv(@ui-hue, @ui-saturation*1.2, @ui-brightness*.85);
+@base-background-color: hsl(@ui-hue, @ui-saturation, @ui-brightness + (@ui-contrast*-2) );
+@base-border-color:     hsl(@ui-hue, @ui-saturation*1.2, 80% + (@ui-contrast*2) );
 
 
 // Level Colors -----------------------------------
 
-@level-1-color: lighten(@base-background-color, (@ui-contrast * 2.0) + 4% );
+@level-1-color: lighten(@base-background-color, (@ui-contrast * 1.5) + 4% );
 @level-2-color: darken( @base-background-color, (@ui-contrast * 0.7)      );
-@level-3-color: desaturate( darken( @base-background-color, (@ui-contrast * 2.0) + 8% ), 10%);
+@level-3-color: darken( @base-background-color, (@ui-contrast * 1.5) + 8% );
 
 
 // Var + State Background Colors
