@@ -104,7 +104,7 @@
 @input-selection-color-focus:      fadein(@background-color-selected, 6%);
 
 @tooltip-background-color:         @base-accent-color;
-@tooltip-text-color:               hsl(@ui-hue,100%,20%);
+@tooltip-text-color:               contrast(@tooltip-background-color, hsl(@ui-hue,100%,100%), hsl(@ui-hue,100%,20%), 40% );
 @tooltip-text-key-color:           @tooltip-background-color;
 @tooltip-background-key-color:     @tooltip-text-color;
 
