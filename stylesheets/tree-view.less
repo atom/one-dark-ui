@@ -28,18 +28,11 @@
   background: @tree-view-background-color;
 
   &:focus {
-    // Disabled for now. Might be better to move it to panes
-    //background: lighten(@tree-view-background-color, 2%);
-
-    .selected:before {
-      background: @background-color-selected;
-    }
-
-    .selected > .name,
-    .selected > .name:before,
-    .selected > .list-item > .name,
-    .selected > .list-item > .name:before {
+    .selected {
       color: @text-color-selected;
+      &:before {
+        background: @background-color-selected;
+      }
     }
   }
 }
