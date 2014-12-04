@@ -23,6 +23,12 @@
     li.list-nested-item.status-@{status} > .list-item {
       color: @color;
     }
+
+    li:not(.list-nested-item).selected.status-@{status},
+    li.list-nested-item.selected.status-@{status} > .list-item {
+      color: @color;
+    }
+
   }
 
   .generate-list-item-status-color(@text-color-subtle, ignored);
