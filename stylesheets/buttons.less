@@ -69,13 +69,28 @@
 
 .btn-group > .btn {
   border-color: @button-border-color;
-  &.selected:first-child,
+  z-index: 0;
+  &:hover {
+    z-index: 0;
+  }
   &:first-child {
     border-left: @btn-border;
   }
-  &.selected:last-child,
   &:last-child {
     border-right: @btn-border;
+  }
+  &:focus {
+    z-index: 1;
+    border: 1px solid @button-border-color-selected;
+  }
+  &.selected,
+  &.selected:first-child,
+  &.selected:last-child {
+    color: @button-text-color-selected;
+    border: 1px solid @button-border-color-selected;
+  }
+  &.selected + .btn {
+    border-left-color: @button-border-color-selected;
   }
 }
 

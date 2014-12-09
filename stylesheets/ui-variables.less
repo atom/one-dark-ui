@@ -94,12 +94,14 @@
 
 @button-background-color:          @level-1-color;
 @button-background-color-hover:    darken(@button-background-color, 4%);
-@button-background-color-selected: hsla(0,0%,0%,.06);
+@button-background-color-selected: lighten(@base-accent-color, 4%);
+@button-text-color-selected:       contrast(@button-background-color-selected, hsl(@ui-hue,100%,100%), hsl(@ui-hue,100%,20%), 40% );
 @button-border-color:              @base-border-color;
+@button-border-color-selected:     @base-accent-color;
 
-@input-border-color:               hsla(0,0%,0%,.12);
-@input-background-color:           hsla(0,0%,0%,.05);
-@input-background-color-focus:     fadein(@input-background-color, 4%);
+@input-border-color:               @base-border-color;
+@input-background-color:           @level-1-color;
+@input-background-color-focus:     mix(@base-accent-color, @input-background-color, 6%);
 @input-selection-color:            @background-color-selected;
 @input-selection-color-focus:      fadein(@background-color-selected, 6%);
 
