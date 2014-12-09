@@ -69,13 +69,28 @@
 
 .btn-group > .btn {
   border-color: @button-border-color;
-  &.selected:first-child,
-  &:first-child {
-      border-left: @btn-border;
+  z-index: 0;
+  &:hover {
+    z-index: 0;
   }
-  &.selected:last-child,
+  &:first-child {
+    border-left: @btn-border;
+  }
   &:last-child {
-      border-right: @btn-border;
+    border-right: @btn-border;
+  }
+  &:focus {
+    z-index: 1;
+    border: 1px solid @button-border-color-selected;
+  }
+  &.selected,
+  &.selected:first-child,
+  &.selected:last-child {
+    color: @button-text-color-selected;
+    border: 1px solid @button-border-color-selected;
+  }
+  &.selected + .btn {
+    border-left-color: @button-border-color-selected;
   }
 }
 
