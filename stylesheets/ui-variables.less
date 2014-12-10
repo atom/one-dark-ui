@@ -94,10 +94,10 @@
 
 @button-background-color:          @level-1-color;
 @button-background-color-hover:    lighten(@button-background-color, 2%);
-@button-background-color-selected: lighten(@base-accent-color, 2%);
+@button-background-color-selected: @base-accent-color;
 @button-text-color-selected:       contrast(@button-background-color-selected, white, hsl(@ui-hue,100%,10%), 40% );
-@button-border-color:              lighten(@base-border-color, 2%);
-@button-border-color-selected:     @base-accent-color;
+@button-border-color:              @base-border-color;
+@button-border-color-selected:     @base-border-color;
 
 @input-border-color:               hsla(0,0%,0%,.2);
 @input-background-color:           hsla(0,0%,0%,.2);
@@ -155,7 +155,7 @@
 @component-icon-padding:  5px;
 @component-icon-size:    16px;
 @component-line-height:  25px;
-@component-border-radius: 2px;
+@component-border-radius: 3px;
 
 @tab-height: 30px;
 

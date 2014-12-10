@@ -69,21 +69,39 @@
 // Button Group
 
 .btn-group > .btn {
-  border-color: @button-border-color;
   z-index: 0;
   &:hover {
     z-index: 0;
   }
+
   &:first-child {
     border-left: @btn-border;
   }
   &:last-child {
     border-right: @btn-border;
   }
-  &:focus {
+
+  &.btn-primary:first-child,
+  &.btn-info:first-child,
+  &.btn-success:first-child,
+  &.btn-warning:first-child,
+  &.btn-error:first-child {
+    border-left-color: transparent;
+  }
+
+  &.btn-primary:last-child,
+  &.btn-info:last-child,
+  &.btn-success:last-child,
+  &.btn-warning:last-child,
+  &.btn-error:last-child {
+    border-right-color: transparent;
+  }
+
+  &.btn:focus {
     z-index: 1;
     border: 1px solid @button-border-color-selected;
   }
+
   &.selected,
   &.selected:first-child,
   &.selected:last-child {
