@@ -1,6 +1,11 @@
 .tooltip {
   white-space: nowrap;
 
+  &.in {
+    opacity: 1;
+    transition: opacity .12s ease-out,
+  }
+
   .tooltip-inner {
     line-height: 19px;
     border-radius: @component-border-radius;
@@ -18,12 +23,6 @@
     border-radius: max(2px, @component-border-radius / 2);
     color: @tooltip-text-key-color;
     background: @tooltip-background-key-color;
-  }
-
-  &.in {
-    opacity: 1;
-    transition-timing-function: ease-out;
-    transition-duration: .2s;
   }
 
   &.top .tooltip-arrow {
