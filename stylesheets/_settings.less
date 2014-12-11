@@ -1,0 +1,281 @@
+
+// Themed Settings
+// Based on https://github.com/postcasio/themed-settings
+
+body .settings-view {
+	.panels {
+		background: @level-2-color;
+		color: @text-color;
+	}
+
+	.settings-panel {
+		label {
+			color: @text-color;
+		}
+	}
+
+	.section .section-heading,
+	section .section-heading {
+		color: @text-color;
+		border-color: @base-border-color;
+	}
+
+	.thumbnail {
+		background: @inset-panel-background-color;
+		border: @inset-panel-border-color;
+
+		.caption {
+			color: @text-color;
+		}
+	}
+
+	select.form-control {
+		.btn();
+		box-shadow: none;
+	}
+
+	atom-text-editor[mini][mini][mini] {
+		color: @text-color-highlight;
+		background-color: @input-background-color;
+		border: 1px solid @input-border-color;
+		border-radius: @component-border-radius;
+		padding-left: @component-padding/2;
+
+		&,
+		&::shadow {
+			.placeholder-text {
+				color: @text-color-subtle;
+			}
+			.text {
+				color: @text-color-highlight;
+			}
+			.selection .region {
+				background-color: lighten(@input-background-color, 10%);
+			}
+			.cursor {
+				border-color: @base-accent-color;
+			}
+		}
+
+		&.is-focused,
+		&.is-focused::shadow {
+			.focus();
+			background-color: darken(@input-background-color, 2%);
+
+			.placeholder-text {
+				color: @text-color-subtle;
+			}
+			.selection .region {
+				background-color: @background-color-selected;
+			}
+			.cursor {
+				border-color: @base-accent-color;
+			}
+		}
+
+	}
+
+	.text, .text-subtle {
+		color: @text-color;
+	}
+
+	.btn {
+		.btn();
+	}
+
+	.btn.btn-primary {
+		.btn-variant(@background-color-info);
+	}
+	.btn.btn-info {
+		.btn-variant(@background-color-info);
+	}
+	.btn.btn-success {
+		.btn-variant(@background-color-success);
+	}
+	.btn.btn-warning {
+		.btn-variant(@background-color-warning);
+	}
+	.btn.btn-error {
+		.btn-variant(@background-color-error);
+	}
+	.btn-group > .btn-default {
+		.btn();
+	}
+
+	.config-menu {
+		position: relative;
+		background: @level-2-color;
+		box-shadow: none;
+		border-right: 1px solid @base-border-color;
+
+		// smoothen border with a gradient
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: -1px;
+			width: 1px;
+			height: 100px;
+			background: linear-gradient(@level-2-color 10%, @base-border-color);
+		}
+
+		.nav-stacked > li + li {
+			margin-top: 0;
+		}
+
+		.nav > li > a {
+			color: @text-color;
+		}
+		.nav > li > a:hover {
+			background: @background-color-highlight;
+			color: @text-color;
+			box-shadow: none;
+		}
+		.nav > li.active > a {
+			color: @text-color-selected;
+			box-shadow: inset 0 1px 0 @base-border-color, inset 0 -1px 0 @base-border-color;
+			background: @background-color-selected;
+			.package-author {
+				color: @text-color-selected;
+			}
+		}
+	}
+
+	.table > tbody > tr > td,
+	.table > thead > tr > th {
+		border-color: @base-border-color;
+	}
+
+	.table > tbody > .success > td {
+		background: @background-color-highlight;
+	}
+
+	.config-menu .panels-menu .panel-menu-separator {
+		border: none;
+	}
+
+	.config-menu .panels-packages {
+		background: @settings-list-background-color;
+		border-top: 1px solid @base-border-color;
+		border-bottom: 1px solid @base-border-color;
+
+		li {
+			a {
+				border-radius: 0 !important;
+				box-shadow: none !important;
+				border-bottom: 1px solid @base-border-color;
+			}
+			a:hover {
+				box-shadow: none !important;
+			}
+			&.active {
+				a, a:hover {
+					box-shadow: none !important;
+				}
+			}
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.package-title {
+			color: @text-color-highlight;
+		}
+
+		.package-version {
+			color: @text-color !important;
+		}
+
+		.package-author {
+			color: @text-color !important;
+		}
+	}
+
+	.packages .available-package-view {
+		.package-name {
+			color: @text-color-highlight;
+		}
+		.downloads {
+			color: @text-color;
+		}
+		.description {
+			color: @text-color;
+		}
+	}
+
+	.packages {
+
+		.theme-chooser {
+			.col-md-4 {
+				min-width: 300px; // temporarly prevent wrapping
+			}
+		}
+
+		.theme-base-color,
+		.theme-saturation {
+			box-shadow: @theme-config-box-shadow;
+		}
+
+		.theme-base-color-selected,
+		.theme-saturation-selected,
+		.theme-contrast-selected {
+			border-color: @theme-config-border-selected;
+			box-shadow: @theme-config-box-shadow-selected;
+		}
+
+		.theme-contrast {
+			background-color: transparent;
+		}
+
+		// TODO: Remove once these get moved to inline styles
+		.theme-base-color-1 { background-color: @theme-base-color-1; }
+		.theme-base-color-2 { background-color: @theme-base-color-2; }
+		.theme-base-color-3 { background-color: @theme-base-color-3; }
+		.theme-base-color-4 { background-color: @theme-base-color-4; }
+		.theme-base-color-5 { background-color: @theme-base-color-5; }
+
+		.theme-saturation-1 { background-color: @theme-saturation-1; } //   40%
+		.theme-saturation-2 { background-color: @theme-saturation-2; } //   20%
+		.theme-saturation-3 { background-color: @theme-saturation-3; } //    0%
+		.theme-saturation-4 { background-color: @theme-saturation-4; } //  -10%
+		.theme-saturation-5 { background-color: @theme-saturation-5; } // -100%
+
+		.theme-contrast-1 { color: @theme-contrast-1; } //  40%
+		.theme-contrast-2 { color: @theme-contrast-2; } //  20%
+		.theme-contrast-3 { color: @theme-contrast-3; } //   0%
+		.theme-contrast-4 { color: @theme-contrast-4; } // -10%
+		.theme-contrast-5 { color: @theme-contrast-5; } // -20%
+	}
+
+	.error-message .error-details {
+		background: @inset-panel-background-color;
+		border: @inset-panel-border-color;
+		color: @text-color;
+	}
+
+	.setting-description {
+		color: @text-color-subtle;
+	}
+
+
+	.alert (@color) {
+		@faded-color: fade(mix(@color, @level-1-color), 20%);
+		color: @color;
+		border-color: @faded-color;
+		background-color: @faded-color;
+		.alert-link {
+			color: inherit;
+			text-decoration: underline;
+		}
+	}
+
+	.alert         { .alert( @text-color ); }
+	.alert-success { .alert( @text-color-success ); }
+	.alert-info    { .alert( @text-color-info ); }
+	.alert-warning { .alert( @text-color-warning ); }
+	.alert-danger  { .alert( @text-color-error ); }
+
+}
