@@ -36,7 +36,10 @@
   .btn-background(@bg, @hover, @selected, @text-color-highlight);
   color: @text-color;
   text-shadow: 0 1px 0 hsla(0,0%,0%,.2);
-  border-color: transparent;
+
+  & when (@ui-brightness > 50%) {
+    border-color: transparent; // hide border on light backgrounds
+  }
 
   &:hover,
   &:focus {
@@ -81,20 +84,23 @@
     border-right: @btn-border;
   }
 
-  &.btn-primary:first-child,
-  &.btn-info:first-child,
-  &.btn-success:first-child,
-  &.btn-warning:first-child,
-  &.btn-error:first-child {
-    border-left-color: transparent;
-  }
+  // hide border on light backgrounds
+  & when (@ui-brightness > 50%) {
+    &.btn-primary:first-child,
+    &.btn-info:first-child,
+    &.btn-success:first-child,
+    &.btn-warning:first-child,
+    &.btn-error:first-child {
+      border-left-color: transparent;
+    }
 
-  &.btn-primary:last-child,
-  &.btn-info:last-child,
-  &.btn-success:last-child,
-  &.btn-warning:last-child,
-  &.btn-error:last-child {
-    border-right-color: transparent;
+    &.btn-primary:last-child,
+    &.btn-info:last-child,
+    &.btn-success:last-child,
+    &.btn-warning:last-child,
+    &.btn-error:last-child {
+      border-right-color: transparent;
+    }
   }
 
   &.btn:focus {
