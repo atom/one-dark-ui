@@ -24,8 +24,9 @@
   &.selected {
     background: @selected-color;
   }
+  &.selected:focus,
   &.selected:hover {
-    background: fadeout(@selected-color, 4%);
+    background: lighten(@selected-color, 2%);
   }
 }
 
