@@ -9,11 +9,12 @@
   background-image: linear-gradient(lighten(@color, 2%), @color);
 
   &:focus {
-    .focus();
+    //.focus(); // disabled for now, since :focus styles stay even after releasing mouse.
+    outline: none;
   }
   &:focus,
   &:hover {
-    color: @text-color;
+    color: @text-color-highlight;
     background-image: linear-gradient(lighten(@hover-color, 2%), @hover-color);
   }
   &:active {
@@ -105,7 +106,6 @@
 
   &.btn:focus {
     z-index: 1;
-    border: 1px solid @button-border-color-selected;
   }
 
   &.selected,
