@@ -64,22 +64,6 @@
         opacity: .3;
       }
     }
-
-    // Active pane marker
-    &:before {
-      content: "";
-      position: absolute;
-      pointer-events: none;
-      z-index: 2;
-      top: 0;
-      left: 0;
-      width: 2px;
-      height: @tab-height + @tab-bottom-border-height;
-      border-bottom: 1px solid fade(@tab-border-color, 60%);
-      background: @base-accent-color;
-      transform: scaleY(0);
-      transition: transform .08s;
-    }
   }
 
   .tab.active {
@@ -115,12 +99,6 @@
       bottom: -1px;
       border-bottom: @tab-bottom-border-height solid @tab-background-color-active;
     }
-
-    // Active pane marker
-    atom-pane.active &:before {
-      transform: scaleY(1);
-    }
-
   }
 
   .tab.modified {
@@ -174,4 +152,28 @@
       }
     }
   }
+}
+
+
+// Active pane marker --------------
+
+.tab-bar:empty:before,
+.tab-bar .tab:before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: @tab-height + @tab-bottom-border-height;
+  border-bottom: 1px solid fade(@tab-border-color, 60%);
+  background: @base-accent-color;
+  transform: scaleY(0);
+  transition: transform .08s;
+}
+
+atom-pane.active .tab-bar:empty:before,
+atom-pane.active .tab.active:before {
+  transform: scaleY(1);
 }
