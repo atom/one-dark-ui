@@ -5,19 +5,21 @@
   }
 }
 
-.panes {
+atom-pane-container {
   atom-pane {
     position: relative;
     background-color: @app-background-color;
   }
 
-  .pane-row > * {
-    border-right: 1px solid @pane-item-border-color;
-    &:last-child { border-right: none; }
-  }
+  atom-pane-axis {
+    &.horizontal > * {
+      border-right: 1px solid @pane-item-border-color;
+      &:last-child { border-right: none; }
+    }
 
-  .pane-column > * {
-    border-bottom: 1px solid @pane-item-border-color;
-    &:last-child { border-bottom: none; }
+    &.vertical > * {
+      border-bottom: 1px solid @pane-item-border-color;
+      &:last-child { border-bottom: none; }
+    }
   }
 }
