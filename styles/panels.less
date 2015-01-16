@@ -5,21 +5,18 @@
   }
 }
 
-.tool-panel.tool-panel {
+atom-panel {
   .text(normal);
   position: relative;
-  background-color: @tool-panel-background-color;
 
-  &.panel-bottom {
-    border-top: 1px solid @tool-panel-border-color;
-  }
-
-  &.panel-left {
+  &.left {
     border-right: 1px solid @tool-panel-border-color;
   }
-
-  &.panel-right {
+  &.right {
     border-left: 1px solid @tool-panel-border-color;
+  }
+  &.bottom {
+    border-top: 1px solid @tool-panel-border-color;
   }
 }
 
