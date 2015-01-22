@@ -1,6 +1,6 @@
 module.exports =
   config:
-    'themeColor':
+    themeColor:
       default: 'hsl(220, 100%, 50%)'
       type: 'color'
 
