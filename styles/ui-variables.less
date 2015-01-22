@@ -3,7 +3,7 @@
 
 // Settings -----------------------------------
 
-@theme-color:             hsl(220, 100%, 50%);
+@themeColor:             hsl(220, 100%, 50%);
 @theme-adjust-saturation: 0%; // -/+n%
 @theme-adjust-contrast:   0%;
 
@@ -29,7 +29,7 @@
 
 // Config -----------------------------------
 
-@ui-hue:         hsvhue(@theme-color);
+@ui-hue:         hsvhue(@themeColor);
 @ui-saturation: max(20% + @theme-adjust-saturation, 0%); // limit to > 0%
 @ui-brightness:     20%;
 @ui-contrast:       @theme-adjust-contrast * 0.1;
