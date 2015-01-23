@@ -4,8 +4,8 @@
 // Settings -----------------------------------
 
 @themeColor:             hsl(220, 100%, 50%);
-@theme-adjust-saturation: 0%; // -/+n%
-@theme-adjust-contrast:   0%;
+@themeAdjustSaturation: 0%; // -/+n%
+@themeAdjustContrast:   0%;
 
 // TODO: Move into package.json
 @theme-base-color-1: hsl(220, 80%, 55%);
@@ -30,14 +30,14 @@
 // Config -----------------------------------
 
 @ui-hue:         hsvhue(@themeColor);
-@ui-saturation: max(20% + @theme-adjust-saturation, 0%); // limit to > 0%
+@ui-saturation: max(20% + @themeAdjustSaturation, 0%); // limit to > 0%
 @ui-brightness:     20%;
-@ui-contrast:       @theme-adjust-contrast * 0.1;
+@ui-contrast:       @themeAdjustContrast * 0.1;
 
 
 // Base colors -----------------------------------
 
-@base-accent-color:     hsl(@ui-hue, @theme-adjust-saturation + 90%, (@ui-brightness + (@ui-contrast*10) + 40%) );
+@base-accent-color:     hsl(@ui-hue, @themeAdjustSaturation + 90%, (@ui-brightness + (@ui-contrast*10) + 40%) );
 @base-background-color: hsv(@ui-hue, @ui-saturation, @ui-brightness);
 @base-border-color:     hsv(@ui-hue, @ui-saturation, @ui-brightness*.7);
 
