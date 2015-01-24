@@ -1,5 +1,9 @@
-# Atom One light UI theme
+## ONE light UI theme
 
-![one-light](https://cloud.githubusercontent.com/assets/378023/4930816/4885f30a-656b-11e4-8bc7-296ac959c5da.png)
+![one-light-ui](https://cloud.githubusercontent.com/assets/378023/5887637/60dde9d2-a420-11e4-9dd5-0a6a9bc4f5bc.png)
 
-There is also a matching [Syntax theme](https://github.com/atom/one-light-syntax) and a [dark](https://github.com/atom/one-dark-ui) version.
+There is also a matching [Syntax theme](https://atom.io/themes/one-light-syntax).
+
+### Install
+
+This theme is installed by default with Atom and can be activated by going to the __Settings > Themes__ section and selecting it from the __UI Themes__ drop-down menu.
