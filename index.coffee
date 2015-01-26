@@ -7,24 +7,24 @@ module.exports =
     themeAdjustSaturation:
       title: 'Saturation'
       type: 'string'
-      default: '0'
+      default: '0%'
       enum: [
         '+80%',
         '+40%',
         '+20%',
-        '0',
+        '0%',
         '-10%',
         '-100%',
       ]
     themeAdjustContrast:
       title: 'Contrast'
       type: 'string'
-      default: '0'
+      default: '0%'
       enum: [
         '+80%',
         '+40%',
         '+20%',
-        '0',
+        '0%',
         '-20%',
         '-40%',
       ]
