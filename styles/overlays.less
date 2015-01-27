@@ -12,6 +12,11 @@ atom-panel.modal {
     border: 1px solid @overlay-border-color;
     background-color: lighten(@overlay-background-color, 2%);
 
+    &:empty {
+      border: none;
+      margin-top: 0;
+    }
+
     li {
       padding: @component-padding;
       border-bottom: 1px solid @overlay-border-color;
