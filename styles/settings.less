@@ -4,16 +4,6 @@
 .settings-view .config-menu {
 	position: relative;
 	background: @level-2-color;
-	border-right: 1px solid @base-border-color;
-
-	// smoothen border with a gradient
-	&:after {
-		content: "";
-		position: absolute;
-		top: 0;
-		right: -1px;
-		width: 1px;
-		height: 100px;
-		background: linear-gradient(@level-2-color 10%, @base-border-color);
-	}
+	border-width: 0 1px 0 0;
+	border-image: linear-gradient(@level-2-color 10px, @base-border-color 200px) 0 1 0 0 stretch;
 }
