@@ -56,7 +56,7 @@
 @background-color-warning: hsl(32,   60%, 50%);
 @background-color-error:   hsl(0,    70%, 50%);
 
-@background-color-highlight: lighten(@base-background-color, 3%);
+@background-color-highlight: lighten(@base-background-color, 4%);
 @background-color-selected: lighten(@base-background-color, 8%);
 
 
@@ -91,6 +91,8 @@
 @overlay-background-color:         @level-2-color;
 @overlay-border-color:             @base-border-color;
 @overlay-backdrop-color:           hsla(@ui-hue,@ui-saturation,5%,.5);
+
+@badge-background-color:           lighten(@background-color-highlight, 6%);
 
 @button-background-color:          @level-1-color;
 @button-background-color-hover:    lighten(@button-background-color, 2%);
