@@ -1,7 +1,7 @@
 {
   "name": "one-light-ui",
   "theme": "ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Atom One light UI theme",
   "repository": "https://github.com/atom/one-light-ui.git",
   "license": "MIT",
