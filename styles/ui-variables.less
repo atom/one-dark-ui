@@ -1,36 +1,50 @@
+@import "syntax-variables";
 
-// UI Variables for Atom Theme: One Light
+// ONE light UI variables
+// -----------------------------------
 
-// Settings -----------------------------------
+// Debug (console.log for Less)
+// html:before {
+//   content: "@{variable}";
+// }
 
-@theme-color:             hsl(220, 100%, 50%);
-@theme-adjust-saturation: 0%; // -/+n%
-@theme-adjust-contrast:   0%;
+// Adjust -----------------------------------
+
+@ui-a:       hsl(40, 2%, 98%); // fallback
+@ui-a:       @syntax-background-color;
+
+// Goal: use @syntax-background-color if it's light enough, otherwise use same hue but stay light
+// The darken down by 100% is done to trick contrast() into picking one of 2 light colors
+@ui-a-h:     hue(@ui-a);
+@ui-a-s:     min( saturation(@ui-a), 6%);
+@ui-a-l:     luma(@ui-a) - 100%; // (1) darken down
+@ui-a-light: hsl(@ui-a-h, @ui-a-s, @ui-a-l); // (2) flashed color
+@ui-a-color: contrast(@ui-a-light, @ui-a, hsl(@ui-a-h, @ui-a-s, 88%) ); // (3) use @ui-a if darker than 88%
 
 
 // Config -----------------------------------
 
-@ui-hue:        hsvhue(@theme-color);
-@ui-saturation: max(0%, @theme-adjust-saturation + 2%); // limit to > 100%, default 20%
-@ui-brightness: 98%;
-@ui-contrast:   @theme-adjust-contrast * -0.1;
+@ui-hue:        hue(@ui-a-color);
+@ui-saturation: saturation(@ui-a-color);
+@ui-lightness:  lightness(@ui-a-color);
+@ui-color:      @ui-a-color;
 
 
 // Base colors -----------------------------------
 
-@base-accent-color:     hsl(@ui-hue, @theme-adjust-saturation + 90%, (@ui-brightness + (@ui-contrast*10) - 40%) );
-@base-background-color: hsl(@ui-hue, @ui-saturation, @ui-brightness + (@ui-contrast*-2) );
-@base-border-color:     hsl(@ui-hue, @ui-saturation*1.2, 80% + (@ui-contrast*2) );
+@base-accent-color:     hsl(@ui-hue, @ui-saturation + 80%, min(@ui-lightness - 40%, 60%) );
+@base-background-color: @ui-color;
+@base-border-color:     darken(@ui-color, 10%);
 
 
 // Level Colors -----------------------------------
 
-@level-1-color: lighten(@base-background-color, (@ui-contrast * 1.5) + 4% );
-@level-2-color: darken( @base-background-color, (@ui-contrast * 0.7)      );
-@level-3-color: darken( @base-background-color, (@ui-contrast * 1.5) + 8% );
+@level-1-color: lighten(@base-background-color, 4%);
+@level-2-color: @base-background-color;
+@level-3-color: darken(@base-background-color, 6%);
 
 
-// Var + State Background Colors
+// Var + State Background Colors -------------------------------------
 
 @background-color-info:    hsl(208, 100%, 56%);
 @background-color-success: hsl(132,  48%, 48%);
@@ -41,7 +55,7 @@
 @background-color-selected:  hsla(@ui-hue, 10% + @ui-saturation, 50%,.18);
 
 
-// Component Colors
+// Component Colors -------------------------------------
 
 @app-background-color:             darken(@level-3-color, 2%);
 
@@ -107,12 +121,12 @@
 @key-binding-background-color: @level-2-color;
 
 
-// Text Colors
+// Text Colors -------------------------------------
 
-@text-color: hsl(@ui-hue, @ui-saturation, -70% + @ui-brightness + (@ui-contrast * 10) );
+@text-color: hsl(@ui-hue, @ui-saturation, -70% + @ui-lightness);
 @text-color-subtle: fadeout(@text-color, 30%);
 @text-color-faded: fade(@text-color, 30%);
-@text-color-highlight: hsl(@ui-hue, @ui-saturation + 20%, @ui-contrast + 30%);
+@text-color-highlight: hsl(@ui-hue, @ui-saturation + 20%, 30%);
 @text-color-selected: darken(@text-color-highlight, 10%);
 
 @text-color-info:    hsl(208, 100%, 54%);
@@ -127,7 +141,7 @@
 @text-color-renamed:  @text-color-info;     // blue
 
 
-// Sizes
+// Sizes -------------------------------------
 
 @font-size:       11px;
 @input-font-size: 14px;
@@ -143,12 +157,12 @@
 @tab-height: 30px;
 
 
-// Font
+// Font -------------------------------------
 
 @font-family: 'Lucida Grande', 'Segoe UI', sans-serif;
 
 
-// Settings View
+// Settings View -------------------------------------
 
 @settings-list-background-color: darken(@level-2-color, 3%);
 @theme-config-box-shadow: inset 0 1px 2px hsla(0, 0%, 0%, .2), 0 1px 0 hsla(0, 0%, 100%, .3);
