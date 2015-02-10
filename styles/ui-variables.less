@@ -36,6 +36,9 @@
 @base-background-color: @ui-color;
 @base-border-color:     hsl(@ui-hue, @ui-saturation, @ui-lightness*.7);
 
+// Editor colors -----------------------------------
+@ui-editor-background-color: @ui-a;
+
 
 // Level Colors -----------------------------------
 
@@ -70,6 +73,8 @@
 @tab-text-color:                   @text-color-highlight;
 @tab-icon-color:                   @text-color-subtle;
 @tab-inactive-transparency:        .5;
+@tab-background-color-editor:      @ui-editor-background-color;
+@tab-text-color-editor:            contrast(@ui-editor-background-color, darken(@ui-editor-background-color, 50%), @text-color-highlight );
 
 @pane-item-background-color:       @base-background-color;
 @pane-item-border-color:           @base-border-color;
