@@ -39,7 +39,7 @@
   color: @text-color;
   text-shadow: 0 1px 0 hsla(0,0%,0%,.2);
 
-  & when (@ui-brightness > 50%) {
+  & when (@ui-lightness > 50%) {
     border-color: transparent; // hide border on light backgrounds
   }
 
@@ -87,7 +87,7 @@
   }
 
   // hide border on light backgrounds
-  & when (@ui-brightness > 50%) {
+  & when (@ui-lightness > 50%) {
     &.btn-primary:first-child,
     &.btn-info:first-child,
     &.btn-success:first-child,

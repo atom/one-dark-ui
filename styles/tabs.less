@@ -118,6 +118,14 @@
     }
   }
 
+  .tab.active[data-type="TextEditor"] {
+    color: @tab-text-color-editor;
+    background-color: @tab-background-color-editor;
+    &:after {
+      border-bottom-color: @tab-background-color-editor;
+    }
+  }
+
   .placeholder {
     margin: 0;
     height: @tab-height + @tab-top-padding;
@@ -158,7 +166,6 @@
   left: 0;
   width: 2px;
   height: @tab-height + @tab-bottom-border-height;
-  border-bottom: 1px solid fade(@tab-border-color, 60%);
   background: @base-accent-color;
   transform: scaleY(0);
   transition: transform .08s;
