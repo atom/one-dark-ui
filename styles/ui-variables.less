@@ -128,7 +128,7 @@
 
 // Text Colors -------------------------------------
 
-@text-color: hsl(@ui-hue, @ui-saturation, max(30%, @ui-lightness * 3) );
+@text-color: hsl(@ui-hue, min(40%, @ui-saturation), max(50%, @ui-lightness * 3) );
 @text-color-subtle: fadeout(@text-color, 40%);
 @text-color-faded: fade(@text-color, 20%);
 @text-color-highlight: hsl(@ui-hue, @ui-saturation*8, 88%);
