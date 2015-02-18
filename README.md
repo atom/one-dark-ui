@@ -2,11 +2,11 @@
 
 A light UI theme that adjusts to most Syntax themes.
 
-![one-light-ui](https://cloud.githubusercontent.com/assets/378023/5887637/60dde9d2-a420-11e4-9dd5-0a6a9bc4f5bc.png)
+![one-light-ui](https://cloud.githubusercontent.com/assets/378023/6241878/95c31112-b768-11e4-9ac0-46a626f4963d.png)
 
 There is a matching [Syntax theme](https://atom.io/themes/one-light-syntax), but most other Syntax themes work fine as well.
 
-![ONE light combos](https://cloud.githubusercontent.com/assets/378023/6142855/3d861708-b202-11e4-800d-45f13c1d0b2c.png)
+![one-light-grid](https://cloud.githubusercontent.com/assets/378023/6241877/95bee43e-b768-11e4-96e8-bb80ae4015ae.png)
 
 ### Install
 
