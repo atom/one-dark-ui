@@ -2,11 +2,11 @@
 
 A dark UI theme that adjusts to most Syntax themes.
 
-![one-dark-ui](https://cloud.githubusercontent.com/assets/378023/5887665/e5ca740c-a421-11e4-94a2-0c25984fef3c.png)
+![one-dark-ui](https://cloud.githubusercontent.com/assets/378023/6241915/00f2457a-b769-11e4-8230-6632668354b1.png)
 
 There is a matching [Syntax theme](https://atom.io/themes/one-dark-syntax), but most other Syntax themes work fine as well.
 
-![ONE dark combos](https://cloud.githubusercontent.com/assets/378023/6142256/03ca3726-b1f6-11e4-82f6-e2c4e9b0aedf.png)
+![one-dark-grid](https://cloud.githubusercontent.com/assets/378023/6241914/00ef2c8c-b769-11e4-945a-bd7333dcf795.png)
 
 ### Install
 
