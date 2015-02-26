@@ -54,11 +54,13 @@
       margin-right: @tab-padding;
       text-align: center;
       top: 0;
+      height: @tab-height;
       line-height: @tab-height;
       color: @tab-icon-color;
       background: inherit;
       transform: scale(0);
       transition: transform .1s;
+      border-bottom: @tab-border-size solid transparent;
 
       &:before {
         font-size: inherit;
@@ -104,13 +106,17 @@
   .tab.modified {
     .close-icon {
       color: @text-color-info;
+      border: none;
+      border-bottom: @tab-border-size solid transparent;
     }
     &:not(:hover) .close-icon {
       right: 0;
       top: 0;
       width: initial;
-      height: initial;
+      height: @tab-height;
       border: none;
+      border-bottom: @tab-border-size solid transparent;
+      border-radius: 0;
       transform: scale(1);
       &::before {
         content: "\f052";
