@@ -149,10 +149,10 @@
     background: @base-accent-color;
     pointer-events: none;
     &:after {
-      top: @tab-height/2 - 5px ;
+      top: @tab-height/2;
       width: 10px;
       height: 10px;
-      margin: 0;
+      margin: -5px 0 0 0;
       border-radius: 0;
       border: 5px solid;
       border-color: transparent transparent transparent @base-accent-color;
@@ -182,7 +182,7 @@
   top: 0;
   left: 0;
   width: 2px;
-  height: @tab-height + @tab-border-size;
+  height: @tab-height;
   background: @base-accent-color;
   transform: scaleY(0);
   transition: transform .08s;
