@@ -15,54 +15,49 @@
 
 // Styleguide ----------------------------------------------
 
-.styleguide section.bordered,
-.styleguide section.collapsed {
-  padding: @component-padding 0; // stops jumping of the title when collapsing
-}
+.styleguide {
+  padding: 0;
 
-.styleguide .section-heading {
-  font-size: 1.5em;
-  line-height: 1.2;
-}
-
-.styleguide h2 {
-  font-size: 1.4em;
-  line-height: 1.2;
-  margin-bottom: 0;
-}
-
-.styleguide atom-panel.modal:after {
-  position: absolute;  // prevent overlay backdrop from leaking outside
-  left: -@component-padding/2;
-  right: -@component-padding/2;
-  bottom: -@component-padding/2;
-}
-
-.styleguide atom-panel.modal:after {
-  position: absolute;  // prevent overlay backdrop from leaking outside
-}
-
-.styleguide .select-list atom-text-editor[mini],
-.styleguide .popover-list atom-text-editor[mini] {
-  line-height: 25px;
-}
-
-
-.example {
-  border: none;
-
-  .example-rendered {
-    border: 1px solid @base-border-color;
-    border-right: none;
-    background: @level-3-color;
+  section.bordered,
+  .section.bordered {
+    border-top: none;
   }
 
-  .example-code {
-    border: 1px solid @base-border-color;
-    border-radius: 0 @component-border-radius @component-border-radius 0;
+  .example {
+    border: none;
 
-    .btn-group .btn.selected {
-      background: @level-3-color;
+    .example-rendered {
+      border: 1px solid @base-border-color;
+      border-right: none;
+      background: @base-background-color;
+    }
+
+    .example-code {
+      border: 1px solid @base-border-color;
+      border-radius: 0 @component-border-radius @component-border-radius 0;
     }
   }
+
+  [data-name="variables"] .example-rendered {
+    border-right: 1px solid @base-border-color;
+    border-radius: @component-border-radius;
+  }
+
+  // Components
+  atom-panel.modal:after {
+    position: absolute;  // prevent overlay backdrop from leaking outside
+    left: -@component-padding;
+    right: -@component-padding;
+    bottom: -@component-padding;
+  }
+
+  atom-panel.modal:after {
+    position: absolute;  // prevent overlay backdrop from leaking outside
+  }
+
+  .select-list atom-text-editor[mini],
+  .popover-list atom-text-editor[mini] {
+    height: initial;
+  }
+
 }

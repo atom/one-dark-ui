@@ -41,6 +41,10 @@
   li.list-nested-item.selected > .list-item {
     .text(selected);
   }
+
+  .no-icon {
+    padding-left: calc(@component-icon-padding ~"+" @component-icon-size);
+  }
 }
 
 .select-list ol.list-group,
@@ -98,6 +102,10 @@
 
   atom-text-editor[mini] {
     margin-bottom: @component-padding/2;
+  }
+
+  ol.list-group {
+    margin-top: @component-padding/2;
   }
 
   .list-group li {

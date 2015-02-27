@@ -1,4 +1,14 @@
 .badge {
+  padding: @component-padding/4 @component-padding/2.5;
+  min-width: @component-padding*1.25;
   .text(highlight);
+  border-radius: @font-size*2;
   background-color: @badge-background-color;
+
+  // Icon ----------------------
+  &.icon {
+    font-size: @font-size;
+    padding: @component-icon-padding @component-icon-padding*1.5;
+  }
+
 }
