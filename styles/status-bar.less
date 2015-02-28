@@ -7,7 +7,7 @@
   line-height: @status-bar-height;
 
   .flexbox-repaint-hack {
-    padding: 0 @status-bar-padding;
+    padding: 0 @status-bar-padding/2;
   }
 
   .inline-block {
@@ -30,9 +30,6 @@
   .icon::before {
     font-size: 16px; // keeps them sharp
   	width: 16px;
-    height: @status-bar-height;
-    line-height: @status-bar-height;
-    vertical-align: top;
-    top: initial;
+    height: 16px;
   }
 }

@@ -148,16 +148,15 @@
 
 // Sizes -------------------------------------
 
-html { font-size: 15px; }   // spacing (padding, margin)
-body { font-size: .75rem; } // sizing (font-size)
+html { font-size: 11px; }   // base font-size
 
 @font-size:             1em;
 @input-font-size:       @font-size*1.25;
 @disclosure-arrow-size: @font-size;
 
-@component-padding:       1rem;
+@component-padding:       @font-size*1.5;
 @component-line-height:   @font-size*2;
-@component-icon-padding:  @component-padding/4;
+@component-icon-padding:  @component-padding/3.3;
 @component-icon-size:     16px; // needs to stay 16px to look sharpest
 @component-border-radius: 3px;
 

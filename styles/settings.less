@@ -20,15 +20,16 @@
 
 	.config-menu {
 		position: relative;
-		min-width: @font-size * 12;
-		max-width: @font-size * 14;
+		min-width: @font-size * 15;
+		max-width: @font-size * 20;
 		border-width: 0 1px 0 0;
 		border-image: linear-gradient(@level-2-color 10px, @base-border-color 200px) 0 1 0 0 stretch;
 		background: @level-2-color;
 
 		.btn {
 			white-space: initial;
-			padding: 0 @font-size/2;
+			font-size: @ms_1;
+			padding: @component-padding/3 @component-padding/2;
 			&::before {
 				vertical-align: top;
 				line-height: inherit;
@@ -43,8 +44,7 @@
 			line-height: @component-padding*2;
 		}
 		.icon::before {
-			vertical-align: top;
-			line-height: @component-padding*2;
+			//margin-right:
 		}
 	}
 
@@ -76,18 +76,24 @@
 	}
 
 	.section .section-heading {
-		@_size: @component-padding*2;
-		font-size: @font-size*1.5;
+		@_size: @ms-6;
+		font-size: @ms-4;
+		margin-bottom: @component-padding;
 		&.icon::before {
 			width: @_size;
 			height: @_size;
-			vertical-align: middle;
 			line-height: @_size;
+			vertical-align: middle;
 			text-align: center;
 			color: @base-background-color;
 			background: @text-color-highlight;
 			border-radius: @_size;
 		}
+	}
+
+	.sub-section-heading.icon:before,
+	.section-heading.icon:before {
+		margin-right: @component-icon-padding;
 	}
 
 	.sub-section-heading {
@@ -99,7 +105,7 @@
 	}
 
 	.setting-description {
-		font-size: @ms_1;
+		font-size: @ms-0;
 	}
 
 
@@ -108,6 +114,11 @@
 	.available-package-view {
 		font-size: @ms-0;
 		padding: @component-padding;
+		.meta-controls .status-indicator {
+			width: @component-padding/4;
+			height: @component-line-height;
+			box-sizing: content-box;
+		}
 	}
 
 
@@ -118,7 +129,7 @@
 	}
 
 	.settings-panel .control-group + .control-group {
-		margin-top: @component-padding/2;
+		margin-top: @component-padding;
 	}
 
 	.checkbox {
@@ -135,11 +146,6 @@
 	.form-control {
 		font-size: @font-size*1.25;
 		height: @component-line-height;
-	}
-
-	.status-indicator {
-		height: @component-line-height;
-		box-sizing: content-box;
 	}
 
 }
