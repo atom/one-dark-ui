@@ -79,16 +79,6 @@
 		@_size: @ms-6;
 		font-size: @ms-4;
 		margin-bottom: @component-padding;
-		&.icon::before {
-			width: @_size;
-			height: @_size;
-			line-height: @_size;
-			vertical-align: middle;
-			text-align: center;
-			color: @base-background-color;
-			background: @text-color-highlight;
-			border-radius: @_size;
-		}
 	}
 
 	.sub-section-heading.icon:before,
@@ -123,6 +113,10 @@
 
 
 	// Components ------------------------------
+
+	.icon::before {
+		color: @text-color-subtle;
+	}
 
 	.settings-panel label {
 		font-size: @ms-0;
