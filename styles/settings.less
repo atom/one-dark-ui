@@ -1,9 +1,145 @@
 
 // Settings
 
-.settings-view .config-menu {
-	position: relative;
-	background: @level-2-color;
-	border-width: 0 1px 0 0;
-	border-image: linear-gradient(@level-2-color 10px, @base-border-color 200px) 0 1 0 0 stretch;
+// Modular Scale (1.125): http://www.modularscale.com/?1&em&1.125&web&table
+@ms-6: @font-size * 2.027;
+@ms-5: @font-size * 1.802;
+@ms-4: @font-size * 1.602;
+@ms-3: @font-size * 1.424;
+@ms-2: @font-size * 1.266;
+@ms-1: @font-size * 1.125;
+@ms-0: @font-size * 1;
+@ms_1: @font-size * 0.889;
+@ms_2: @font-size * 0.790;
+
+
+
+.settings-view {
+
+	// Menu ------------------------------
+
+	.config-menu {
+		position: relative;
+		min-width: @font-size * 15;
+		max-width: @font-size * 20;
+		border-width: 0 1px 0 0;
+		border-image: linear-gradient(@level-2-color 10px, @base-border-color 200px) 0 1 0 0 stretch;
+		background: @level-2-color;
+
+		.btn {
+			white-space: initial;
+			font-size: @ms_1;
+			padding: @component-padding/3 @component-padding/2;
+			&::before {
+				vertical-align: top;
+				line-height: inherit;
+			}
+		}
+
+
+	}
+	.nav {
+		& > li > a {
+			padding: 0 @component-padding;
+			line-height: @component-padding*2;
+		}
+		.icon::before {
+			//margin-right:
+		}
+	}
+
+
+	// Sections ------------------------------
+
+	.section-container {
+		max-width: @font-size*60;
+	}
+	.sub-section {
+		margin: @component-padding*2 0;
+	}
+
+	.section,
+	.section:first-child,
+	.section:last-child {
+		padding: @component-padding*2;
+	}
+
+	.themes-panel .control-group {
+		margin-top: @component-padding*2;
+	}
+
+
+	// Titles ------------------------------
+
+	.breadcrumb {
+		font-size: @ms-1;
+	}
+
+	.section .section-heading {
+		@_size: @ms-6;
+		font-size: @ms-4;
+		margin-bottom: @component-padding;
+	}
+
+	.sub-section-heading.icon:before,
+	.section-heading.icon:before {
+		margin-right: @component-icon-padding;
+	}
+
+	.sub-section-heading {
+		font-size: @ms-2;
+	}
+
+	.setting-title.setting-title {
+		font-size: @ms-1;
+	}
+
+	.setting-description {
+		font-size: @ms-0;
+	}
+
+
+	// Cards ------------------------------
+
+	.available-package-view {
+		font-size: @ms-0;
+		padding: @component-padding;
+		.meta-controls .status-indicator {
+			width: @component-padding/4;
+			height: @component-line-height;
+			box-sizing: content-box;
+		}
+	}
+
+
+	// Components ------------------------------
+
+	.icon::before {
+		color: @text-color-subtle;
+	}
+
+	.settings-panel label {
+		font-size: @ms-0;
+	}
+
+	.settings-panel .control-group + .control-group {
+		margin-top: @component-padding;
+	}
+
+	.checkbox {
+		font-size: @ms-0;
+		padding-left: @font-size*2;
+		min-height: @component-padding;
+		margin-top: @component-padding/2;
+		margin-bottom: @component-padding/2;
+	}
+	input[type="checkbox"] {
+		margin-left: -@font-size*2;
+	}
+
+	.form-control {
+		font-size: @font-size*1.25;
+		height: @component-line-height;
+	}
+
 }

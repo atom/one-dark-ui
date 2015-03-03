@@ -1,7 +1,10 @@
 
 @btn-border: 1px solid @button-border-color;
+@btn-padding: 0 @font-size/1.25;
 
-.btn-background (@color, @hover-color, @selected-color, @text-color) {
+// Mixins -----------------------
+
+.btn-default (@color, @hover-color, @selected-color, @text-color) {
   color: @text-color;
   text-shadow: none;
   border: @btn-border;
@@ -35,7 +38,7 @@
   @bg: @color;
   @hover: lighten(@bg, 3%);
   @selected: saturate(darken(@bg, 12%), 20%);
-  .btn-background(@bg, @hover, @selected, @text-color-highlight);
+  .btn-default(@bg, @hover, @selected, @text-color-highlight);
   color: @text-color;
   text-shadow: 0 1px 0 hsla(0,0%,0%,.2);
 
@@ -49,9 +52,17 @@
   }
 }
 
+
+// Buttons -----------------------
+
+.btn {
+  height: initial;
+  padding: @btn-padding;
+}
+
 .btn,
 .btn.btn-default {
-  .btn-background(@button-background-color, @button-background-color-hover, @button-background-color-selected, @text-color);
+  .btn-default(@button-background-color, @button-background-color-hover, @button-background-color-selected, @text-color);
 }
 
 .btn.btn-primary {
@@ -71,7 +82,29 @@
 }
 
 
-// Button Group
+// Button Group -----------------------
+
+.btn.btn-xs,
+.btn-group-xs > .btn {
+  font-size: @font-size*.8;
+  line-height: @component-line-height;
+  padding: @btn-padding;
+}
+.btn.btn-sm,
+.btn-group-sm > .btn {
+  font-size: @font-size*.9;
+  line-height: @component-line-height;
+  padding: @btn-padding;
+}
+.btn.btn-lg,
+.btn-group-lg > .btn {
+  font-size: @font-size * 1.5;
+  line-height: @component-line-height;
+  padding: @btn-padding;
+}
+
+
+// Button Group -----------------------
 
 .btn-group > .btn {
   z-index: 0;
@@ -118,11 +151,4 @@
   &.selected + .btn {
     border-left-color: @button-border-color-selected;
   }
-}
-
-
-// TODO: Move to a better place, not sure where it gets used
-.caret {
-  border-top: 5px solid #fff;
-  margin-top: -1px;
 }
