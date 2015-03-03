@@ -148,18 +148,19 @@
 
 // Sizes -------------------------------------
 
-@font-size:       11px;
-@input-font-size: 14px;
+html { font-size: 11px; }   // base font-size
 
-@disclosure-arrow-size: 12px;
+@font-size:             1em;
+@input-font-size:       @font-size*1.25;
+@disclosure-arrow-size: @font-size;
 
-@component-padding:      10px;
-@component-icon-padding:  5px;
-@component-icon-size:    16px;
-@component-line-height:  25px;
+@component-padding:       @font-size*1.5;
+@component-line-height:   @font-size*2;
+@component-icon-padding:  @component-padding/3.3;
+@component-icon-size:     16px; // needs to stay 16px to look sharpest
 @component-border-radius: 3px;
 
-@tab-height: 30px;
+@tab-height:              @component-padding*2;
 
 
 // Font -------------------------------------

@@ -1,4 +1,9 @@
+
+@modal-padding: @component-padding/2 @component-padding/1.5;
+
 atom-panel.modal {
+  width: @font-size * 40;
+  margin-left: @font-size * -20;
   color: @text-color;
   background-color: transparent;
   padding: @component-padding;
@@ -18,15 +23,11 @@ atom-panel.modal {
     }
 
     li {
-      padding: @component-padding;
+      padding: @modal-padding;
       border-bottom: 1px solid @overlay-border-color;
 
       &:last-of-type {
         border-bottom: none;
-      }
-
-      &.two-lines {
-        padding: @component-padding/2 @component-padding;
       }
 
       .status.icon {
@@ -45,6 +46,11 @@ atom-panel.modal {
     }
   }
 
+  .select-list .key-binding {
+    margin-top: -1px;
+    margin-left: @component-padding/2;
+    margin-right: calc( -@component-padding/3 ~"+" 1px);
+  }
 
   & > * {
     position: relative; // fixes stacking order
@@ -82,7 +88,7 @@ atom-panel.modal {
   }
 
   @-webkit-keyframes overlay-fade {
-      0% { opacity: 0; }
+    0% { opacity: 0; }
     100% { opacity: 1; }
   }
 

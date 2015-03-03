@@ -6,12 +6,6 @@ atom-workspace {
 	background-color: @app-background-color;
 }
 
-.status-bar .icon:before {
-	font-size: 16px; // keeps them sharp
-	width: 16px;
-	height: 16px;
-}
-
 // Scrollbars
 .scrollbars-visible-always {
 	/deep/ ::-webkit-scrollbar {
@@ -45,4 +39,10 @@ atom-workspace {
 		border-top-width: 0;
 		border-bottom-width: 0;
 	}
+}
+
+// TODO: Move to a better place, not sure where it gets used
+.caret {
+  border-top: 5px solid #fff;
+  margin-top: -1px;
 }

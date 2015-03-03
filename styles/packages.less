@@ -1,0 +1,59 @@
+// Overrides packages
+
+// find-and-replace ---------------------------
+.find-and-replace {
+
+  .btn,
+  .btn-group-options.btn-group .btn,
+  .btn-group-options.btn-group .btn.option-selection,
+  .btn-group-options.btn-group .btn.option-whole-word {
+    font-size: @font-size*1.25;
+    padding: 0;
+  }
+
+  .btn-group {
+    &.btn-group-options {
+      width: @font-size * 10;
+      display: flex;
+      & > .btn {
+        flex: 1;
+      }
+      .btn.option-selection {
+        padding-top: 0;
+      }
+    }
+    &.btn-group-replace-all {
+      width: @font-size * 10;
+    }
+    &.btn-group-find,
+    &.btn-group-replace {
+      width: @font-size * 7.5;
+    }
+  }
+
+  // atom-text-editor[mini]
+  .find-meta-container {
+    top: @font-size*.35; // 1.25 (parent font-size) - 0.9 (font-size)
+  }
+}
+
+// project-find ---------------------------
+.project-find {
+  .btn,
+  .btn-group.btn-group-options .btn {
+    font-size: @font-size*1.25;
+    padding: 0;
+  }
+  .btn-group {
+    &.btn-group-replace-all,
+    &.btn-group-options {
+      width: @font-size * 10;
+    }
+  }
+}
+
+
+// markdown-preview ---------------------------
+.markdown-preview {
+  font-size: @font-size;
+}

@@ -1,0 +1,35 @@
+@status-bar-height: @component-padding*1.5;
+@status-bar-padding: @component-padding;
+
+.status-bar {
+  font-size: @font-size;
+  height: @status-bar-height;
+  line-height: @status-bar-height;
+
+  .flexbox-repaint-hack {
+    padding: 0 @status-bar-padding/2;
+  }
+
+  .inline-block {
+    margin-right: @status-bar-padding;
+    vertical-align: top;
+  }
+  .pull-right {
+    .inline-block {
+      margin-right: 0;
+      margin-left: @status-bar-padding;
+      & > .inline-block {
+        margin-left: 0;
+      }
+    }
+    .icon {
+      margin-right: @status-bar-padding/4;
+    }
+  }
+
+  .icon::before {
+    font-size: 16px; // keeps them sharp
+  	width: 16px;
+    height: 16px;
+  }
+}

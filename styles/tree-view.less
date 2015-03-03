@@ -1,14 +1,16 @@
+@tree-view-height: @component-padding*1.5;
+
 .tree-view {
   font-size: @font-size;
   background: @tree-view-background-color;
 
-  .project-root {
+  .project-root.project-root {
     &:before {
-      height: @tab-height + 1px; // + 1px border
+      height: @tab-height;
       border-bottom: 1px solid @base-border-color;
     }
     & > .header .name {
-        line-height: @tab-height + 1px; // + 1px border
+      line-height: @tab-height;
     }
   }
 
@@ -23,16 +25,28 @@
   }
 }
 
-.focusable-panel {
-  opacity: 1;
-  background: @tree-view-background-color;
+// Variable height, based on ems
+.list-group li:not(.list-nested-item),
+.list-tree li:not(.list-nested-item),
+.list-group li.list-nested-item > .list-item,
+.list-tree li.list-nested-item > .list-item {
+  line-height: @tree-view-height;
+}
 
-  &:focus {
-    .selected {
-      color: @text-color-selected;
-      &:before {
-        background: @background-color-selected;
-      }
-    }
+.list-group .selected::before,
+.list-tree .selected::before {
+  height: @tree-view-height;
+}
+
+// icon
+.list-group .icon,
+.list-tree .icon {
+  display: inline-block;
+  height: inherit;
+  &::before {
+    top: initial;
+    line-height: inherit;
+    height: inherit;
+    vertical-align: top;
   }
 }
