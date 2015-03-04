@@ -56,8 +56,58 @@
 
 // markdown-preview ---------------------------
 .markdown-preview {
-  font-size: @font-size;
+  font-size: @font-size*1.25;
+  color: @text-color;
+  background-color: @base-background-color;
+
+  h1, h2 {
+    color: inherit;
+    border-color: @base-border-color;
+  }
+
+  a {
+    color: @text-color-highlight;
+  }
+
+  hr {
+    background-color: @text-color-subtle;
+  }
+
+  blockquote {
+    color: @text-color;
+    border-left-color: @text-color-subtle;
+  }
+
+  code {
+    color: lighten(@text-color, 20%);
+    border-color: @base-border-color;
+    background-color: lighten(@base-background-color, 10%);
+    background-clip: padding-box;
+  }
+
+  atom-text-editor {
+    background-color: @level-3-color;
+    &::shadow {
+      .lines {
+        background-color: @level-3-color;
+      }
+      .line.cursor-line {
+        background-color: transparent;
+      }
+    }
+  }
 }
+
+/* Active tab for default background
+.tab.active[data-type="MarkdownPreviewView"] {
+  color: @tab-text-color-editor;
+  background-color: #fff;
+  &:after {
+    border-bottom-color: #fff;
+  }
+}
+*/
+
 
 
 // git-control ---------------------------
