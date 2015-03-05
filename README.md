@@ -17,15 +17,17 @@ This theme is installed by default with Atom and can be activated by going to th
 You can scale the whole UI up or down by adding this to your `styles.less`:
 
 ```css
-html { font-size: 14px; }
+.theme-one-dark-ui { font-size: 14px; }
 ```
 
 It's also possible to only change certain areas (Use the DevTools to find the right selectors):
 
 ```css
-.tab-bar { font-size: 18px; }
-.tree-view { font-size: 14px; }
-.status-bar { font-size: 12px; }
+.theme-one-dark-ui {
+  .tab-bar { font-size: 18px; }
+  .tree-view { font-size: 14px; }
+  .status-bar { font-size: 12px; }
+}
 ```
 
 ### FAQ
