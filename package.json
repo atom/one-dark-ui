@@ -1,10 +1,10 @@
 {
-  "name": "one-dark-ui",
+  "name": "solo-one-dark-ui",
   "theme": "ui",
-  "version": "0.5.0",
-  "description": "Atom One dark UI theme",
+  "version": "0.0.1",
+  "description": "Solo One dark UI theme (Solarised)",
   "license": "MIT",
-  "repository": "https://github.com/atom/one-dark-ui",
+  "repository": "https://github.com/soloman1124/solo-one-dark-ui",
   "engines": {
     "atom": ">0.40.0"
   }
