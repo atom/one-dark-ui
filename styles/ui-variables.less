@@ -8,6 +8,21 @@
 //   content: "@{variable}";
 // }
 
+// Solar colours
+
+@solar-color-base01: #93A1A1;
+@solar-color-base01-dark: #304647;
+@solar-color-base02-light: lighten(@solar-color-base02, 5%);
+@solar-color-base02: #073642;
+@solar-color-base03: #002B36;
+@solar-color-base04: #00222D;
+@solar-color-base0: #839496;
+@solar-color-base1: #93a1a1;
+@solar-color-base2: #eee8d5;
+@solar-color-base3: #fdf6e3;
+@solar-color-cyan:  #2aa198;
+
+
 // Adjust -----------------------------------
 
 @ui-a:       hsl(252, 11%, 18%); // fallback
@@ -32,7 +47,7 @@
 
 // Base colors -----------------------------------
 
-@base-accent-color:     hsl(@ui-hue, @ui-saturation + 70%, @ui-lightness + 40%);
+@base-accent-color:     @solar-color-cyan;
 @base-background-color: @ui-color;
 @base-border-color:     hsl(@ui-hue, @ui-saturation, @ui-lightness*.7);
 
@@ -128,23 +143,22 @@
 
 // Text Colors -------------------------------------
 
-@text-color: hsl(@ui-hue, min(40%, @ui-saturation), max(50%, @ui-lightness * 3) );
-@text-color-subtle: fadeout(@text-color, 40%);
+@text-color: @solar-color-base2;
+@text-color-subtle: @solar-color-base1;
 @text-color-faded: fade(@text-color, 20%);
-@text-color-highlight: hsl(@ui-hue, @ui-saturation*8, 88%);
-@text-color-selected: white;
+@text-color-highlight: @solar-color-base3;
+@text-color-selected: @text-color-highlight;
 
-@text-color-info:    hsl(219,  79%, 66%);
-@text-color-success: hsl(140,  44%, 62%);
-@text-color-warning: hsl( 36,  60%, 72%);
-@text-color-error:   hsl(  9, 100%, 64%);
+@text-color-info: #5293d8;
+@text-color-success: #26c26a;
+@text-color-warning: #ff982d;
+@text-color-error: #c00;
 
 @text-color-added:    @text-color-success;  // green
 @text-color-ignored:  @text-color-subtle;   // faded
 @text-color-modified: @text-color-warning;  // orange
 @text-color-removed:  @text-color-error;    // red
 @text-color-renamed:  @text-color-info;     // blue
-
 
 // Sizes -------------------------------------
 
