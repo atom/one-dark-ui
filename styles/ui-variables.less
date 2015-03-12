@@ -168,9 +168,15 @@ html { font-size: 11px; }   // base font-size
 @font-family: 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
 
 
-// Settings View -------------------------------------
+// Packages -------------------------------------
 
 @settings-list-background-color: darken(@level-2-color, 1.5%);
 @theme-config-box-shadow: inset 0 0 3px hsla(0, 0%, 100%, .4), 0 1px 3px hsla(0, 0%, 0%, .2);
 @theme-config-box-shadow-selected: inset 0 1px 3px hsla(0, 0%, 0%, .1);
 @theme-config-border-selected: hsla(0, 0%, 100%, .75);
+
+@markdown-preview-color: lighten(@text-color, 15%);
+@markdown-preview-background-color: lighten(@base-background-color, 3%);
+@markdown-preview-hr-color: lighten(@base-background-color, 3%);
+@markdown-preview-code-color: lighten(@text-color, 30%);
+@markdown-preview-code-background-color: lighten(@base-background-color, 10%);
