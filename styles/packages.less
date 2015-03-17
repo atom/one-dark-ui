@@ -56,5 +56,47 @@
 
 // markdown-preview ---------------------------
 .markdown-preview {
-  font-size: @font-size;
+  font-size: @font-size*1.25;
+  color: @markdown-preview-color;
+  background-color: @markdown-preview-background-color;
+
+
+  h1, h2 {
+    color: inherit;
+    border-color: @base-border-color;
+  }
+
+  a {
+    color: @text-color-highlight;
+  }
+
+  hr {
+    background-color: @text-color-subtle;
+  }
+
+  blockquote {
+    color: @text-color;
+    border-left-color: @text-color-subtle;
+  }
+
+  code {
+    color: @markdown-preview-code-color;
+    border-color: @base-border-color;
+    background-color: @markdown-preview-code-background-color;
+    background-clip: padding-box;
+  }
+
+  atom-text-editor::shadow {
+    .line.cursor-line {
+      background-color: transparent;
+    }
+  }
+}
+
+// Active tab for default background
+.tab.active[data-type="MarkdownPreviewView"] {
+  background-color: @markdown-preview-background-color;
+  &:after {
+    border-bottom-color: @markdown-preview-background-color;
+  }
 }
