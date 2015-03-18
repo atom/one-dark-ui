@@ -1,15 +1,10 @@
+
+/* ONE light UI variables
+** ---------------------------------------------- */
+
 @import "syntax-variables";
 
-// ONE light UI variables
-// -----------------------------------
-
-// Debug (console.log for Less)
-// html:before {
-//   content: "@{variable}";
-// }
-
-// Adjust -----------------------------------
-
+// Config -----------------
 @ui-a:       hsl(40, 2%, 98%); // fallback
 @ui-a:       @syntax-background-color;
 @ui-a-h:     hue(@ui-a);
@@ -21,33 +16,35 @@
 .ui-a-color();
 
 
-// Config -----------------------------------
-
+// UI color -----------------
 @ui-hue:        hue(@ui-a-color);
 @ui-saturation: saturation(@ui-a-color);
 @ui-lightness:  lightness(@ui-a-color);
 @ui-color:      @ui-a-color;
 
 
-// Base colors -----------------------------------
-
-@base-accent-color:     hsl(@ui-hue, @ui-saturation + 80%, min(@ui-lightness - 40%, 60%) );
-@base-background-color: @ui-color;
-@base-border-color:     darken(@ui-color, 15%);
-
-// Editor colors -----------------------------------
-@ui-editor-background-color: @ui-a;
 
 
-// Level Colors -----------------------------------
 
-@level-1-color: lighten(@base-background-color, 4%);
-@level-2-color: @base-background-color;
-@level-3-color: darken(@base-background-color, 6%);
+/* Official variables
+** These variables must be defined in every theme
+** Source: https://github.com/atom/atom/blob/master/static/variables/ui-variables.less
+** ---------------------------------------------- */
 
 
-// Var + State Background Colors -------------------------------------
+// Text -----------------
+@text-color:            hsl(@ui-hue, @ui-saturation, -70% + @ui-lightness);
+@text-color-subtle:     fadeout(@text-color, 30%);
+@text-color-highlight:  hsl(@ui-hue, @ui-saturation + 20%, 30%);
+@text-color-selected:   darken(@text-color-highlight, 10%);
 
+@text-color-info:    hsl(208, 100%, 54%);
+@text-color-success: hsl(132,  60%, 44%);
+@text-color-warning: hsl( 37,  90%, 44%);
+@text-color-error:   hsl(  0,  90%, 56%);
+
+
+// Background -----------------
 @background-color-info:    hsl(208, 100%, 56%);
 @background-color-success: hsl(132,  48%, 48%);
 @background-color-warning: hsl( 40,  60%, 52%);
@@ -56,30 +53,20 @@
 @background-color-highlight: hsla(@ui-hue, 10% + @ui-saturation, 50%,.12);
 @background-color-selected:  hsla(@ui-hue, 10% + @ui-saturation, 50%,.18);
 
+@app-background-color: darken(@level-3-color, 2%);
 
-// Component Colors -------------------------------------
 
-@app-background-color:             darken(@level-3-color, 2%);
+// Base -----------------
+@base-background-color: @ui-color;
+@base-border-color:     darken(@ui-color, 15%);
 
-@tree-view-background-color:       @level-3-color;
-@tree-view-border-color:           @base-border-color;
 
-@tab-background-color:             @level-3-color;
-@tab-background-color-active:      @level-2-color;
-@tab-bar-background-color:         @level-3-color;
-@tab-bar-border-color:             @base-border-color;
-@tab-border-color:                 @base-border-color;
-@tab-text-color:                   @text-color-highlight;
-@tab-icon-color:                   @text-color-subtle;
-@tab-inactive-transparency:        .7;
-@tab-background-color-editor:      @ui-editor-background-color;
-@tab-text-color-editor:            contrast(@ui-editor-background-color, lighten(@ui-editor-background-color, 70%), @text-color-highlight );
-
+// Components -----------------
 @pane-item-background-color:       @base-background-color;
 @pane-item-border-color:           @base-border-color;
 
-@panel-heading-background-color:   @level-2-color;
-@panel-heading-border-color:       @base-border-color;
+@input-background-color:           @level-1-color;
+@input-border-color:               @base-border-color;
 
 @tool-panel-background-color:      @level-3-color;
 @tool-panel-border-color:          @base-border-color;
@@ -87,42 +74,25 @@
 @inset-panel-background-color:     lighten(@level-2-color, 4%);
 @inset-panel-border-color:         fadeout(@base-border-color, 15%);
 
+@panel-heading-background-color:   @level-2-color;
+@panel-heading-border-color:       @base-border-color;
+
 @overlay-background-color:         @level-2-color;
 @overlay-border-color:             @base-border-color;
-@overlay-backdrop-color:           hsla(@ui-hue,@ui-saturation,5%,.5);
-
-@badge-background-color:           fadein(@background-color-highlight, 8%);
 
 @button-background-color:          @level-1-color;
 @button-background-color-hover:    darken(@button-background-color, 4%);
 @button-background-color-selected: lighten(@base-accent-color, 4%);
-@button-text-color-selected:       contrast(@button-background-color-selected, hsl(@ui-hue,100%,100%), hsl(@ui-hue,100%,12%), 40% );
 @button-border-color:              @base-border-color;
-@button-border-color-selected:     @base-accent-color;
 
-@input-border-color:               @base-border-color;
-@input-background-color:           @level-1-color;
-@input-background-color-focus:     mix(@base-accent-color, @input-background-color, 6%);
-@input-selection-color:            @background-color-selected;
-@input-selection-color-focus:      fadein(@background-color-selected, 6%);
+@tab-bar-background-color:         @level-3-color;
+@tab-bar-border-color:             @base-border-color;
+@tab-background-color:             @level-3-color;
+@tab-background-color-active:      @level-2-color;
+@tab-border-color:                 @base-border-color;
 
-@tooltip-background-color:         @base-accent-color;
-@tooltip-text-color:               contrast(@tooltip-background-color, hsl(@ui-hue,100%,100%), hsl(@ui-hue,100%,12%), 40% );
-@tooltip-text-key-color:           @tooltip-background-color;
-@tooltip-background-key-color:     @tooltip-text-color;
-
-@progress-background-color:        @base-accent-color;
-
-@checkbox-background-color:        fade(@base-accent-color, 33%);
-
-@scrollbar-color:                  @level-1-color;
-@scrollbar-background-color:       @level-3-color; // replaced `transparent` with a solid color to test https://github.com/atom/one-light-ui/issues/4
-
-
-// Utilities
-
-@key-binding-border-color:     @base-border-color;
-@key-binding-background-color: @level-2-color;
+@tree-view-background-color:       @level-3-color;
+@tree-view-border-color:           @base-border-color;
 
 @ui-site-color-1: hsl(132,  48%, 48%); // green
 @ui-site-color-2: hsl(208, 100%, 56%); // blue
@@ -131,18 +101,33 @@
 @ui-site-color-5: #EBDD5B;             // yellow
 
 
-// Text Colors -------------------------------------
+// Sizes -----------------
+@font-size:               1em;
+@input-font-size:         @font-size*1.25;
+@disclosure-arrow-size:   @font-size;
 
-@text-color: hsl(@ui-hue, @ui-saturation, -70% + @ui-lightness);
-@text-color-subtle: fadeout(@text-color, 30%);
+@component-padding:       @font-size*1.5;
+@component-icon-padding:  @component-padding/3.3;
+@component-icon-size:     16px; // needs to stay 16px to look sharpest
+@component-line-height:   @font-size*2;
+@component-border-radius: 3px;
+
+@tab-height:              @component-padding*2;
+
+
+// Font -----------------
+@font-family: 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+
+
+
+
+
+/* Custom variables
+** These variables are only used in this theme
+** ---------------------------------------------- */
+
+// Text (Custom) -----------------
 @text-color-faded: fade(@text-color, 30%);
-@text-color-highlight: hsl(@ui-hue, @ui-saturation + 20%, 30%);
-@text-color-selected: darken(@text-color-highlight, 10%);
-
-@text-color-info:    hsl(208, 100%, 54%);
-@text-color-success: hsl(132,  60%, 44%);
-@text-color-warning: hsl( 37,  90%, 44%);
-@text-color-error:   hsl(  0,  90%, 56%);
 
 @text-color-added:    @text-color-success;  // green
 @text-color-ignored:  @text-color-subtle;   // faded
@@ -151,29 +136,62 @@
 @text-color-renamed:  @text-color-info;     // blue
 
 
-// Sizes -------------------------------------
+// Background (Custom) -----------------
+@level-1-color: lighten(@base-background-color, 4%);
+@level-2-color: @base-background-color;
+@level-3-color: darken(@base-background-color, 6%);
 
-html { font-size: 11px; }   // base font-size
-
-@font-size:             1em;
-@input-font-size:       @font-size*1.25;
-@disclosure-arrow-size: @font-size;
-
-@component-padding:       @font-size*1.5;
-@component-line-height:   @font-size*2;
-@component-icon-padding:  @component-padding/3.3;
-@component-icon-size:     16px; // needs to stay 16px to look sharpest
-@component-border-radius: 3px;
-
-@tab-height:              @component-padding*2;
+@ui-editor-background-color: @ui-a;
 
 
-// Font -------------------------------------
+// Base (Custom) -----------------
+@base-accent-color: hsl(@ui-hue, @ui-saturation + 80%, min(@ui-lightness - 40%, 60%) );
 
-@font-family: 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+
+// Components (Custom) -----------------
+@badge-background-color:           fadein(@background-color-highlight, 8%);
+
+@button-text-color-selected:       contrast(@button-background-color-selected, hsl(@ui-hue,100%,100%), hsl(@ui-hue,100%,12%), 40% );
+@button-border-color-selected:     @base-accent-color;
+
+@checkbox-background-color:        fade(@base-accent-color, 33%);
+
+@input-background-color-focus:     mix(@base-accent-color, @input-background-color, 6%);
+@input-selection-color:            @background-color-selected;
+@input-selection-color-focus:      fadein(@background-color-selected, 6%);
+
+@key-binding-border-color:         @base-border-color;
+@key-binding-background-color:     @level-2-color;
+
+@overlay-backdrop-color:           hsla(@ui-hue,@ui-saturation,5%,.5);
+
+@progress-background-color:        @base-accent-color;
+
+@scrollbar-color:                  @level-1-color;
+@scrollbar-background-color:       @level-3-color; // replaced `transparent` with a solid color to test https://github.com/atom/one-light-ui/issues/4
+
+@tab-text-color:                   @text-color-highlight;
+@tab-icon-color:                   @text-color-subtle;
+@tab-inactive-transparency:        .7;
+@tab-background-color-editor:      @ui-editor-background-color;
+@tab-text-color-editor:            contrast(@ui-editor-background-color, lighten(@ui-editor-background-color, 70%), @text-color-highlight );
+
+@tooltip-background-color:         @base-accent-color;
+@tooltip-text-color:               contrast(@tooltip-background-color, hsl(@ui-hue,100%,100%), hsl(@ui-hue,100%,12%), 40% );
+@tooltip-text-key-color:           @tooltip-background-color;
+@tooltip-background-key-color:     @tooltip-text-color;
 
 
-// Packages -------------------------------------
+// Sizes (Custom) -----------------
+html { font-size: 11px; } // base font-size
+
+
+
+
+
+/* Packages variables
+** These variables are used to override packages
+** ---------------------------------------------- */
 
 @settings-list-background-color: darken(@level-2-color, 3%);
 @theme-config-box-shadow: inset 0 1px 2px hsla(0, 0%, 0%, .2), 0 1px 0 hsla(0, 0%, 100%, .3);
@@ -185,3 +203,13 @@ html { font-size: 11px; }   // base font-size
 @markdown-preview-hr-color: lighten(@base-background-color, 3%);
 @markdown-preview-code-color: lighten(@text-color, 10%);
 @markdown-preview-code-background-color: darken(@base-background-color, 1%);
+
+
+
+/* Debug
+** Output variables to the top of the UI
+** ------------------------------------- */
+
+// html:before {
+//   content: "@{variable}";
+// }
