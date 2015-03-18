@@ -12,14 +12,13 @@
 
 @ui-a:       hsl(252, 11%, 18%); // fallback
 @ui-a:       @syntax-background-color;
-
-// Goal: use @syntax-background-color if it's dark enough, otherwise use same hue but stay dark
-// The light up by 100% is done to trick contrast() into picking one of 2 dark colors
 @ui-a-h:     hue(@ui-a);
 @ui-a-s:     min( saturation(@ui-a), 12%);
-@ui-a-l:     luma(@ui-a) + 100%; // (1) light up
-@ui-a-light: hsl(@ui-a-h, @ui-a-s, @ui-a-l); // (2) flashed color
-@ui-a-color: contrast(@ui-a-light, @ui-a, hsl(@ui-a-h, @ui-a-s, 24%) ); // (3) use @ui-a if darker than 24%
+@ui-a-l:     luma(@ui-a);
+
+.ui-a-color() when (@ui-a-l <= 50%) { @ui-a-color: @ui-a; }
+.ui-a-color() when (@ui-a-l > 50%)  { @ui-a-color: hsl(@ui-a-h, @ui-a-s, 24%); }
+.ui-a-color();
 
 
 // Config -----------------------------------
