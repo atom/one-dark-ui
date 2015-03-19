@@ -5,22 +5,22 @@
 @import "syntax-variables";
 
 // Config -----------------
-@ui-a:       hsl(252, 11%, 18%); // fallback
-@ui-a:       @syntax-background-color;
-@ui-a-h:     hue(@ui-a);
-@ui-a-s:     min( saturation(@ui-a), 12%);
-@ui-a-l:     luma(@ui-a);
+@ui-s:       @syntax-background-color;
+@ui-s-h:     hue(@ui-s);
+@ui-s-s:     min( saturation(@ui-s), 12%);
+@ui-s-l:     luma(@ui-s);
 
-.ui-a-color() when (@ui-a-l <= 50%) { @ui-a-color: @ui-a; }
-.ui-a-color() when (@ui-a-l > 50%)  { @ui-a-color: hsl(@ui-a-h, @ui-a-s, 24%); }
-.ui-a-color();
+.ui-s-color() when (@ui-s-l <= 50%) { @ui-s-color: @ui-s; }
+.ui-s-color() when (@ui-s-l > 50%)  { @ui-s-color: hsl(@ui-s-h, @ui-s-s, 24%); }
+.ui-s-color(); // ^ Use @syntax-background-color if dark, otherwise only use hue + saturation
 
 
-// UI color -----------------
-@ui-hue:        hue(@ui-a-color);
-@ui-saturation: saturation(@ui-a-color);
-@ui-lightness:  lightness(@ui-a-color);
-@ui-color:      @ui-a-color;
+// Main UI colors -----------------
+@ui-hue:          hue(@ui-s-color);
+@ui-saturation:   saturation(@ui-s-color);
+@ui-lightness:    lightness(@ui-s-color);
+@ui-color:        @ui-s-color; // normalized @syntax-background-color
+@ui-syntax-color: @ui-s;       // original @syntax-background-color
 
 
 
@@ -141,8 +141,6 @@
 @level-2-color: @base-background-color;
 @level-3-color: darken(@base-background-color, 3%);
 
-@ui-editor-background-color: @ui-a;
-
 
 // Base -----------------
 @base-accent-color: hsl(@ui-hue, @ui-saturation + 70%, @ui-lightness + 40%);
@@ -173,8 +171,8 @@
 @tab-text-color:                   @text-color-highlight;
 @tab-icon-color:                   @text-color-subtle;
 @tab-inactive-transparency:        .5;
-@tab-background-color-editor:      @ui-editor-background-color;
-@tab-text-color-editor:            contrast(@ui-editor-background-color, darken(@ui-editor-background-color, 50%), @text-color-highlight );
+@tab-background-color-editor:      @ui-syntax-color;
+@tab-text-color-editor:            contrast(@ui-syntax-color, darken(@ui-syntax-color, 50%), @text-color-highlight );
 
 @tooltip-background-color:         @base-accent-color;
 @tooltip-text-color:               contrast(@tooltip-background-color, white, hsl(@ui-hue,100%,10%), 40% );
