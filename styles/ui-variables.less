@@ -5,22 +5,13 @@
 @import "syntax-variables";
 
 // Config -----------------
-@ui-s:       @syntax-background-color;
-@ui-s-h:     hue(@ui-s);
-@ui-s-s:     min( saturation(@ui-s), 12%);
-@ui-s-l:     luma(@ui-s);
+@ui-syntax-color: @syntax-background-color;
 
-.ui-s-color() when (@ui-s-l <= 50%) { @ui-s-color: @ui-s; }
-.ui-s-color() when (@ui-s-l > 50%)  { @ui-s-color: hsl(@ui-s-h, @ui-s-s, 24%); }
-.ui-s-color(); // ^ Use @syntax-background-color if dark, otherwise only use hue + saturation
+@ui-hue:          hue(@ui-syntax-color);
+@ui-saturation:   min( saturation(@ui-syntax-color),  8%);
+@ui-lightness:    min(  lightness(@ui-syntax-color), 26%);
 
-
-// Main UI colors -----------------
-@ui-hue:          hue(@ui-s-color);
-@ui-saturation:   saturation(@ui-s-color);
-@ui-lightness:    lightness(@ui-s-color);
-@ui-color:        @ui-s-color; // normalized @syntax-background-color
-@ui-syntax-color: @ui-s;       // original @syntax-background-color
+@ui-color:        hsl(@ui-hue, @ui-saturation, @ui-lightness); // normalized @syntax-background-color
 
 
 
