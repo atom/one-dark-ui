@@ -3,8 +3,13 @@
 }
 
 atom-workspace {
-	padding: 0 @component-padding/2;
+	padding-right: @component-padding/2;
 	background-color: @app-background-color;
+
+	atom-panel-container.left:empty {
+		padding-left: @component-padding/2;
+	}
+
 }
 
 // Scrollbars
