@@ -75,10 +75,6 @@
         opacity: .3;
       }
     }
-
-    &:last-of-type {
-      margin-right: -@tab-border-size;
-    }
   }
 
   .tab.active {
@@ -177,12 +173,6 @@
       }
     }
   }
-}
-
-// No minus margin on the last/single item in a row
-atom-pane-axis.horizontal > atom-pane:last-of-type > .tab-bar .tab:last-of-type,
-atom-pane:only-child > .tab-bar .tab:last-of-type {
-  margin-right: 0;
 }
 
 
