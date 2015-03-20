@@ -1,37 +1,12 @@
 
-@panes-padding: @component-padding/2;
-
 atom-pane-container {
-  padding-right: @panes-padding;
-  //border-right: 1px solid @pane-item-border-color;
-
   atom-pane {
     position: relative;
-    padding-top: @panes-padding;
+    padding-top: @component-padding/2;
 
     .item-views {
       border: 1px solid @pane-item-border-color;
-      border-width: 0 0 1px 1px;
+      border-top: none;
     }
-
   }
-
-  // add right border only to the last/single item in a row
-  atom-pane-axis.horizontal > atom-pane:last-of-type > .item-views,
-  atom-pane:only-child > .item-views {
-    border-right: 1px solid @pane-item-border-color;
-  }
-
-
-  // atom-pane-axis {
-  //   &.horizontal > * {
-  //     border-right: 1px solid @pane-item-border-color;
-  //     &:last-child { border-right: none; }
-  //   }
-  //
-  //   &.vertical > * {
-  //     border-bottom: 1px solid @pane-item-border-color;
-  //     &:last-child { border-bottom: none; }
-  //   }
-  // }
 }
