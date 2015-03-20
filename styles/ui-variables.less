@@ -3,15 +3,16 @@
 ** ---------------------------------------------- */
 
 @import "syntax-variables";
-
-// Config -----------------
 @ui-syntax-color: @syntax-background-color;
 
+// Color guards -----------------
 @ui-hue:          hue(@ui-syntax-color);
-@ui-saturation:   min( saturation(@ui-syntax-color), 24%);
-@ui-lightness:    max(  lightness(@ui-syntax-color), 92%);
+@ui-saturation:   min( saturation(@ui-syntax-color), 24%); // max saturation
+@ui-lightness:    max(  lightness(@ui-syntax-color), 92%); // min lightness
 
-@ui-color:        hsl(@ui-hue, @ui-saturation, @ui-lightness); // normalized @syntax-background-color
+// Main colors -----------------
+@ui-fg: hsl(@ui-hue, @ui-saturation, @ui-lightness - 66%);
+@ui-bg: hsl(@ui-hue, @ui-saturation, @ui-lightness); // normalized @syntax-background-color
 
 
 
@@ -24,7 +25,7 @@
 
 
 // Text -----------------
-@text-color:            hsl(@ui-hue, @ui-saturation, -70% + @ui-lightness);
+@text-color:            @ui-fg;
 @text-color-subtle:     fadeout(@text-color, 30%);
 @text-color-highlight:  hsl(@ui-hue, @ui-saturation + 20%, 30%);
 @text-color-selected:   darken(@text-color-highlight, 10%);
@@ -48,8 +49,8 @@
 
 
 // Base -----------------
-@base-background-color: @ui-color;
-@base-border-color:     darken(@ui-color, 15%);
+@base-background-color: @ui-bg;
+@base-border-color:     darken(@base-background-color, 15%);
 
 
 // Components -----------------
