@@ -3,15 +3,26 @@
 ** ---------------------------------------------- */
 
 @import "syntax-variables";
-
-// Config -----------------
 @ui-syntax-color: @syntax-background-color;
 
-@ui-hue:          hue(@ui-syntax-color);
-@ui-saturation:   min( saturation(@ui-syntax-color),  8%);
-@ui-lightness:    min(  lightness(@ui-syntax-color), 26%);
+// Color guards -----------------
+@ui-hue: hue(@ui-syntax-color);
 
-@ui-color:        hsl(@ui-hue, @ui-saturation, @ui-lightness); // normalized @syntax-background-color
+@ui-s-s: saturation(@ui-syntax-color);
+.ui-saturation() when (@ui-hue <=  80) { @ui-saturation: min(@ui-s-s,  6%); } // minimize saturation for brown
+.ui-saturation() when (@ui-hue >   80)
+                  and (@ui-hue <  160) { @ui-saturation: min(@ui-s-s, 12%); } // reduce saturation for green
+.ui-saturation() when (@ui-hue >= 160) { @ui-saturation: min(@ui-s-s, 24%); } // limit max saturaiotn for the rest
+.ui-saturation();
+
+@ui-s-l: lightness(@ui-syntax-color);
+.ui-lightness() when (@ui-s-l <  16%) { @ui-lightness: @ui-s-l + 6%; } // increase lightness when too dark
+.ui-lightness() when (@ui-s-l >= 16%) { @ui-lightness: min(@ui-s-l, 22%); } // limit max lightness
+.ui-lightness();
+
+// Main colors -----------------
+@ui-fg: hsl(@ui-hue, min(@ui-saturation, 18%), max(@ui-lightness*3, 60%) );
+@ui-bg: hsl(@ui-hue, @ui-saturation, @ui-lightness); // normalized @syntax-background-color
 
 
 
@@ -24,7 +35,7 @@
 
 
 // Text -----------------
-@text-color:            hsl(@ui-hue, min(40%, @ui-saturation), max(50%, @ui-lightness * 3) );
+@text-color:            @ui-fg;
 @text-color-subtle:     fadeout(@text-color, 40%);
 @text-color-highlight:  hsl(@ui-hue, @ui-saturation*8, 88%);
 @text-color-selected:   white;
@@ -48,7 +59,7 @@
 
 
 // Base -----------------
-@base-background-color: @ui-color;
+@base-background-color: @ui-bg;
 @base-border-color:     hsl(@ui-hue, @ui-saturation, @ui-lightness*.7);
 
 
