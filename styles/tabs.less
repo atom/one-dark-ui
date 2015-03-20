@@ -1,6 +1,6 @@
 @modified-icon-width: @font-size*1.5;
 @tab-border-size: 1px;
-@tab-border: @tab-border-size solid @tab-border-color;
+@tab-border: @tab-border-size solid transparent;
 @tab-max-width: @font-size*15;
 @tab-min-width: @font-size*3.2;
 @tab-padding: @component-padding/1.5;
@@ -29,8 +29,8 @@
     color: @tab-text-color;
     background: @tab-background-color;
     background-clip: padding-box;
-    border-right: @tab-border;
-    border-bottom: @tab-border-size solid transparent;
+    border: @tab-border;
+    border-radius: @component-border-radius @component-border-radius 0 0;
     opacity: @tab-inactive-transparency;
     transition: opacity .3s;
 
@@ -46,6 +46,7 @@
       position: relative;
       z-index: 1;
       padding: 0 @tab-padding;
+      text-align: center;
     }
 
     .close-icon {
@@ -80,11 +81,11 @@
     z-index: 1;
     flex: 2 0 auto;
     padding-right: @modified-icon-width;
+    border-color: @tab-border-color;
     background-color: @tab-background-color-active;
     opacity: 1;
 
     &:last-of-type {
-      border-right-color: @tab-border-color;
       margin-right: -@tab-border-size;
     }
 
@@ -189,6 +190,7 @@
   left: 0;
   width: 2px;
   height: @tab-height;
+  border-top-left-radius: inherit;
   background: @base-accent-color;
   transform: scaleY(0);
   transition: transform .08s;
