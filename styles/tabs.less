@@ -75,6 +75,10 @@
         opacity: .3;
       }
     }
+
+    &:last-of-type {
+      margin-right: -@tab-border-size;
+    }
   }
 
   .tab.active {
@@ -86,10 +90,6 @@
     background-image: linear-gradient( hsla(0,0%,100,.02), hsla(0,0%,100,0) );
     box-shadow: inset 0 1px 1px hsla(0,0%,100,.06);
     opacity: 1;
-
-    &:last-of-type {
-      margin-right: -@tab-border-size;
-    }
 
     & .close-icon {
       transform: scale(1);
@@ -177,6 +177,12 @@
       }
     }
   }
+}
+
+// No minus margin on the last/single item in a row
+atom-pane-axis.horizontal > atom-pane:last-of-type > .tab-bar .tab:last-of-type,
+atom-pane:only-child > .tab-bar .tab:last-of-type {
+  margin-right: 0;
 }
 
 
