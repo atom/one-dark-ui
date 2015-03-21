@@ -1,9 +1,9 @@
-@modified-icon-width: @font-size*1.5;
 @tab-border-size: 1px;
 @tab-border: @tab-border-size solid transparent;
 @tab-max-width: @font-size*15;
-@tab-min-width: @font-size*3.2;
-@tab-padding: @component-padding/1.5;
+@tab-min-width: @font-size*5;
+@tab-padding: @component-padding/2;
+@modified-icon-width: @font-size*1.5;
 
 .tab-bar {
   height: @tab-height;
@@ -34,60 +34,47 @@
     opacity: @tab-inactive-transparency;
     transition: opacity .3s;
 
-    &:last-of-type {
-      border-right-color: transparent;
-    }
-
-    &:hover .close-icon {
-      transform: scale(1);
-    }
-
     .title {
       position: relative;
-      z-index: 1;
-      padding: 0 @tab-padding;
+      //z-index: 1; // TODO: observe if any negative effect when removing
       text-align: center;
     }
 
     .close-icon {
-      right: 0;
-      z-index: 3;
-      margin-right: @tab-padding;
-      text-align: center;
       top: 0;
+      right: 0;
+      //z-index: 3; // TODO: observe if any negative effect when removing
+      margin-right: @tab-padding*1.2;
       height: @tab-height;
-      line-height: calc( @tab-height ~"-" 2px );
+      line-height: @tab-height;
+      text-align: center;
       color: @tab-icon-color;
-      background: inherit;
       transform: scale(0);
       transition: transform .1s;
-      border-top: @tab-border-size solid transparent;
-
-      &:before {
-        font-size: inherit;
-      }
-
       &:hover {
         color: inherit;
       }
-
       &:active {
         opacity: .3;
       }
+      &::before {
+        font-size: inherit;
+      }
+    }
+    &:hover .close-icon {
+      transform: scale(1);
     }
   }
 
   .tab.active {
-    z-index: 1;
-    flex: 2 0 auto;
-    padding-right: @modified-icon-width;
+    //z-index: 1; // TODO: observe if any negative effect when removing
     border-color: @tab-border-color;
     background-color: @tab-background-color-active;
     background-image: linear-gradient( hsla(0,0%,100,.02), hsla(0,0%,100,0) );
     box-shadow: inset 0 1px 1px hsla(0,0%,100,.06);
     opacity: 1;
 
-    & .close-icon {
+    .close-icon {
       transform: scale(1);
     }
 
@@ -99,6 +86,21 @@
       right: 0;
       bottom: -1px;
       border-bottom: @tab-border-size solid @tab-background-color-active;
+    }
+  }
+
+  // Tab sizing
+  .tab {
+    flex: 1;
+  }
+  .tab.active {
+    flex: 1 0 auto;
+  }
+  .tab,
+  .tab.active {
+    padding-right: @modified-icon-width;
+    .title {
+      padding: 0 @tab-padding;
     }
   }
 
@@ -178,7 +180,6 @@
 
 // Active pane marker --------------
 
-.tab-bar:empty:before,
 .tab-bar .tab:before {
   content: "";
   position: absolute;
@@ -194,7 +195,6 @@
   transition: transform .08s;
 }
 
-atom-pane.active .tab-bar:empty:before,
 atom-pane.active .tab.active:before {
   transform: scaleY(1);
 }
