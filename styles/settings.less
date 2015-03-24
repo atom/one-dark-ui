@@ -84,7 +84,10 @@
 	.package-card {
 		padding: @component-padding;
 		.meta-controls .status-indicator {
-			width: @component-padding/5;
+			width: @component-padding/4;
+			&:before {
+				content: "\00a0"; // fixes 0 height
+			}
 		}
 	}
 
