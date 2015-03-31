@@ -5,9 +5,11 @@
   background: @tree-view-background-color;
 
   .project-root.project-root {
+    padding-top: @component-padding/2;
     &:before {
       height: @tab-height;
-      border-bottom: 1px solid @base-border-color;
+      border-top: 1px solid transparent;
+      background-clip: padding-box;
     }
     & > .header .name {
       line-height: @tab-height;

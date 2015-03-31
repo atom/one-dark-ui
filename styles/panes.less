@@ -1,25 +1,12 @@
-.pane-item {
-  .panel {
-    // Not sure if this is still needed. Disabled for now
-    //border-color: fadeout(@inset-panel-border-color, 30%);
-  }
-}
 
 atom-pane-container {
   atom-pane {
     position: relative;
-    background-color: @app-background-color;
-  }
+    padding-top: @component-padding/2;
 
-  atom-pane-axis {
-    &.horizontal > * {
-      border-right: 1px solid @pane-item-border-color;
-      &:last-child { border-right: none; }
-    }
-
-    &.vertical > * {
-      border-bottom: 1px solid @pane-item-border-color;
-      &:last-child { border-bottom: none; }
+    .item-views {
+      border: 1px solid @pane-item-border-color;
+      border-top: none;
     }
   }
 }
