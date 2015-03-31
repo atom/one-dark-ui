@@ -3,6 +3,11 @@
   "theme": "ui",
   "version": "0.5.0",
   "description": "Atom One dark UI theme",
+  "keywords": [
+    "dark",
+    "adaptive",
+    "ui"
+  ],
   "license": "MIT",
   "repository": "https://github.com/atom/one-dark-ui",
   "engines": {
