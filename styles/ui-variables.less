@@ -170,11 +170,11 @@
 @scrollbar-color:                  @level-1-color;
 @scrollbar-background-color:       @level-3-color; // replaced `transparent` with a solid color to test https://github.com/atom/one-light-ui/issues/4
 
-@tab-text-color:                   @text-color-highlight;
-@tab-icon-color:                   @text-color-subtle;
-@tab-inactive-transparency:        .5;
-@tab-background-color-editor:      @ui-syntax-color;
+@tab-text-color:                   @text-color-subtle;
+@tab-text-color-active:            @text-color-highlight;
 @tab-text-color-editor:            contrast(@ui-syntax-color, darken(@ui-syntax-color, 50%), @text-color-highlight );
+@tab-icon-color:                   @text-color-subtle;
+@tab-background-color-editor:      @ui-syntax-color;
 
 @tooltip-background-color:         @base-accent-color;
 @tooltip-text-color:               contrast(@tooltip-background-color, white, hsl(@ui-hue,100%,10%), 40% );
