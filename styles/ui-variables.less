@@ -21,7 +21,7 @@
 .ui-lightness();
 
 // Main colors -----------------
-@ui-fg: hsl(@ui-hue, min(@ui-saturation, 18%), max(@ui-lightness*3, 60%) );
+@ui-fg: hsl(@ui-hue, min(@ui-saturation, 18%), max(@ui-lightness*3, 66%) );
 @ui-bg: hsl(@ui-hue, @ui-saturation, @ui-lightness); // normalized @syntax-background-color
 
 
@@ -37,7 +37,7 @@
 // Text -----------------
 @text-color:            @ui-fg;
 @text-color-subtle:     fadeout(@text-color, 40%);
-@text-color-highlight:  hsl(@ui-hue, @ui-saturation*8, 88%);
+@text-color-highlight:  saturate( lighten(@text-color, 20%), 40%);
 @text-color-selected:   white;
 
 @text-color-info:    hsl(219,  79%, 66%);
