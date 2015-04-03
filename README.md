@@ -6,6 +6,8 @@ A dark UI theme that adjusts to most Syntax themes.
 
 > The font used in the screenshots is [Fira Mono](https://github.com/mozilla/Fira).
 
+### Combine with other Syntax themes
+
 There is a matching [Syntax theme](https://atom.io/themes/one-dark-syntax), but most other Syntax themes work fine as well.
 
 ![one-dark-ui + sepia](https://cloud.githubusercontent.com/assets/378023/6979865/af2d59da-da24-11e4-8ab6-974c50534b86.png)
