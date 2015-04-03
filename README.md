@@ -1,12 +1,18 @@
-## ONE dark UI theme
+## One dark UI theme
 
 A dark UI theme that adjusts to most Syntax themes.
 
-![one-dark-ui](https://cloud.githubusercontent.com/assets/378023/6241915/00f2457a-b769-11e4-8230-6632668354b1.png)
+![one-dark-ui](https://cloud.githubusercontent.com/assets/378023/6979859/96e416e8-da24-11e4-995c-00dcd84c276d.png)
+
+> The font used in the screenshots is [Fira Mono](https://github.com/mozilla/Fira).
 
 There is a matching [Syntax theme](https://atom.io/themes/one-dark-syntax), but most other Syntax themes work fine as well.
 
-![one-dark-grid](https://cloud.githubusercontent.com/assets/378023/6241914/00ef2c8c-b769-11e4-945a-bd7333dcf795.png)
+![one-dark-ui + sepia](https://cloud.githubusercontent.com/assets/378023/6979865/af2d59da-da24-11e4-8ab6-974c50534b86.png)
+> One dark + [Sepia](https://atom.io/themes/sepia-syntax)
+
+![one-dark-ui chester](https://cloud.githubusercontent.com/assets/378023/6979876/cd0fca64-da24-11e4-9006-4f7e1ff80cad.png)
+> One dark + [Chester](https://atom.io/themes/chester-atom-syntax)
 
 ### Install
 
