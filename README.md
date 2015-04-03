@@ -1,12 +1,20 @@
-## ONE light UI theme
+## One light UI theme
 
 A light UI theme that adjusts to most Syntax themes.
 
-![one-light-ui](https://cloud.githubusercontent.com/assets/378023/6241878/95c31112-b768-11e4-9ac0-46a626f4963d.png)
+![one-light-ui](https://cloud.githubusercontent.com/assets/378023/6980108/fb10eec2-da27-11e4-9e52-7f4115044a97.png)
+
+> The font used in the screenshots is [Fira Mono](https://github.com/mozilla/Fira).
+
+### Combine with other Syntax themes
 
 There is a matching [Syntax theme](https://atom.io/themes/one-light-syntax), but most other Syntax themes work fine as well.
 
-![one-light-grid](https://cloud.githubusercontent.com/assets/378023/6241877/95bee43e-b768-11e4-96e8-bb80ae4015ae.png)
+![one-light-ui + sepia](https://cloud.githubusercontent.com/assets/378023/6980110/fc59aca6-da27-11e4-963c-7ecd8400b2c0.png)
+> One light + [Sepia](https://atom.io/themes/sepia-syntax)
+
+![one-light-ui + chester](https://cloud.githubusercontent.com/assets/378023/6980109/fb13e384-da27-11e4-8324-8d8ee2de5ad5.png)
+> One light + [Chester](https://atom.io/themes/chester-atom-syntax)
 
 ### Install
 
