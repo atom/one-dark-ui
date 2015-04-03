@@ -1,5 +1,5 @@
 @tab-border-size: 1px;
-@tab-border: @tab-border-size solid transparent;
+@tab-border: @tab-border-size solid @tab-border-color;
 @tab-max-width: @font-size*15;
 @tab-min-width: @font-size*5;
 @tab-padding: @component-padding/2;
@@ -16,6 +16,8 @@
     display: none;
   }
 
+  // Tab ----------------------
+
   .tab {
     position: relative;
     top: 0;
@@ -26,33 +28,69 @@
     line-height: @tab-height;
     padding: 0;
     margin: 0;
-    color: @tab-text-color;
-    background: @tab-background-color;
-    background-clip: padding-box;
-    border: @tab-border;
-    border-radius: @component-border-radius @component-border-radius 0 0;
-    opacity: @tab-inactive-transparency;
-    transition: opacity .3s;
+
+
+    // Background ----------------------
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: inherit;
+      border-radius: @component-border-radius @component-border-radius 0 0;
+      border: @tab-border;
+      border-bottom-color: @tab-background-color-active;
+      background-color: @tab-background-color-active;
+      background-image: linear-gradient( hsla(0,0%,100,.02), hsla(0,0%,100,0) );
+      box-shadow: inset 0 1px 1px hsla(0,0%,100,.06);
+      transition: opacity .16s;
+      opacity: 0;
+    }
+    &[data-type="TextEditor"]::after {
+      background-color: @tab-background-color-editor;
+      border-bottom-color: @tab-background-color-editor;
+    }
+    &.active::after {
+      opacity: 1;
+      transition: none;
+    }
+
+
+    // Title ----------------------
 
     .title {
       position: relative;
-      //z-index: 1; // TODO: observe if any negative effect when removing
+      z-index: 1;
       text-align: center;
+      color: @tab-text-color;
     }
+    &.active {
+      .title {
+        color: @tab-text-color-active;
+      }
+      &[data-type="TextEditor"] .title {
+        color: @tab-text-color-editor;
+      }
+    }
+
+
+    // Close icon ----------------------
 
     .close-icon {
       top: 0;
       right: 0;
-      //z-index: 3; // TODO: observe if any negative effect when removing
+      z-index: 1;
       margin-right: @tab-padding*1.2;
       height: @tab-height;
       line-height: @tab-height;
       text-align: center;
       color: @tab-icon-color;
       transform: scale(0);
-      transition: transform .1s;
+      transition: transform .08s;
       &:hover {
-        color: inherit;
+        color: @tab-text-color-active;
       }
       &:active {
         opacity: .3;
@@ -61,41 +99,26 @@
         font-size: inherit;
       }
     }
-    &:hover .close-icon {
+    &:hover .close-icon,
+    &.active .close-icon {
       transform: scale(1);
+      transition-duration: .16s;
     }
   }
 
-  .tab.active {
-    //z-index: 1; // TODO: observe if any negative effect when removing
-    border-color: @tab-border-color;
-    background-color: @tab-background-color-active;
-    background-image: linear-gradient( hsla(0,0%,100,.02), hsla(0,0%,100,0) );
-    box-shadow: inset 0 1px 1px hsla(0,0%,100,.06);
-    opacity: 1;
 
-    .close-icon {
-      transform: scale(1);
-    }
+  // Tab sizing ----------------------
 
-    // Seamless tab border cover
-    &:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      border-bottom: @tab-border-size solid @tab-background-color-active;
-    }
-  }
-
-  // Tab sizing
   .tab {
     flex: 1;
+    &.active {
+      flex: 1 0 auto;
+    }
   }
-  .tab.active {
-    flex: 1 0 auto;
-  }
+
+
+  // keep tabs same size when active ----------------------
+
   .tab,
   .tab.active {
     padding-right: @modified-icon-width;
@@ -104,6 +127,8 @@
     }
   }
 
+
+  // Modified ----------------------
   .tab.modified {
     .close-icon {
       color: @text-color-info;
@@ -131,22 +156,18 @@
     }
   }
 
+
+  // Dragging ----------------------
+
   .tab.is-dragging {
-    background: darken(@tab-background-color, 6%);
-    border-color: transparent;
-    opacity: .5;
-    & .close-icon,
-    &:before,
-    &:after {
+    .close-icon,
+    &:before {
       visibility: hidden;
     }
-  }
-
-  .tab.active[data-type="TextEditor"] {
-    color: @tab-text-color-editor;
-    background-color: @tab-background-color-editor;
-    &:after {
-      border-bottom-color: @tab-background-color-editor;
+    &::after {
+      background: darken(@tab-background-color, 6%);
+      border-color: transparent;
+      opacity: .5;
     }
   }
 
@@ -180,21 +201,29 @@
 
 // Active pane marker --------------
 
-.tab-bar .tab:before {
+.tab-bar .tab::before {
   content: "";
   position: absolute;
   pointer-events: none;
-  z-index: 2;
-  top: 0;
-  left: 0;
+  z-index: 1;
+  top: @tab-border-size;
+  left: @tab-border-size;
+  bottom: @tab-border-size;
   width: 2px;
-  height: @tab-height;
   border-top-left-radius: inherit;
+  border-radius: @component-border-radius 0;
   background: @base-accent-color;
+  opacity: 0;
   transform: scaleY(0);
-  transition: transform .08s;
+  transition: opacity .16s, transform .16s cubic-bezier(.80, 0, .90, .53);
+
+  .theme-one-light-ui & {
+    left: 0;
+  }
 }
 
 atom-pane.active .tab.active:before {
+  opacity: 1;
   transform: scaleY(1);
+  transition: opacity .16s, transform .32s cubic-bezier(0,.6,.2,1);
 }
