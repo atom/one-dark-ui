@@ -4,7 +4,7 @@ A dark UI theme that adjusts to most Syntax themes.
 
 ![one-dark-ui](https://cloud.githubusercontent.com/assets/378023/6979859/96e416e8-da24-11e4-995c-00dcd84c276d.png)
 
-> The font used in the screenshots is [Fira Mono](https://github.com/mozilla/Fira).
+> The font used in the screenshots is [Fira Mono](https://github.com/mozilla/Fira). Icons by [file-icons](https://atom.io/packages/file-icons).
 
 ### Combine with other Syntax themes
 
