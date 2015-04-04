@@ -4,7 +4,7 @@ A light UI theme that adjusts to most Syntax themes.
 
 ![one-light-ui](https://cloud.githubusercontent.com/assets/378023/6980108/fb10eec2-da27-11e4-9e52-7f4115044a97.png)
 
-> The font used in the screenshots is [Fira Mono](https://github.com/mozilla/Fira).
+> The font used in the screenshots is [Fira Mono](https://github.com/mozilla/Fira). Icons by [file-icons](https://atom.io/packages/file-icons).
 
 ### Combine with other Syntax themes
 
