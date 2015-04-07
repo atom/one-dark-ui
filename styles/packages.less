@@ -2,54 +2,59 @@
 
 // find-and-replace ---------------------------
 .find-and-replace {
+  .header,
+  .input-block {
+    min-width: @font-size*25;
+  }
+
+  .input-block-item {
+    flex: 1 1 @font-size*25;
+  }
+  .input-block-item--flex {
+    flex: 100 1 @font-size*25;
+  }
 
   .btn,
-  .btn-group-options.btn-group .btn,
-  .btn-group-options.btn-group .btn.option-selection,
-  .btn-group-options.btn-group .btn.option-whole-word {
-    font-size: @font-size*1.25;
+  .btn-group-options .btn {
+    font-size: @font-size*1.1;
     padding: 0;
   }
 
-  .btn-group {
-    &.btn-group-options {
-      width: @font-size * 10;
-      display: flex;
-      & > .btn {
-        flex: 1;
-      }
-      .btn.option-selection {
-        padding-top: 0;
-      }
-    }
-    &.btn-group-replace-all {
-      width: @font-size * 10;
-    }
-    &.btn-group-find,
-    &.btn-group-replace {
-      width: @font-size * 7.5;
-    }
+  .btn-group-options .btn,
+  .btn-group-options .btn.option-selection,
+  .btn-group-options .btn.option-whole-word {
+    font-size: @font-size*1.25;
   }
 
-  // atom-text-editor[mini]
+  .find-container atom-text-editor {
+    padding-right: @font-size*5; // leave some room for the results count
+  }
   .find-meta-container {
-    top: @font-size*.35; // 1.25 (parent font-size) - 0.9 (font-size)
+    top: .66em;
   }
 }
 
 
-// project-find ---------------------------
+// project-find
 .project-find {
-  .btn,
-  .btn-group.btn-group-options .btn {
-    font-size: @font-size*1.25;
+  .header,
+  .input-block {
+    min-width: @font-size*15;
+  }
+
+  .input-block-item {
+    flex: 1 1 @font-size*10;
+  }
+  .input-block-item--flex {
+    flex: 100 1 @font-size*20;
+  }
+
+  .btn {
+    font-size: @font-size*1.1;
     padding: 0;
   }
-  .btn-group {
-    &.btn-group-replace-all,
-    &.btn-group-options {
-      width: @font-size * 10;
-    }
+  .btn-group-options .btn {
+    font-size: @font-size*1.25;
   }
 }
 
