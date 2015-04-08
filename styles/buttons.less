@@ -1,6 +1,6 @@
 
 @btn-border: 1px solid @button-border-color;
-@btn-padding: 0 @font-size/1.25;
+@btn-padding: 0 @ui-size/1.25;
 
 // Mixins -----------------------
 
@@ -63,6 +63,8 @@
 .btn {
   height: initial;
   padding: @btn-padding;
+  font-size: @ui-size;
+  line-height: @ui-line-height;
 }
 
 .btn,
@@ -91,20 +93,20 @@
 
 .btn.btn-xs,
 .btn-group-xs > .btn {
-  font-size: @font-size*.8;
-  line-height: @component-line-height;
+  font-size: @ui-size*.8;
+  line-height: @ui-line-height;
   padding: @btn-padding;
 }
 .btn.btn-sm,
 .btn-group-sm > .btn {
-  font-size: @font-size*.9;
-  line-height: @component-line-height;
+  font-size: @ui-size*.9;
+  line-height: @ui-line-height;
   padding: @btn-padding;
 }
 .btn.btn-lg,
 .btn-group-lg > .btn {
-  font-size: @font-size * 1.5;
-  line-height: @component-line-height;
+  font-size: @ui-size * 1.5;
+  line-height: @ui-line-height;
   padding: @btn-padding;
 }
 

@@ -23,7 +23,7 @@ atom-notifications {
       padding-right: 40px;
     }
     .item {
-      padding: @component-padding/2;
+      padding: @ui-padding/2;
     }
     &.icon:before {
       padding-top: .85em;
@@ -34,6 +34,7 @@ atom-notifications {
 // Styleguide ----------------------------------------------
 
 .styleguide {
+  font-size: inherit;
   padding: 0;
 
   section.bordered,
@@ -64,9 +65,9 @@ atom-notifications {
   // Components
   atom-panel.modal:after {
     position: absolute;  // prevent overlay backdrop from leaking outside
-    left: -@component-padding;
-    right: -@component-padding;
-    bottom: -@component-padding;
+    left: -@ui-padding;
+    right: -@ui-padding;
+    bottom: -@ui-padding;
   }
 
   atom-panel.modal:after {
