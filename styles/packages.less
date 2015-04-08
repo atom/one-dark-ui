@@ -98,6 +98,22 @@
     border-left-color: @text-color-subtle;
   }
 
+  table {
+    th,
+    td {
+      border-color: @base-border-color;
+    }
+    th {
+      background-color: lighten(@markdown-preview-background-color, 3%);
+    }
+    tr {
+      background-color: @markdown-preview-background-color;
+      &:nth-child(2n) {
+        background-color: darken(@markdown-preview-background-color, 3%);
+      }
+    }
+  }
+
   code {
     color: @markdown-preview-code-color;
     border-color: @base-border-color;
