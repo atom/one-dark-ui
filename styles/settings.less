@@ -2,15 +2,15 @@
 // Settings
 
 // Modular Scale (1.125): http://www.modularscale.com/?1&em&1.125&web&table
-@ms-6: @font-size * 2.027;
-@ms-5: @font-size * 1.802;
-@ms-4: @font-size * 1.602;
-@ms-3: @font-size * 1.424;
-@ms-2: @font-size * 1.266;
-@ms-1: @font-size * 1.125;
-@ms-0: @font-size * 1;
-@ms_1: @font-size * 0.889;
-@ms_2: @font-size * 0.790;
+@ms-6: @ui-size * 2.027;
+@ms-5: @ui-size * 1.802;
+@ms-4: @ui-size * 1.602;
+@ms-3: @ui-size * 1.424;
+@ms-2: @ui-size * 1.266;
+@ms-1: @ui-size * 1.125;
+@ms-0: @ui-size * 1;
+@ms_1: @ui-size * 0.889;
+@ms_2: @ui-size * 0.790;
 
 
 
@@ -20,8 +20,8 @@
 
 	.config-menu {
 		position: relative;
-		min-width: @font-size * 15;
-		max-width: @font-size * 20;
+		min-width: @ui-size * 15;
+		max-width: @ui-size * 20;
 		border-width: 0 1px 0 0;
 		border-image: linear-gradient(@level-2-color 10px, @base-border-color 200px) 0 1 0 0 stretch;
 		background: @level-2-color;
@@ -30,7 +30,7 @@
 			white-space: initial;
 			font-size: @ms_1;
 			line-height: 1;
-			padding: @component-padding/3 @component-padding/2;
+			padding: @ui-padding/3 @ui-padding/2;
 			&::before {
 				vertical-align: middle;
 			}
@@ -40,8 +40,8 @@
 	}
 	.nav {
 		& > li > a {
-			padding: @component-padding/2 @component-padding;
-			line-height: @component-line-height;
+			padding: @ui-padding/2 @ui-padding;
+			line-height: @ui-line-height;
 		}
 	}
 
@@ -49,32 +49,32 @@
 	// Sections ------------------------------
 
 	.section-container {
-		max-width: @font-size*60;
+		max-width: @ui-size*60;
 	}
 	.sub-section {
-		margin: @component-padding*3 0;
+		margin: @ui-padding*3 0;
 	}
 
 	.section,
 	.section:first-child,
 	.section:last-child {
-		padding: @component-padding*3;
+		padding: @ui-padding*3;
 	}
 
 	.themes-panel .control-group {
-		margin-top: @component-padding*2;
+		margin-top: @ui-padding*2;
 	}
 
 
 	// Titles ------------------------------
 
 	.section .section-heading {
-		margin-bottom: @component-padding/1.5;
+		margin-bottom: @ui-padding/1.5;
 	}
 
 	.sub-section-heading.icon:before,
 	.section-heading.icon:before {
-		margin-right: @component-icon-padding;
+		margin-right: @ui-padding-icon;
 	}
 
 
@@ -82,9 +82,9 @@
 	// Cards ------------------------------
 
 	.package-card {
-		padding: @component-padding;
+		padding: @ui-padding;
 		.meta-controls .status-indicator {
-			width: @component-padding/4;
+			width: @ui-padding/4;
 			&:before {
 				content: "\00a0"; // fixes 0 height
 			}
@@ -99,14 +99,19 @@
 	}
 
 	.editor-container {
-		margin: @component-padding 0;
+		margin: @ui-padding 0;
 	}
 
 	.form-control {
-		font-size: @font-size*1.25;
-		height: @component-line-height;
+		font-size: @ui-size*1.25;
+		height: @ui-line-height;
 		padding-top: 0;
 		padding-bottom: 0;
+
+		/deep/ option {
+			color: red;
+		}
+
 	}
 
 }
