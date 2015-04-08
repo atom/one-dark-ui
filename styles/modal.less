@@ -6,10 +6,10 @@ atom-panel.modal {
   margin-left: @ui-size * -20;
   color: @text-color;
   background-color: transparent;
-  padding: @ui-padding;
+  padding: @ui-padding/2;
 
   atom-text-editor[mini] {
-    margin-bottom: @ui-padding;
+    margin-bottom: @ui-padding/2;
   }
 
   .select-list ol.list-group,
@@ -24,6 +24,7 @@ atom-panel.modal {
 
     li {
       padding: @modal-padding;
+      line-height: @ui-line-height;
       border-bottom: 1px solid @overlay-border-color;
 
       &:last-of-type {
@@ -50,6 +51,10 @@ atom-panel.modal {
     margin-top: -1px;
     margin-left: @ui-padding/2;
     margin-right: calc( -@ui-padding/3 ~"+" 1px);
+  }
+
+  .select-list .primary-line {
+    display: block;
   }
 
   & > * {
