@@ -1,18 +1,18 @@
-@tree-view-height: @component-padding*1.5;
+@tree-view-height: @ui-padding*1.5;
 
 .tree-view {
-  font-size: @font-size;
+  font-size: @ui-size;
   background: @tree-view-background-color;
 
   .project-root.project-root {
-    padding-top: @component-padding/2;
+    padding-top: @ui-padding/2;
     &:before {
-      height: @tab-height;
+      height: @ui-tab-height;
       border-top: 1px solid transparent;
       background-clip: padding-box;
     }
     & > .header .name {
-      line-height: @tab-height;
+      line-height: @ui-tab-height;
     }
   }
 

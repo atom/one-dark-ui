@@ -43,7 +43,7 @@
   }
 
   .no-icon {
-    padding-left: calc(@component-icon-padding ~"+" @component-icon-size);
+    padding-left: calc(@ui-padding-icon ~"+" @component-icon-size);
   }
 }
 
@@ -86,12 +86,12 @@
       width: @active-icon-size;
     }
     > li:not(.active):before {
-      margin-right: @component-icon-padding;
+      margin-right: @ui-padding-icon;
     }
     li.active {
       .octicon(check, @active-icon-size);
       &:before {
-        margin-right: @component-icon-padding;
+        margin-right: @ui-padding-icon;
         color: @text-color-success;
       }
     }
@@ -101,19 +101,19 @@
 .select-list.popover-list {
   background-color: @overlay-background-color;
   box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.3);
-  padding: @component-padding/2;
+  padding: @ui-padding/2;
   border-radius: @component-border-radius;
 
   atom-text-editor[mini] {
-    margin-bottom: @component-padding/2;
+    margin-bottom: @ui-padding/2;
   }
 
   ol.list-group {
-    margin-top: @component-padding/2;
+    margin-top: @ui-padding/2;
   }
 
   .list-group li {
-    padding-left: @component-padding/2;
+    padding-left: @ui-padding/2;
   }
 }
 
@@ -131,12 +131,12 @@
 
 li.ui-draggable-dragging,
 li.ui-sortable-helper {
-  line-height: @component-line-height;
-  height: @component-line-height;
+  line-height: @ui-line-height;
+  height: @ui-line-height;
   border: 0;
   border-radius: 0;
   list-style: none;
-  padding: 0 @component-padding;
+  padding: 0 @ui-padding;
   background: @background-color-highlight;
   box-shadow: 0 0 1px @base-border-color;
 }
