@@ -1,6 +1,16 @@
 // Overrides packages
 
-// find-and-replace ---------------------------
+// find-and-replace + project-find ---------------------------
+
+.find-and-replace,
+.project-find {
+  padding: @ui-padding/4;
+  .input-block-item {
+    padding: @ui-padding/4;
+  }
+}
+
+// find-and-replace
 .find-and-replace {
   .header,
   .input-block {
@@ -23,17 +33,19 @@
   .btn-group-options .btn,
   .btn-group-options .btn.option-selection,
   .btn-group-options .btn.option-whole-word {
-    font-size: @ui-size*1.25;
+    padding: 0;
+    font-size: @ui-input-size; // keep same as text input
   }
 
   .find-container atom-text-editor {
     padding-right: @ui-size*5; // leave some room for the results count
   }
   .find-meta-container {
-    top: .66em;
+    top: 0;
+    font-size: @ui-size;
+    line-height: @ui-size*2.66;
   }
 }
-
 
 // project-find
 .project-find {
@@ -54,12 +66,14 @@
     padding: 0;
   }
   .btn-group-options .btn {
-    font-size: @ui-size*1.25;
+    padding: 0;
+    font-size: @ui-input-size; // keep same as text input
   }
 }
 
 
 // markdown-preview ---------------------------
+
 .markdown-preview {
   font-size: @ui-size*1.25;
   color: @markdown-preview-color;
