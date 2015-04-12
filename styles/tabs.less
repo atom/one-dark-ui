@@ -1,9 +1,9 @@
 @tab-border-size: 1px;
 @tab-border: @tab-border-size solid @tab-border-color;
-@tab-max-width: @ui-size*24;
+@tab-max-width: @ui-size*16;
 @tab-min-width: @ui-size*7.5; // icon + 3 characters
-@tab-padding: @ui-padding/2;
-@modified-icon-width: @ui-size*1.5;
+@tab-padding: @ui-padding/1.25;
+@modified-icon-width: @ui-size*1.25;
 
 .tab-bar {
   height: @ui-tab-height;
@@ -75,7 +75,7 @@
       top: 0;
       right: 0;
       z-index: 1;
-      margin-right: @tab-padding*1.2;
+      padding: 0 @tab-padding/1.25;
       height: @ui-tab-height;
       line-height: @ui-tab-height;
       text-align: center;
@@ -102,11 +102,9 @@
 
   // Tab sizing ----------------------
 
-  .tab {
-    flex: 1;
-    &.active {
-      flex: 1 0 auto;
-    }
+  .tab,
+  .tab.active {
+    flex: 0 0 auto;
   }
 
 
