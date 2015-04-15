@@ -1,9 +1,9 @@
 @tab-border-size: 1px;
 @tab-border: @tab-border-size solid @tab-border-color;
-@tab-max-width: @ui-size*16;
-@tab-min-width: @ui-size*7.5; // icon + 3 characters
-@tab-padding: @ui-padding/1.25;
-@modified-icon-width: @ui-size*1.25;
+@tab-max-width: @ui-size*24;
+@tab-min-width: @ui-size*6; // icon + 3 characters
+@tab-padding: @ui-padding/1.5;
+@modified-icon-width: @ui-size;
 
 .tab-bar {
   height: @ui-tab-height;
@@ -66,6 +66,12 @@
       position: relative;
       z-index: 1;
       text-align: center;
+      margin: 0 @tab-padding;
+      text-overflow: clip;
+      -webkit-mask: linear-gradient( to left, hsla(0,0%,0%,0), hsla(0,0%,0%,1) 1em) no-repeat;
+    }
+    &:hover .title {
+      -webkit-mask-position: -@modified-icon-width 0;
     }
 
 
@@ -92,8 +98,7 @@
         font-size: inherit;
       }
     }
-    &:hover .close-icon,
-    &.active .close-icon {
+    &:hover .close-icon {
       transform: scale(1);
       transition-duration: .16s;
     }
@@ -104,7 +109,7 @@
 
   .tab,
   .tab.active {
-    flex: 0 0 auto;
+    flex: 1;
   }
 
 
@@ -112,9 +117,9 @@
 
   .tab,
   .tab.active {
-    padding-right: @modified-icon-width;
+    padding-right: 0;
     .title {
-      padding: 0 @tab-padding;
+      padding: 0;
     }
   }
 
@@ -126,6 +131,17 @@
     &[data-type="TextEditor"] {
       color: @tab-text-color-editor;
     }
+  }
+
+  // Tab seperator ----------------------
+
+  .tab {
+    border-width: 0 0 0 1px;
+    border-image: linear-gradient(@tab-bar-background-color, @base-border-color 1em) 0 0 0 1 stretch;
+  }
+  .tab.active,
+  .tab.active + .tab {
+    border-image: linear-gradient(transparent, transparent) 0 0 0 1 stretch;
   }
 
 
