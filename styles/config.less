@@ -1,0 +1,32 @@
+// Compact mode ----------------------------------------------
+
+html {
+  font-size: @font-size*1.25;
+}
+
+@media (max-width: 1200px), (max-height: 600px) {
+
+  html {
+  	font-size: @font-size;
+  }
+
+  atom-workspace {
+    padding-right: 0;
+    atom-panel-container.left:empty {
+      padding-left: 0;
+    }
+  }
+
+  atom-pane-container atom-pane {
+    padding-top: 0;
+  }
+
+  .tree-view .project-root.project-root {
+    padding-top: 0;
+  }
+
+  .tab-bar .tab::after {
+    border-radius: 0;
+  }
+
+}
