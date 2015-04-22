@@ -1,13 +1,18 @@
 // Compact mode ----------------------------------------------
 
-html {
-  font-size: @font-size*1.25;
+// Medium screen
+html { font-size: @font-size; }
+
+// Large screen
+@media (min-width: 1690px), (min-height: 950px) {
+  html { font-size: @font-size + 2px; }
 }
 
-@media (max-width: 1200px), (max-height: 600px) {
+// Small screen (<= 13")
+@media (max-width: 1280px), (max-height: 800px) {
 
   html {
-  	font-size: @font-size;
+    font-size: @font-size - 1px;
   }
 
   atom-workspace {
@@ -21,12 +26,28 @@ html {
     padding-top: 0;
   }
 
+  .tab-bar {
+    border-radius: 0; // TODO: move to tabs.less
+    .tab::before,
+    .tab::after {
+      border-radius: 0;
+    }
+  }
+
+
+  // tree-view
   .tree-view .project-root.project-root {
     padding-top: 0;
   }
 
-  .tab-bar .tab::after {
-    border-radius: 0;
+  .list-group li:not(.list-nested-item),
+  .list-tree li:not(.list-nested-item),
+  .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
+    line-height: @ui-line-height*.92;
+  }
+  .list-group .selected::before,
+  .list-tree .selected::before {
+    height: @ui-line-height*.92;
   }
 
 }
