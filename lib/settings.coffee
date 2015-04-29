@@ -2,7 +2,7 @@ module.exports =
   config:
     layoutMode:
       title: 'Layout Mode'
-      description: 'In auto mode, the UI and font size will automatically change based on the window size.'
+      description: 'In Auto mode, the UI and font size will automatically change based on the window size.'
       type: 'string'
       default: 'Auto'
       enum: [
