@@ -1,19 +1,23 @@
 // Compact mode ----------------------------------------------
 
-// Medium screen
+// Default
 html { font-size: @font-size; }
 
-// Large screen
-@media (min-width: 1690px), (min-height: 950px) {
-  html { font-size: @font-size + 2px; }
+
+// Large screen (>= 27")
+@media (min-width: 2560px) {
+  [theme-one-dark-ui-layoutmode="auto"] { font-size: @font-size + 2px; }
+}
+
+// Medium screen (>= 20")
+@media (min-width: 1920px) {
+  [theme-one-dark-ui-layoutmode="auto"] { font-size: @font-size + 1px; }
 }
 
 // Small screen (<= 13")
-@media (max-width: 1280px), (max-height: 800px) {
 
-  html {
-    font-size: @font-size - 1px;
-  }
+.compact-mode() {
+  font-size: @font-size - 1px;
 
   atom-workspace {
     padding-right: 0;
@@ -49,5 +53,14 @@ html { font-size: @font-size; }
   .list-tree .selected::before {
     height: @ui-line-height*.92;
   }
+}
 
+[theme-one-dark-ui-layoutmode="compact"] {
+  .compact-mode();
+}
+
+@media (max-width: 1280px), (max-height: 800px) {
+  [theme-one-dark-ui-layoutmode="auto"] {
+    .compact-mode();
+  }
 }
