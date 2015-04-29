@@ -1,6 +1,6 @@
 module.exports =
 
-  apply: () ->
+  apply: ->
 
     body = document.querySelector('html')
 
