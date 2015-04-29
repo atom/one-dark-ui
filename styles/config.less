@@ -6,12 +6,12 @@ html { font-size: @font-size; }
 
 // Large screen (>= 27")
 @media (min-width: 2560px) {
-  [theme-one-dark-ui-layoutmode="Auto"] { font-size: @font-size + 2px; }
+  [theme-one-dark-ui-layoutmode="auto"] { font-size: @font-size + 2px; }
 }
 
 // Medium screen (>= 20")
 @media (min-width: 1920px) {
-  [theme-one-dark-ui-layoutmode="Auto"] { font-size: @font-size + 1px; }
+  [theme-one-dark-ui-layoutmode="auto"] { font-size: @font-size + 1px; }
 }
 
 // Small screen (<= 13")
@@ -58,12 +58,12 @@ html { font-size: @font-size; }
   }
 }
 
-[theme-one-dark-ui-layoutmode="Compact"] {
+[theme-one-dark-ui-layoutmode="compact"] {
   .compact-mode();
 }
 
 @media (max-width: 1280px), (max-height: 800px) {
-  [theme-one-dark-ui-layoutmode="Auto"] {
+  [theme-one-dark-ui-layoutmode="auto"] {
     .compact-mode();
   }
 }
