@@ -42,6 +42,9 @@ html { font-size: @font-size; }
   // tree-view
   .tree-view .project-root.project-root {
     padding-top: 0;
+    &:before {
+      height: @ui-tab-height;
+    }
   }
 
   .list-group li:not(.list-nested-item),
