@@ -4,11 +4,11 @@ module.exports =
       title: 'Layout Mode'
       description: 'In auto mode, the UI and font size will automatically change based on the window size.'
       type: 'string'
-      default: 'auto'
+      default: 'Auto'
       enum: [
-        'compact',
-        'auto',
-        'spacious',
+        'Compact',
+        'Auto',
+        'Spacious',
       ]
 
   activate: (state) ->
