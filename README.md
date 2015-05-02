@@ -20,6 +20,14 @@ There is a matching [Syntax theme](https://atom.io/themes/one-dark-syntax), but 
 
 This theme is installed by default with Atom and can be activated by going to the __Settings > Themes__ section and selecting "One Dark" from the __UI Themes__ drop-down menu.
 
+### Settings
+
+In the theme settings you can switch between 3 layout modes:
+
+1. `Auto` (default) - In Auto mode, the UI and font size will automatically change based on the window size.
+2. `Compact` - The UI stays compact to leave more space for the editor.
+3. `Spacious` - The UI is expanded, giving some breathing room.
+
 ### Customize
 
 You can scale the whole UI up or down by adding this to your `styles.less`:
