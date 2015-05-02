@@ -2,11 +2,22 @@
 atom-pane-container {
   atom-pane {
     position: relative;
-    padding-top: @ui-padding/2;
+    padding-top: @ui-padding-pane;
+    padding-right: @ui-padding-pane;
 
     .item-views {
       border: 1px solid @pane-item-border-color;
       border-top: none;
     }
+  }
+
+  // make resize-handles fill the space
+  atom-pane-axis.horizontal > atom-pane-resize-handle {
+    width: @ui-padding-pane;
+    margin-left: -@ui-padding-pane;
+  }
+  atom-pane-axis.vertical > atom-pane-resize-handle {
+    height: @ui-padding-pane;
+    margin-top: 0;
   }
 }
