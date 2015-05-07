@@ -74,16 +74,6 @@ html { font-size: @font-size; }
       height: @ui-tab-height;
     }
   }
-
-  .list-group li:not(.list-nested-item),
-  .list-tree li:not(.list-nested-item),
-  .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
-    line-height: @ui-line-height*.92;
-  }
-  .list-group .selected::before,
-  .list-tree .selected::before {
-    height: @ui-line-height*.92;
-  }
 }
 
 [@{theme-layoutmode}="compact"] {
