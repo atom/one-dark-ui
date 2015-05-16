@@ -71,6 +71,14 @@ html { font-size: @font-size; }
 
 
   // tree-view
+  .tree-view-resizer[data-show-on-right-side="true"] {
+    border-left: 1px solid @base-border-color;
+  }
+
+  .tree-view::before {
+    top: 0;
+  }
+
   .tree-view .project-root.project-root {
     padding-top: 0;
     &:before {
