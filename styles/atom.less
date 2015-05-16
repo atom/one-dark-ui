@@ -48,6 +48,19 @@ atom-workspace {
 		border-top-width: 0;
 		border-bottom-width: 0;
 	}
+
+	atom-text-editor {
+		/deep/ ::-webkit-scrollbar-track {
+			background: @scrollbar-background-color-editor;
+		}
+		/deep/ ::-webkit-scrollbar-corner {
+			background: @scrollbar-background-color-editor;
+		}
+		/deep/ ::-webkit-scrollbar-thumb {
+			border-color: @scrollbar-background-color-editor;
+			background: @scrollbar-color-editor;
+		}
+	}
 }
 
 // TODO: Move to a better place, not sure where it gets used

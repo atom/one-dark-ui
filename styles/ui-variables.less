@@ -152,37 +152,40 @@
 
 
 // Components (Custom) -----------------
-@badge-background-color:           lighten(@background-color-highlight, 6%);
+@badge-background-color:            lighten(@background-color-highlight, 6%);
 
-@button-text-color-selected:       contrast(@button-background-color-selected, white, hsl(@ui-hue,100%,10%), 40% );
-@button-border-color-selected:     @base-border-color;
+@button-text-color-selected:        contrast(@button-background-color-selected, white, hsl(@ui-hue,100%,10%), 40% );
+@button-border-color-selected:      @base-border-color;
 
-@checkbox-background-color:        fade(@base-accent-color, 33%);
+@checkbox-background-color:         fade(@base-accent-color, 33%);
 
-@input-background-color-focus:     fadein(@input-background-color, 6%);
-@input-selection-color:            darken(@background-color-selected, 6%);
-@input-selection-color-focus:      @background-color-selected;
+@input-background-color-focus:      fadein(@input-background-color, 6%);
+@input-selection-color:             darken(@background-color-selected, 6%);
+@input-selection-color-focus:       @background-color-selected;
 
-@key-binding-border-color:         hsla(0,0%,100%,.1);
-@key-binding-background-color:     hsla(0,0%,100%,.1);
+@key-binding-border-color:          hsla(0,0%,100%,.1);
+@key-binding-background-color:      hsla(0,0%,100%,.1);
 
-@overlay-backdrop-color:           hsla(@ui-hue,@ui-saturation,5%,.5);
+@overlay-backdrop-color:            hsla(@ui-hue,@ui-saturation,5%,.5);
 
-@progress-background-color:        @base-accent-color;
+@progress-background-color:         @base-accent-color;
 
-@scrollbar-color:                  @level-1-color;
-@scrollbar-background-color:       @level-3-color; // replaced `transparent` with a solid color to test https://github.com/atom/one-light-ui/issues/4
+@scrollbar-color:                   @level-1-color;
+@scrollbar-background-color:        @level-3-color; // replaced `transparent` with a solid color to test https://github.com/atom/one-light-ui/issues/4
+@scrollbar-color-editor:            contrast(@ui-syntax-color, darken(@ui-syntax-color, 18%), lighten(@ui-syntax-color, 9%) );
+@scrollbar-background-color-editor: @ui-syntax-color;
 
-@tab-text-color:                   @text-color-subtle;
-@tab-text-color-active:            @text-color-highlight;
-@tab-text-color-editor:            contrast(@ui-syntax-color, darken(@ui-syntax-color, 50%), @text-color-highlight );
-@tab-icon-color:                   @text-color-subtle;
-@tab-background-color-editor:      @ui-syntax-color;
 
-@tooltip-background-color:         @base-accent-color;
-@tooltip-text-color:               contrast(@tooltip-background-color, white, hsl(@ui-hue,100%,10%), 40% );
-@tooltip-text-key-color:           @tooltip-background-color;
-@tooltip-background-key-color:     @tooltip-text-color;
+@tab-text-color:                    @text-color-subtle;
+@tab-text-color-active:             @text-color-highlight;
+@tab-text-color-editor:             contrast(@ui-syntax-color, darken(@ui-syntax-color, 50%), @text-color-highlight );
+@tab-icon-color:                    @text-color-subtle;
+@tab-background-color-editor:       @ui-syntax-color;
+
+@tooltip-background-color:          @base-accent-color;
+@tooltip-text-color:                contrast(@tooltip-background-color, white, hsl(@ui-hue,100%,10%), 40% );
+@tooltip-text-key-color:            @tooltip-background-color;
+@tooltip-background-key-color:      @tooltip-text-color;
 
 
 // Sizes (Custom) -----------------
