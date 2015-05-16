@@ -15,7 +15,18 @@ atom-workspace {
 
 }
 
-// Scrollbars
+.platform-darwin {
+	atom-workspace.theme-one-light-ui {
+	  border-top: 1px solid darken(@base-border-color, 20%);
+	}
+	&.is-blurred atom-workspace.theme-one-light-ui {
+	  border-top-color: @base-border-color;
+	}
+}
+
+
+// Scrollbars ------------------------------------
+
 .scrollbars-visible-always {
 	/deep/ ::-webkit-scrollbar {
 		width: 10px;
