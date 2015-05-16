@@ -5,10 +5,9 @@
   background: @tree-view-background-color;
 
   .project-root.project-root {
-    padding-top: @ui-padding/2;
+    padding-top: @ui-padding-pane;
     &:before {
       height: @ui-tab-height;
-      border-top: 1px solid transparent;
       background-clip: padding-box;
     }
     & > .header .name {
@@ -19,6 +18,11 @@
   .selected:before {
     background: @background-color-highlight;
   }
+}
+
+.theme-one-dark-ui .tree-view .project-root.project-root::before {
+  border-top: 1px solid transparent;
+  background-clip: padding-box;
 }
 
 .tree-view-resizer {
@@ -60,7 +64,7 @@
   position: fixed;
   pointer-events: none;
   z-index: 1;
-  top: @ui-padding/2;
+  top: @ui-padding-pane;
   left: 0;
   height: @ui-tab-height;
   bottom: 0;
