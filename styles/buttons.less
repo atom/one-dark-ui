@@ -34,12 +34,14 @@
 }
 
 .btn-variant (@color) {
-  @text-color: contrast(@color, hsl(0,0%,25%), white, 70% );
-  @bg: @color;
-  @hover: lighten(@bg, 3%);
-  @selected: saturate(darken(@bg, 12%), 20%);
-  .btn-default(@bg, @hover, @selected, @text-color-highlight);
-  color: @text-color;
+  @_text-color: contrast(@color, hsl(0,0%,25%), white, 70% );
+  .btn-default(
+    @color,
+    lighten(@color, 3%),
+    saturate(darken(@color, 12%), 20%),
+    @text-color-highlight
+  );
+  color: @_text-color;
   text-shadow: 0 1px 0 hsla(0,0%,0%,.2);
 
   & when (@ui-lightness > 50%) {
@@ -48,12 +50,11 @@
 
   &:hover,
   &:focus {
-    color: @text-color;
+    color: @_text-color;
   }
 
-
   &.icon:before {
-    color: @text-color;
+    color: @_text-color;
   }
 }
 

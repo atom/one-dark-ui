@@ -31,11 +31,11 @@ atom-panel {
   .btn {
     padding-left: 8px;
     padding-right: 8px;
-
-    @bg: lighten(@button-background-color, 10%);
-    @hover: lighten(@button-background-color-hover, 10%);
-    @selected: lighten(@button-background-color-selected, 10%);
-    @text: lighten(@text-color, 10%);
-    .btn-default(@bg, @hover, @selected, @text);
+    .btn-default(
+      lighten(@button-background-color, 10%),
+      lighten(@button-background-color-hover, 10%),
+      lighten(@button-background-color-selected, 10%),
+      lighten(@text-color, 10%)
+    );
   }
 }
