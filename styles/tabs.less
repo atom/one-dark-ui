@@ -86,14 +86,13 @@
       height: @ui-tab-height;
       line-height: @ui-tab-height;
       text-align: center;
-      color: @tab-icon-color;
       transform: scale(0);
       transition: transform .08s;
       &:hover {
-        color: @tab-text-color-active;
+        opacity: .7;
       }
       &:active {
-        opacity: .3;
+        opacity: .4;
       }
       &::before {
         font-size: inherit;
@@ -168,12 +167,7 @@
       &::before {
         content: "\f052";
         display: inline-block;
-        color: inherit;
       }
-    }
-
-    &:hover .close-icon:hover {
-      color: @text-color-highlight;
     }
   }
 
