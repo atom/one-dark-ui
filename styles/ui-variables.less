@@ -7,23 +7,35 @@
 @ui-syntax-color: @syntax-background-color;
 
 // Color guards -----------------
-@ui-hue: hue(@ui-syntax-color);
-
+@ui-s-h: hue(@ui-syntax-color);
 @ui-s-s: saturation(@ui-syntax-color);
-.ui-saturation() when (@ui-hue <=  80) { @ui-saturation: min(@ui-s-s,  6%); } // minimize saturation for brown
-.ui-saturation() when (@ui-hue >   80)
-                  and (@ui-hue <  160) { @ui-saturation: min(@ui-s-s, 12%); } // reduce saturation for green
-.ui-saturation() when (@ui-hue >= 160) { @ui-saturation: min(@ui-s-s, 24%); } // limit max saturaiotn for the rest
+@ui-s-l: lightness(@ui-syntax-color);
+@ui-inv: 10%; // inverse lightness if below
+
+.ui-hue() when (@ui-s-s = 0) { @ui-hue: 220; } // Use blue hue when no saturation
+.ui-hue() when (@ui-s-s > 0) { @ui-hue: @ui-s-h; }
+.ui-hue();
+
+.ui-saturation() when (@ui-s-h <=  80) { @ui-saturation: min(@ui-s-s,  5%); } // minimize saturation for brown
+.ui-saturation() when (@ui-s-h >   80) and (@ui-s-h <  160) { @ui-saturation: min(@ui-s-s, 12%); } // reduce saturation for green
+.ui-saturation() when (@ui-s-h >= 160) and (@ui-s-l <  @ui-inv) { @ui-saturation: min(@ui-s-s, 48%); } // limit max saturaiotn for very dark backgrounds
+.ui-saturation() when (@ui-s-h >= 160) and (@ui-s-l >= @ui-inv) { @ui-saturation: @ui-s-s; }
 .ui-saturation();
 
-@ui-s-l: lightness(@ui-syntax-color);
-.ui-lightness() when (@ui-s-l <  16%) { @ui-lightness: @ui-s-l + 6%; } // increase lightness when too dark
-.ui-lightness() when (@ui-s-l >= 16%) { @ui-lightness: min(@ui-s-l, 22%); } // limit max lightness
+.ui-lightness() when (@ui-s-l <  @ui-inv) {
+  @ui-lightness: @ui-s-l + 8%; // increase lightness when too dark
+  @ui-lightness-border: @ui-lightness*.3;
+}
+.ui-lightness() when (@ui-s-l >= @ui-inv) {
+  @ui-lightness: min(@ui-s-l, 20%); // limit max lightness (for light syntax themes)
+  @ui-lightness-border: @ui-lightness*.6;
+}
 .ui-lightness();
 
 // Main colors -----------------
-@ui-fg: hsl(@ui-hue, min(@ui-saturation, 18%), max(@ui-lightness*3, 66%) );
-@ui-bg: hsl(@ui-hue, @ui-saturation, @ui-lightness); // normalized @syntax-background-color
+@ui-fg:     hsl(@ui-hue, min(@ui-saturation, 18%), max(@ui-lightness*3, 66%) );
+@ui-bg:     hsl(@ui-hue, @ui-saturation, @ui-lightness); // normalized @syntax-background-color
+@ui-border: hsl(@ui-hue, @ui-saturation, @ui-lightness-border);
 
 
 
@@ -38,7 +50,7 @@
 // Text -----------------
 @text-color:            @ui-fg;
 @text-color-subtle:     fadeout(@text-color, 40%);
-@text-color-highlight:  saturate( lighten(@text-color, 20%), 40%);
+@text-color-highlight:  lighten(@text-color, 20%);
 @text-color-selected:   white;
 
 @text-color-info:    hsl(219,  79%, 66%);
@@ -61,7 +73,7 @@
 
 // Base -----------------
 @base-background-color: @ui-bg;
-@base-border-color:     hsl(@ui-hue, @ui-saturation, @ui-lightness*.7);
+@base-border-color:     @ui-border;
 
 
 // Components -----------------
@@ -69,7 +81,7 @@
 @pane-item-border-color:           @base-border-color;
 
 @input-background-color:           hsla(0,0%,0%,.2);
-@input-border-color:               hsla(0,0%,0%,.2);
+@input-border-color:               @base-border-color;
 
 @tool-panel-background-color:      @level-3-color;
 @tool-panel-border-color:          @base-border-color;
@@ -148,7 +160,7 @@
 
 
 // Base -----------------
-@base-accent-color: hsl(@ui-hue, @ui-saturation + 70%, @ui-lightness + 40%);
+@base-accent-color: hsl(@ui-hue, 100%, 66%);
 
 
 // Components (Custom) -----------------
