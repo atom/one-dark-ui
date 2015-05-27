@@ -13,5 +13,8 @@
   "main": "lib/settings",
   "engines": {
     "atom": ">0.40.0"
+  },
+  "devDependencies": {
+    "coffeelint": "^1.9.7"
   }
 }
