@@ -6,11 +6,10 @@ module.exports =
 
 
     # Font Size
-    setFontSize = (fontSize) ->
-      _fontSize = atom.config.get('one-dark-ui.fontSize')
-      if 10 <= _fontSize <= 20
-        root.style.fontSize = atom.config.get('one-dark-ui.fontSize') + 'px'
-      else if _fontSize is ''
+    setFontSize = (currentFontSize) ->
+      if 10 <= currentFontSize <= 20
+        root.style.fontSize = currentFontSize + 'px'
+      else if currentFontSize is ''
         root.style.fontSize = ''
 
     atom.config.onDidChange 'one-dark-ui.fontSize', ->
