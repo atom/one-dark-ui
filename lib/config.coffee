@@ -7,9 +7,9 @@ module.exports =
 
     # Font Size
     setFontSize = (currentFontSize) ->
-      if 10 <= currentFontSize <= 20
+      if Number.isInteger(currentFontSize)
         root.style.fontSize = currentFontSize + 'px'
-      else if currentFontSize is ''
+      else if currentFontSize is 'Auto'
         root.style.fontSize = ''
 
     atom.config.onDidChange 'one-dark-ui.fontSize', ->

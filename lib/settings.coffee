@@ -4,8 +4,10 @@ module.exports =
     fontSize:
       title: 'Font Size'
       description: 'Change the UI font size. Needs to be between 10 and 20.'
-      type: 'string'
-      default: ''
+      type: ['integer', 'string']
+      minimum: 10
+      maximum: 20
+      default: 'Auto'
 
     layoutMode:
       title: 'Layout Mode'
