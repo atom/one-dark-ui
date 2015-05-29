@@ -22,21 +22,17 @@ This theme is installed by default with Atom and can be activated by going to th
 
 ### Settings
 
-In the theme settings you can switch between 3 layout modes:
+In the theme settings you can switch between 3 __Layout Modes__:
 
 1. `Auto` (default) - In Auto mode, the UI and font size will automatically change based on the window size.
 2. `Compact` - The UI stays compact to leave more space for the editor.
 3. `Spacious` - The UI is expanded, giving some breathing room.
 
+As well as change the __Font Size__ to scale the whole UI up or down.
+
 ### Customize
 
-You can scale the whole UI up or down by adding this to your `styles.less`:
-
-```css
-.theme-one-dark-ui { font-size: 14px; }
-```
-
-It's also possible to only change certain areas (Use the DevTools to find the right selectors):
+It's also possible to only change certain areas by adding the following to your `styles.less` (Use the DevTools to find the right selectors):
 
 ```css
 .theme-one-dark-ui {
