@@ -32,7 +32,7 @@ As well as change the __Font Size__ to scale the whole UI up or down.
 
 ### Customize
 
-It's also possible to only change certain areas by adding the following to your `styles.less` (Use the DevTools to find the right selectors):
+It's also possible to resize only certain areas by adding the following to your `styles.less` (Use the DevTools to find the right selectors):
 
 ```css
 .theme-one-dark-ui {
