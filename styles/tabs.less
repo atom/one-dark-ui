@@ -51,7 +51,7 @@
       transition: opacity .16s;
       opacity: 0;
     }
-    &[data-type="TextEditor"]::after {
+    &[data-type$="Editor"]::after {
       background-color: @tab-background-color-editor;
       border-bottom-color: @tab-background-color-editor;
     }
@@ -128,7 +128,7 @@
 
   .tab.active {
     color: @tab-text-color-active;
-    &[data-type="TextEditor"] {
+    &[data-type$="Editor"] {
       color: @tab-text-color-editor;
     }
   }
