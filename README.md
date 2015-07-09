@@ -44,5 +44,5 @@ It's also possible to resize only certain areas by adding the following to your 
 
 ### FAQ
 
-__Why do the colors change when I switch Syntax themes.__
+__Why do the colors change when I switch Syntax themes?__
 This UI theme uses the same background color as the choosen Syntax theme. In case that Syntax theme has a light background color, it only uses its hue, but otherwise stays dark. This lets you use dark-light combos.
