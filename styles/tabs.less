@@ -30,12 +30,21 @@
     line-height: @ui-tab-height;
     padding: 0;
     margin: 0;
+    background-clip: content-box;
+    &.active {
+      border-radius: @component-border-radius @component-border-radius 0 0;
+      background-color: @tab-background-color-active;
+    }
+    &[data-type$="Editor"].active {
+      border-radius: @component-border-radius*1.75 @component-border-radius*1.75 0 0;
+      background-color: @tab-background-color-editor;
+    }
 
-
-    // Background ----------------------
+    // Cover ----------------------
 
     &::after {
       content: "";
+      z-index: 1;
       position: absolute;
       top: 0;
       left: 0;
@@ -44,7 +53,6 @@
       border-radius: @component-border-radius @component-border-radius 0 0;
       border: @tab-border;
       border-bottom-color: @tab-background-color-active;
-      background-color: @tab-background-color-active;
       background-image: linear-gradient( hsla(0,0%,100,.02), hsla(0,0%,100,0) );
       background-clip: content-box;
       box-shadow: inset 0 1px 1px hsla(0,0%,100,.06);
@@ -52,7 +60,6 @@
       opacity: 0;
     }
     &[data-type$="Editor"]::after {
-      background-color: @tab-background-color-editor;
       border-bottom-color: @tab-background-color-editor;
     }
     &.active::after {
@@ -65,14 +72,23 @@
 
     .title {
       position: relative;
-      z-index: 1;
+      bottom: @tab-border-size;
       text-align: center;
       margin: 0 @tab-padding;
       text-overflow: clip;
+      // To use a mask and keep sub-pixel AA: Also add an opaque bg + HWA layer
       -webkit-mask: linear-gradient( to left, hsla(0,0%,0%,0), hsla(0,0%,0%,1) 1em) no-repeat;
+      background-color: @tab-background-color;
+      backface-visibility: hidden;
     }
     &:hover .title {
       -webkit-mask-position: -@modified-icon-width 0;
+    }
+    &.active .title {
+      background-color: @tab-background-color-active;
+    }
+    &[data-type$="Editor"].active .title {
+      background-color: @tab-background-color-editor;
     }
 
 
@@ -81,7 +97,7 @@
     .close-icon {
       top: 0;
       right: 0;
-      z-index: 1;
+      z-index: 2;
       padding: 0 @tab-padding/1.25;
       height: @ui-tab-height;
       line-height: @ui-tab-height;
@@ -220,7 +236,7 @@
   content: "";
   position: absolute;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
   top: @tab-border-size;
   left: @tab-border-size;
   bottom: @tab-border-size;

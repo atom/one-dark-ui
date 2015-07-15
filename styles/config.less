@@ -50,11 +50,21 @@ html { font-size: @font-size; }
   }
 
   .tab-bar {
+    .tab {
+      border-radius: 0;
+    }
     .tab::before {
       border-radius: 0;
       top: 0;
-      left: 0;
       bottom: 0;
+
+      .theme-one-dark-ui & {
+        left: 1px;
+      }
+    }
+
+    .tab:first-of-type::before {
+      left: 0;
     }
     .tab::after {
       border-top: none;
