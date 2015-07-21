@@ -32,12 +32,8 @@
     margin: 0;
     background-clip: content-box;
     &.active {
-      border-radius: @component-border-radius @component-border-radius 0 0;
-      background-color: @tab-background-color-active;
-    }
-    &[data-type$="Editor"].active {
       border-radius: @component-border-radius*1.75 @component-border-radius*1.75 0 0;
-      background-color: @tab-background-color-editor;
+      background-color: @tab-background-color-active;
     }
 
     // Cover ----------------------
@@ -58,9 +54,6 @@
       box-shadow: inset 0 1px 1px hsla(0,0%,100,.06);
       transition: opacity .16s;
       opacity: 0;
-    }
-    &[data-type$="Editor"]::after {
-      border-bottom-color: @tab-background-color-editor;
     }
     &.active::after {
       opacity: 1;
@@ -86,9 +79,6 @@
     }
     &.active .title {
       background-color: @tab-background-color-active;
-    }
-    &[data-type$="Editor"].active .title {
-      background-color: @tab-background-color-editor;
     }
 
 
@@ -257,4 +247,28 @@ atom-pane.active .tab.active:before {
   opacity: 1;
   transform: scaleY(1);
   transition: opacity .16s, transform .32s cubic-bezier(0,.6,.2,1);
+}
+
+
+// Custom tabs --------------
+
+.tab-bar .tab.active {
+  &[data-type$="Editor"] {
+    background-color: @tab-background-color-editor;
+    &::after {
+      border-bottom-color: @tab-background-color-editor;
+    }
+    .title {
+      background-color: @tab-background-color-editor;
+    }
+  }
+  &[data-type="MarkdownPreviewView"] {
+    background-color: @markdown-preview-background-color;
+    &::after {
+      border-bottom-color: @markdown-preview-background-color;
+    }
+    .title {
+      background-color: @markdown-preview-background-color;
+    }
+  }
 }
