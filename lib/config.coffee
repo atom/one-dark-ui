@@ -1,28 +1,21 @@
 module.exports =
+  config:
 
-  apply: ->
+    fontSize:
+      title: 'Font Size'
+      description: 'Change the UI font size. Needs to be between 8 and 20.'
+      type: ['integer', 'string']
+      minimum: 8
+      maximum: 20
+      default: 'Auto'
 
-    root = document.documentElement
-
-
-    # Font Size
-    setFontSize = (currentFontSize) ->
-      if Number.isInteger(currentFontSize)
-        root.style.fontSize = currentFontSize + 'px'
-      else if currentFontSize is 'Auto'
-        root.style.fontSize = ''
-
-    atom.config.onDidChange 'one-dark-ui.fontSize', ->
-      setFontSize(atom.config.get('one-dark-ui.fontSize'))
-
-    setFontSize(atom.config.get('one-dark-ui.fontSize'))
-
-
-    # Layout Mode
-    setLayoutMode = (layoutMode) ->
-      root.setAttribute('theme-one-dark-ui-layoutmode', layoutMode.toLowerCase())
-
-    atom.config.onDidChange 'one-dark-ui.layoutMode', ->
-      setLayoutMode(atom.config.get('one-dark-ui.layoutMode'))
-
-    setLayoutMode(atom.config.get('one-dark-ui.layoutMode'))
+    layoutMode:
+      title: 'Layout Mode'
+      description: 'In Auto mode, the UI will automatically adapt based on the window size.'
+      type: 'string'
+      default: 'Auto'
+      enum: [
+        'Compact',
+        'Auto',
+        'Spacious',
+      ]
