@@ -6,7 +6,6 @@ root = document.documentElement
 
 module.exports =
   config:
-
     fontSize:
       title: 'Font Size'
       description: 'Change the UI font size. Needs to be between 8 and 20.'
@@ -14,7 +13,6 @@ module.exports =
       minimum: 8
       maximum: 20
       default: 'Auto'
-
     layoutMode:
       title: 'Layout Mode'
       description: 'In Auto mode, the UI will automatically adapt based on the window size.'
