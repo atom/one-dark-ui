@@ -19,9 +19,9 @@ module.exports =
       type: 'string'
       default: 'Auto'
       enum: [
-        'Compact',
-        'Auto',
-        'Spacious',
+        'Compact'
+        'Auto'
+        'Spacious'
       ]
 
   activate: (state) ->
@@ -43,7 +43,7 @@ module.exports =
 # Font Size -----------------------
 setFontSize = (currentFontSize) ->
   if Number.isInteger(currentFontSize)
-    root.style.fontSize = currentFontSize + 'px'
+    root.style.fontSize = "#{currentFontSize}px"
   else if currentFontSize is 'Auto'
     unsetFontSize()
 
