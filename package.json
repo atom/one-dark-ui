@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "repository": "https://github.com/atom/one-dark-ui",
-  "main": "lib/settings",
+  "main": "lib/main",
   "engines": {
     "atom": ">0.40.0"
   },
