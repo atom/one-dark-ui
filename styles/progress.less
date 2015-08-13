@@ -51,7 +51,7 @@ progress {
      linear-gradient(-45deg, transparent 33%, @progress-buffer-color 33%,
                              @progress-buffer-color 66%, transparent 66%);
   background-size: 25px @progress-height, 100% 100%, 100% 100%;
-  -webkit-animation: animate-stripes 5s linear infinite;
+  -webkit-animation: animate-stripes 5s linear 6; // stop animation after 6 runs (30s) to limit CPU usage 
 }
 
 progress::-webkit-progress-bar {
