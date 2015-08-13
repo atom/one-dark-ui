@@ -1,4 +1,5 @@
-// Spinner
+
+// Spinner ----------------------
 
 .loading-spinner(@size) {
   width: @size;
@@ -31,10 +32,7 @@
 }
 
 
-// Progress Bar
-
-// Much learning from:
-// http://css-tricks.com/html5-progress-element/
+// Progress Bar ----------------------
 
 @progress-height: 8px;
 @progress-buffer-color: fade(@progress-background-color, 20%);
@@ -43,31 +41,28 @@ progress {
   -webkit-appearance: none;
   height: @progress-height;
   border-radius: @component-border-radius;
-
   background-color: @input-background-color;
   box-shadow: inset 0 0 0 1px @input-border-color;
 
-  background-image:
-     linear-gradient(-45deg, transparent 33%, @progress-buffer-color 33%,
-                             @progress-buffer-color 66%, transparent 66%);
-  background-size: 25px @progress-height, 100% 100%, 100% 100%;
-  -webkit-animation: animate-stripes 5s linear 6; // stop animation after 6 runs (30s) to limit CPU usage 
+  &::-webkit-progress-bar {
+    background-color: transparent;
+  }
+
+  &::-webkit-progress-value {
+    border-radius: @component-border-radius;
+    background-color: @progress-background-color;
+  }
+
+  // Is buffering (when no value is set)
+  &:indeterminate {
+    background-image:
+       linear-gradient(-45deg, transparent 33%, @progress-buffer-color 33%,
+                               @progress-buffer-color 66%, transparent 66%);
+    background-size: 25px @progress-height, 100% 100%, 100% 100%;
+    -webkit-animation: progress-buffering 5s linear 6; // stop animation after 6 runs (30s) to limit CPU usage
+  }
 }
 
-progress::-webkit-progress-bar {
-  background-color: transparent;
-}
-
-progress::-webkit-progress-value {
-  border-radius: @component-border-radius;
-  background-color: @progress-background-color;
-}
-
-progress[value] {
-  background-image: none;
-  -webkit-animation: none;
-}
-
-@-webkit-keyframes animate-stripes {
+@-webkit-keyframes progress-buffering {
    100% { background-position: -100px 0px; }
 }
