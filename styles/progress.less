@@ -1,35 +1,60 @@
 
 // Spinner ----------------------
 
-.loading-spinner(@size) {
-  width: @size;
-  height: @size;
-  display: block;
+@spinner-width: .1em;
+@spinner-offset: @spinner-width/2;
 
-  background-image: url(images/octocat-spinner-128.gif);
-  background-repeat: no-repeat;
-  background-size: cover;
+.loading {
+  position: relative;
+  display: block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid @base-accent-color;
+  border-radius: 1em;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 10; // prevent sibling elements from getting their own layers
+    top: 50%;
+    left: 50%;
+    margin: -@spinner-offset 0 0 -@spinner-offset;
+    width: @spinner-width;
+    border-radius: inherit;
+
+    transform-origin: @spinner-offset @spinner-offset;
+    -webkit-animation: spinner-animation 1.2s infinite;
+    -webkit-animation-fill-mode: backwards;
+  }
+  &::before { //hour
+    height: .4em;
+    background-color: @base-accent-color;
+    -webkit-animation-delay: .24s;
+  }
+  &::after { // minutes
+    height: .5em;
+    background-color: lighten(@base-accent-color, 15%);
+  }
 
   &.inline-block {
     display: inline-block;
   }
 }
 
-.loading-spinner-large {
-  .loading-spinner(64px);
+@-webkit-keyframes spinner-animation {
+    0% { transform: scale(.6) rotate(180deg); transform-origin: @spinner-offset @spinner-offset;      -webkit-animation-timing-function: cubic-bezier(.85, .15, .9, .65); }
+   50% { transform: scale( 1) rotate(360deg); transform-origin: @spinner-offset @spinner-offset*-1.5; -webkit-animation-timing-function: cubic-bezier(.1, .35, .15, .85); }
+  100% { transform: scale(.6) rotate(540deg); transform-origin: @spinner-offset @spinner-offset; }
 }
 
-.loading-spinner-medium {
-  .loading-spinner(50px);
-}
+// Spinner sizes
+.loading-spinner-tiny   { font-size: 16px; border-width: 1px; }
+.loading-spinner-small  { font-size: 32px; }
+.loading-spinner-medium { font-size: 48px; }
+.loading-spinner-large  { font-size: 64px; }
 
-.loading-spinner-small {
-  .loading-spinner(32px);
-}
 
-.loading-spinner-tiny {
-  .loading-spinner(20px);
-}
 
 
 // Progress Bar ----------------------
