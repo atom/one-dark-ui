@@ -69,12 +69,12 @@
       text-align: center;
       margin: 0 @tab-padding;
       text-overflow: clip;
-      // To use a mask and keep sub-pixel AA: Also add an opaque bg + HWA layer
-      -webkit-mask: linear-gradient( to left, hsla(0,0%,0%,0), hsla(0,0%,0%,1) 1em) no-repeat;
       background-color: @tab-background-color;
       backface-visibility: hidden;
     }
     &:hover .title {
+      // To use a mask and keep sub-pixel AA: Also add an opaque bg + HWA layer
+      -webkit-mask: linear-gradient( to left, hsla(0,0%,0%,0), hsla(0,0%,0%,1) 1em) no-repeat;
       -webkit-mask-position: -@modified-icon-width 0;
     }
     &.active .title {
