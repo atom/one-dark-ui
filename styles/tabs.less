@@ -134,9 +134,6 @@
 
   .tab.active {
     color: @tab-text-color-active;
-    &[data-type$="Editor"] {
-      color: @tab-text-color-editor;
-    }
   }
 
   // Tab seperator ----------------------
@@ -253,22 +250,15 @@ atom-pane.active .tab.active:before {
 // Custom tabs --------------
 
 .tab-bar .tab.active {
-  &[data-type$="Editor"] {
+  &[data-type$="Editor"],
+  &[data-type="MarkdownPreviewView"] {
+    color: @tab-text-color-editor;
     background-color: @tab-background-color-editor;
     &::after {
       border-bottom-color: @tab-background-color-editor;
     }
     .title {
       background-color: @tab-background-color-editor;
-    }
-  }
-  &[data-type="MarkdownPreviewView"] {
-    background-color: @markdown-preview-background-color;
-    &::after {
-      border-bottom-color: @markdown-preview-background-color;
-    }
-    .title {
-      background-color: @markdown-preview-background-color;
     }
   }
 }
