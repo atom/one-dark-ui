@@ -5,7 +5,9 @@
   background: @tree-view-background-color;
 
   .project-root.project-root {
-    padding-top: @ui-padding-pane;
+    &:first-child {
+      padding-top: @ui-padding-pane;
+    }
     &:before {
       height: @ui-tab-height;
       background-clip: padding-box;
