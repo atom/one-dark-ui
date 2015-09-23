@@ -72,61 +72,6 @@
 }
 
 
-// markdown-preview ---------------------------
-
-.markdown-preview {
-  font-size: @ui-size*1.25;
-  color: @markdown-preview-color;
-  background-color: @markdown-preview-background-color;
-
-
-  h1, h2 {
-    color: inherit;
-    border-color: @base-border-color;
-  }
-
-  a {
-    color: @text-color-info;
-  }
-
-  hr {
-    background-color: @markdown-preview-hr-color;
-  }
-
-  blockquote {
-    color: @text-color;
-    border-left-color: @text-color-subtle;
-  }
-
-  table {
-    th,
-    td {
-      border-color: @base-border-color;
-    }
-    tr {
-      background-color: @markdown-preview-background-color;
-      &:nth-child(2n) {
-        background-color: darken(@markdown-preview-background-color, 3%);
-      }
-    }
-  }
-
-  code {
-    color: @markdown-preview-code-color;
-    border-color: @base-border-color;
-    background-color: @markdown-preview-code-background-color;
-    background-clip: padding-box;
-  }
-
-  atom-text-editor::shadow {
-    .line.cursor-line {
-      background-color: transparent;
-    }
-  }
-}
-
-
-
 // Timecop ---------------------------
 
 .timecop {
