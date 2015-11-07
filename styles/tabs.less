@@ -65,13 +65,15 @@
 
     .title {
       position: relative;
-      bottom: @tab-border-size;
+      height: inherit;
       text-align: center;
       margin: 0 @tab-padding;
+      border-bottom: @tab-border-size solid transparent;
       text-overflow: clip;
       // To use a mask and keep sub-pixel AA: Also add an opaque bg + HWA layer
       -webkit-mask: linear-gradient( to left, hsla(0,0%,0%,0), hsla(0,0%,0%,1) 1em) no-repeat;
       background-color: @tab-background-color;
+      background-clip: content-box;
       backface-visibility: hidden;
     }
     &:hover .title {
@@ -178,14 +180,10 @@
   // Dragging ----------------------
 
   .tab.is-dragging {
+    opacity: .5;
     .close-icon,
     &:before {
       visibility: hidden;
-    }
-    &::after {
-      background: darken(@tab-background-color, 6%);
-      border-color: transparent;
-      opacity: .5;
     }
   }
 
