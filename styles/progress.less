@@ -3,11 +3,12 @@
 
 @spinner-duration: 1.2s;
 
-.loading {
+.loading-spinner(@size) {
   position: relative;
   display: block;
   width: 1em;
   height: 1em;
+  font-size: @size;
   background: radial-gradient(@base-accent-color .1em, transparent .11em);
 
   &::before,
@@ -45,10 +46,10 @@
 }
 
 // Spinner sizes
-.loading-spinner-tiny   { font-size: 16px; &::before, &::after { border-width: 1px; } }
-.loading-spinner-small  { font-size: 32px; }
-.loading-spinner-medium { font-size: 48px; }
-.loading-spinner-large  { font-size: 64px; }
+.loading-spinner-tiny   { .loading-spinner(16px); &::before, &::after { border-width: 1px; } }
+.loading-spinner-small  { .loading-spinner(32px); }
+.loading-spinner-medium { .loading-spinner(48px); }
+.loading-spinner-large  { .loading-spinner(64px); }
 
 
 
