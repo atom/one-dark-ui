@@ -73,8 +73,16 @@
   width: 2px;
   background: @base-accent-color;
   opacity: 0;
-  // transform: scaleY(0);
+}
+
+ol.tree-view::before {
+  transform: scaleY(0);
   transition: opacity .16s, transform .16s cubic-bezier(.80, 0, .90, .53);
+}
+
+ol.tree-view:focus::before {
+  transform: scaleY(1);
+  transition: opacity .16s, transform .32s cubic-bezier(0,.6,.2,1);
 }
 
 [data-show-on-right-side="true"] .tree-view::before {
@@ -84,6 +92,4 @@
 
 .tree-view:focus::before {
   opacity: 1;
-  transform: scaleY(1);
-  transition: opacity .16s, transform .32s cubic-bezier(0,.6,.2,1);
 }
