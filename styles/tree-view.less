@@ -66,20 +66,14 @@
   position: fixed;
   pointer-events: none;
   z-index: 1;
-  top: @ui-padding-pane;
+  margin-top: @ui-padding-pane;
   margin-left: -@component-icon-padding;
   height: @ui-tab-height;
-  bottom: 0;
   width: 2px;
   background: @base-accent-color;
   opacity: 0;
   transform: scaleY(0);
   transition: opacity .16s, transform .16s cubic-bezier(.80, 0, .90, .53);
-}
-
-[data-show-on-right-side="true"] .tree-view::before {
-  left: auto;
-  right: 0;
 }
 
 .tree-view:focus::before {
