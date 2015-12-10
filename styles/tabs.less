@@ -230,8 +230,7 @@
   border-radius: @component-border-radius 0;
   background: @base-accent-color;
   opacity: 0;
-  transform: scaleY(0);
-  transition: opacity .16s, transform .16s cubic-bezier(.80, 0, .90, .53);
+  transition: opacity .16s;
 
   .theme-one-light-ui & {
     left: 0;
@@ -240,8 +239,7 @@
 
 atom-pane.active .tab.active:before {
   opacity: 1;
-  transform: scaleY(1);
-  transition: opacity .16s, transform .32s cubic-bezier(0,.6,.2,1);
+  transition-duration: .32s;
 }
 
 
