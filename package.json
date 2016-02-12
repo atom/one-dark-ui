@@ -1,7 +1,7 @@
 {
   "name": "one-dark-ui",
   "theme": "ui",
-  "version": "1.1.9",
+  "version": "1.2.0",
   "description": "Atom One dark UI theme",
   "keywords": [
     "dark",
@@ -21,7 +21,10 @@
     "fontSize": {
       "title": "Font Size",
       "description": "Change the UI font size. Needs to be between 8 and 20.",
-      "type": ["integer", "string"],
+      "type": [
+        "integer",
+        "string"
+      ],
       "minimum": 8,
       "maximum": 20,
       "default": "Auto"
