@@ -2,9 +2,17 @@
 @modal-padding: @ui-padding/2 @ui-padding/1.5;
 @modal-width: @ui-size * 50;
 
+atom-panel-container.modal {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+}
+
 atom-panel.modal {
-  width: @ui-size * 50;
-  margin-left: @modal-width/-2;
+  position: relative;
+  width: 100%;
+  max-width: @modal-width;
+  margin: 0 auto;
+  left: initial;
   color: @text-color;
   background-color: transparent;
   padding: @ui-padding/2;
