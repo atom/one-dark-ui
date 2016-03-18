@@ -9,8 +9,11 @@ html {
 atom-workspace {
 	background-color: @app-background-color;
 
-	atom-panel-container.left:empty {
-		padding-left: @ui-padding-pane;
+	atom-panel-container {
+		z-index: 5;
+		&.left:empty {
+			padding-left: @ui-padding-pane;
+		}
 	}
 
 }
