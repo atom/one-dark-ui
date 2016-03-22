@@ -81,7 +81,11 @@ progress {
        linear-gradient(-45deg, transparent 33%, @progress-buffer-color 33%,
                                @progress-buffer-color 66%, transparent 66%);
     background-size: 25px @progress-height, 100% 100%, 100% 100%;
-    -webkit-animation: progress-buffering 5s linear 6; // stop animation after 6 runs (30s) to limit CPU usage
+
+    // Plays animation for 1min (12runs) at normal speed,
+    // then slows down frame-rate for 9mins (108runs) to limit CPU usage
+    -webkit-animation: progress-buffering 5s linear 12,
+                       progress-buffering 5s 60s steps(10) 108;
   }
 }
 
