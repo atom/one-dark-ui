@@ -39,6 +39,16 @@
         "Auto",
         "Spacious"
       ]
+    },
+    "tabSizing": {
+      "title": "Tab Sizing",
+      "description": "In minimum width mode the tabs will be as small as possible but in even width mode, all tabs will be the same size.",
+      "type": "string",
+      "default": "Even",
+      "enum": [
+        "Even",
+        "Minimum"
+      ]
     }
   }
 }

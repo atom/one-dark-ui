@@ -7,10 +7,14 @@ module.exports =
 
     atom.config.observe 'one-dark-ui.layoutMode', (value) ->
       setLayoutMode(value)
+      
+    atom.config.observe 'one-dark-ui.tabSizing', (value) ->
+      setTabSizing(value)
 
   deactivate: ->
     unsetFontSize()
     unsetLayoutMode()
+    unsetTabSizing()
 
 # Font Size -----------------------
 setFontSize = (currentFontSize) ->
@@ -28,3 +32,10 @@ setLayoutMode = (layoutMode) ->
 
 unsetLayoutMode = ->
   root.removeAttribute('theme-one-dark-ui-layoutmode')
+
+# Tab Sizing
+setTabSizing = (tabSizing) ->
+  root.setAttribute('theme-one-dark-ui-tabsizing', tabSizing.toLowerCase())
+
+unsetTabSizing = ->
+  root.removeAttribute('theme-one-dark-ui-tabsizing')
