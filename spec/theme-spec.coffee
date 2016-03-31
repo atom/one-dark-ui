@@ -19,7 +19,7 @@ describe "One Dark UI theme", ->
     expect(document.documentElement.getAttribute('theme-one-dark-ui-layoutmode')).toBe 'spacious'
 
   it "allows the tab sizing to be set via config", ->
-    expect(document.documentElement.getAttribute('theme-one-dark-ui-tabsizing')).toBe 'even'
+    expect(document.documentElement.getAttribute('theme-one-dark-ui-tabsizing')).toBe 'auto'
 
     atom.config.set('one-dark-ui.tabSizing', 'Minimum')
     expect(document.documentElement.getAttribute('theme-one-dark-ui-tabsizing')).toBe 'minimum'

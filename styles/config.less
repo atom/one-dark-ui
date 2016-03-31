@@ -123,6 +123,12 @@ html { font-size: @font-size; }
     .minimum-width-tabs();
 }
 
+@media (max-width: 1280px), (max-height: 800px) {
+  [@{theme-tabsizing}="auto"] {
+    .minimum-width-tabs();
+  }
+}
+
 .minimum-width-tabs() {
   // auto-size tabs
   .tab,
