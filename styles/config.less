@@ -120,7 +120,7 @@ html { font-size: @font-size; }
 @theme-tabsizing: ~'theme-@{ui-theme-name}-tabsizing';
 
 [@{theme-tabsizing}="minimum"] {
-    .minimum-width-tabs();
+  .minimum-width-tabs();
 }
 
 @media (max-width: 1280px), (max-height: 800px) {
@@ -138,11 +138,10 @@ html { font-size: @font-size; }
   }
 
   .tab .title {
-     -webkit-mask: none;
+    -webkit-mask: none;
   }
   .tab:hover .title {
     -webkit-mask: linear-gradient( to left, hsla(0,0%,0%,0), hsla(0,0%,0%,1) 1em) no-repeat;
     -webkit-mask-position: -@modified-icon-width 0;
   }
 }
-

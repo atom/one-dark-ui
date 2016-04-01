@@ -7,7 +7,7 @@ module.exports =
 
     atom.config.observe 'one-dark-ui.layoutMode', (value) ->
       setLayoutMode(value)
-      
+
     atom.config.observe 'one-dark-ui.tabSizing', (value) ->
       setTabSizing(value)
 
@@ -33,7 +33,7 @@ setLayoutMode = (layoutMode) ->
 unsetLayoutMode = ->
   root.removeAttribute('theme-one-dark-ui-layoutmode')
 
-# Tab Sizing
+# Tab Sizing -----------------------
 setTabSizing = (tabSizing) ->
   root.setAttribute('theme-one-dark-ui-tabsizing', tabSizing.toLowerCase())
 
