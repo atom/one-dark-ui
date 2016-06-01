@@ -20,7 +20,7 @@
   "configSchema": {
     "fontSize": {
       "title": "Font Size",
-      "description": "Change the UI font size. Needs to be between 8 and 20.",
+      "description": "Change the UI font size. Needs to be between 8 and 20. In Auto mode, the Font Size will automatically change based on the window size.",
       "type": [
         "integer",
         "string"
