@@ -40,49 +40,11 @@ atom-notifications {
 // Styleguide ----------------------------------------------
 
 .styleguide {
-  font-size: inherit;
-  padding: 0;
-
-  section.bordered,
-  .section.bordered {
-    border-top: none;
-  }
-
-  .example {
-    border: none;
-
-    .example-rendered {
-      border: 1px solid @base-border-color;
-      border-right: none;
-      background: @base-background-color;
-    }
-
-    .example-code {
-      border: 1px solid @base-border-color;
-      border-radius: 0 @component-border-radius @component-border-radius 0;
-    }
-  }
-
-  [data-name="variables"] .example-rendered {
-    border-right: 1px solid @base-border-color;
-    border-radius: @component-border-radius;
-  }
-
-  // Components
+  // Modal
   atom-panel.modal:after {
     position: absolute;  // prevent overlay backdrop from leaking outside
     left: -@ui-padding;
     right: -@ui-padding;
     bottom: -@ui-padding;
   }
-
-  atom-panel.modal:after {
-    position: absolute;  // prevent overlay backdrop from leaking outside
-  }
-
-  .select-list atom-text-editor[mini],
-  .popover-list atom-text-editor[mini] {
-    height: initial;
-  }
-
 }
