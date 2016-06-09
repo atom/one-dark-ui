@@ -137,11 +137,21 @@ html { font-size: @font-size; }
     min-width: @ui-tab-height;
   }
 
+  .tab .close-icon {
+    padding-left: .4em;
+    padding-right: .4em;
+  }
+
   .tab .title {
     -webkit-mask: none;
   }
   .tab:hover .title {
     -webkit-mask: linear-gradient( to left, hsla(0,0%,0%,0), hsla(0,0%,0%,1) 1em) no-repeat;
-    -webkit-mask-position: -@modified-icon-width 0;
+    -webkit-mask-position: -@modified-icon-width*.6 0;
+  }
+
+  .tab.modified .title {
+    -webkit-mask: linear-gradient( to left, hsla(0,0%,0%,0), hsla(0,0%,0%,1) 1em) no-repeat;
+    -webkit-mask-position: -@modified-icon-width*.4 0;
   }
 }
