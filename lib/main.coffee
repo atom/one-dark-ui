@@ -5,6 +5,9 @@ module.exports =
     atom.config.observe 'one-dark-ui.accentColor', (value) ->
       setAccentColor(value)
 
+    atom.config.observe 'one-dark-ui.autoAccentColor', (value) ->
+      setAutoAccentColor(value)
+
     atom.config.observe 'one-dark-ui.fontSize', (value) ->
       setFontSize(value)
 
@@ -16,6 +19,7 @@ module.exports =
 
   deactivate: ->
     unsetAccentColor()
+    unsetAutoAccentColor()
     unsetFontSize()
     unsetLayoutMode()
     unsetTabSizing()
@@ -23,11 +27,23 @@ module.exports =
 
 # Accent Color -----------------------
 setAccentColor = (accentColor) ->
-  unsetAccentColor()
+  root.style.removeProperty('--accent-color') # prevents adding endless properties
   root.style.setProperty('--accent-color', accentColor.toHexString())
 
 unsetAccentColor = ->
   root.style.removeProperty('--accent-color')
+
+# Auto Accent Color -----------------------
+setAutoAccentColor = (autoAccentColor) ->
+  if autoAccentColor
+    document.body.classList.add('use-auto-accent-color')
+  else
+    unsetAutoAccentColor()
+
+unsetAutoAccentColor = ->
+  document.body.classList.remove('use-auto-accent-color')
+
+
 
 # Font Size -----------------------
 setFontSize = (currentFontSize) ->
