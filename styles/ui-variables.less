@@ -193,8 +193,8 @@
 @tab-text-color-editor:             contrast(@ui-syntax-color, darken(@ui-syntax-color, 50%), @text-color-highlight );
 @tab-background-color-editor:       @ui-syntax-color;
 
-@tooltip-background-color:          @base-accent-color;
-@tooltip-text-color:                contrast(@tooltip-background-color, white, hsl(@ui-hue,100%,10%), 40% );
+@tooltip-background-color:          var(--accent-color);
+@tooltip-text-color:                contrast(@base-accent-color, white, hsl(@ui-hue,100%,10%), 40% );
 @tooltip-text-key-color:            @tooltip-background-color;
 @tooltip-background-key-color:      @tooltip-text-color;
 

@@ -156,9 +156,13 @@
   // Modified ----------------------
   .tab.modified {
     .close-icon {
-      color: @text-color-info;
       border: none;
       border-bottom: @tab-border-size solid transparent;
+      &::before { color: inherit; }
+    }
+    &:hover .close-icon,
+    .close-icon {
+      color: var(--accent-color);
     }
     &:not(:hover) .close-icon {
       right: 0;
@@ -190,7 +194,7 @@
   .placeholder {
     margin: 0;
     height: @ui-tab-height;
-    background: @base-accent-color;
+    background: var(--accent-color);
     pointer-events: none;
     &:after {
       top: @ui-tab-height/2;
@@ -199,7 +203,7 @@
       margin: -5px 0 0 0;
       border-radius: 0;
       border: 5px solid;
-      border-color: transparent transparent transparent @base-accent-color;
+      border-color: transparent transparent transparent var(--accent-color);
       background: transparent;
     }
 
@@ -208,7 +212,7 @@
 
       &:after {
         margin-left: -10px;
-        border-color: transparent @base-accent-color transparent transparent;
+        border-color: transparent var(--accent-color) transparent transparent;
       }
     }
   }
