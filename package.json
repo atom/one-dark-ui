@@ -18,6 +18,12 @@
     "coffeelint": "^1.9.7"
   },
   "configSchema": {
+    "accentColor": {
+      "title": "Accent Color",
+      "description": "Change the accent color of this theme.",
+      "type": "color",
+      "default": "cornflowerblue"
+    },
     "fontSize": {
       "title": "Font Size",
       "description": "Change the UI font size. Needs to be between 8 and 20. In Auto mode, the Font Size will automatically change based on the window size.",
