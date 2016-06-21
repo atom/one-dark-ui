@@ -87,23 +87,27 @@
     // Close icon ----------------------
 
     .close-icon {
-      top: 0;
-      right: 0;
+      top: .75em;
+      right: .75em;
       z-index: 2;
-      padding: 0 @tab-padding/1.25;
-      height: @ui-tab-height;
-      line-height: @ui-tab-height;
+      width: 1.5em;
+      height: 1.5em;
+      line-height: 1.5;
       text-align: center;
+      border-radius: @component-border-radius;
       transform: scale(0);
       transition: transform .08s;
       &:hover {
-        opacity: .7;
+        color: @base-accent-text-color;
+        background-color: @base-accent-color;
       }
       &:active {
         opacity: .4;
       }
       &::before {
         font-size: inherit;
+        width: auto;
+        height: auto;
       }
     }
     &:hover .close-icon {
@@ -157,17 +161,14 @@
   .tab.modified {
     .close-icon {
       color: @text-color-info;
-      border: none;
-      border-bottom: @tab-border-size solid transparent;
     }
     &:not(:hover) .close-icon {
-      right: 0;
-      top: 0;
-      width: initial;
-      height: @ui-tab-height;
+      top: .75em;
+      right: .75em;
+      width: 1.5em;
+      height: 1.5em;
+      line-height: 1.5;
       border: none;
-      border-bottom: @tab-border-size solid transparent;
-      border-radius: 0;
       transform: scale(1);
       &::before {
         content: "\f052";
