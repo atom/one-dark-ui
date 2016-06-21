@@ -1,0 +1,35 @@
+
+// Custom properties (CSS variables)
+// These can be changed in styles.less
+// ----------------------------------------------
+
+
+// Accent Color
+
+.use-auto-accent-color {
+  --accent-color: @base-accent-color;
+
+  // disable color picker if auto is on
+  // this only works if there is just a single color picker, so far so good
+  .settings-view .color {
+    opacity: .2;
+    pointer-events: none;
+  }
+}
+
+label[for="one-dark-ui.autoAccentColor"] {
+  margin-left: 2.5em;
+
+  & + .setting-description {
+    margin-left: 2.8em;
+  }
+}
+
+input[id="one-dark-ui.autoAccentColor"] {
+  margin-right: 1em;
+}
+
+// subtle accent color when window is blurred
+.is-blurred {
+  --accent-color: @text-color-subtle;
+}
