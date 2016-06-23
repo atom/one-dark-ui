@@ -138,16 +138,16 @@ html { font-size: @font-size; }
   }
 
   .tab .close-icon.close-icon.close-icon {
-    top: .875em;
-    right: .5em;
+    top: .86em; // should be .875em but that messes up the pixel snapping
+    right: .46em; // again some random number helps with pixel snapping of the width
     width: 1.25em;
     height: 1.25em;
     line-height: 1.25;
   }
-
   .tab .close-icon::before {
-    height: inherit;
-    vertical-align: middle;
+    width: 1.25em;
+    height: 1.25em;
+    line-height: 1.25;
   }
 
   .tab .title {
