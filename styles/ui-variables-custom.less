@@ -63,9 +63,9 @@
 
 
 // Base Accent (Custom) -----------------
-@base-accent-color:            hsl(@ui-hue, 100%, 66%);
-@base-accent-text-color:       lighten(@base-accent-color, 6%); // A bit lighter when used for smaller things
-@base-accent-text-on-bg-color: contrast(@base-accent-color, white, hsl(@ui-hue,100%,10%), 33% );
+@accent-color:            hsl(@ui-hue, 100%, 66%);
+@accent-text-color:       lighten(@accent-color, 6%); // A bit lighter when used for smaller things
+@accent-text-on-bg-color: contrast(@accent-color, white, hsl(@ui-hue,100%,10%), 33% );
 
 
 // Components (Custom) -----------------
@@ -74,7 +74,7 @@
 @button-text-color-selected:        contrast(@button-background-color-selected, white, hsl(@ui-hue,100%,10%), 40% );
 @button-border-color-selected:      @base-border-color;
 
-@checkbox-background-color:         fade(@base-accent-color, 33%);
+@checkbox-background-color:         fade(@accent-color, 33%);
 
 @input-background-color-focus:      fadein(@input-background-color, 6%);
 @input-selection-color:             darken(@background-color-selected, 6%);
@@ -85,7 +85,7 @@
 
 @overlay-backdrop-color:            hsla(@ui-hue,@ui-saturation,5%,.5);
 
-@progress-background-color:         @base-accent-color;
+@progress-background-color:         @accent-color;
 
 @scrollbar-color:                   @level-1-color;
 @scrollbar-background-color:        @level-3-color; // replaced `transparent` with a solid color to test https://github.com/atom/one-light-ui/issues/4
@@ -98,7 +98,7 @@
 @tab-text-color-editor:             contrast(@ui-syntax-color, darken(@ui-syntax-color, 50%), @text-color-highlight );
 @tab-background-color-editor:       @ui-syntax-color;
 
-@tooltip-background-color:          @base-accent-color;
+@tooltip-background-color:          @accent-color;
 @tooltip-text-color:                contrast(@tooltip-background-color, white, hsl(@ui-hue,100%,10%), 40% );
 @tooltip-text-key-color:            @tooltip-background-color;
 @tooltip-background-key-color:      @tooltip-text-color;
