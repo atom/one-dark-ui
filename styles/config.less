@@ -137,21 +137,28 @@ html { font-size: @font-size; }
     min-width: @ui-tab-height;
   }
 
-  .tab .close-icon {
-    padding-left: .4em;
-    padding-right: .4em;
+  .tab .close-icon.close-icon.close-icon {
+    top: .86em; // should be .875em but that messes up the pixel snapping
+    right: .46em; // again some random number helps with pixel snapping of the width
+    width: 1.25em;
+    height: 1.25em;
+    line-height: 1.25;
+  }
+  .tab .close-icon::before {
+    width: 1.25em;
+    height: 1.25em;
+    line-height: 1.25;
   }
 
   .tab .title {
     -webkit-mask: none;
+    margin-left: 1.25em;
+    margin-right: 1.25em;
   }
+
+  .tab.modified .title,
   .tab:hover .title {
     -webkit-mask: linear-gradient( to left, hsla(0,0%,0%,0), hsla(0,0%,0%,1) 1em) no-repeat;
     -webkit-mask-position: -@modified-icon-width*.6 0;
-  }
-
-  .tab.modified .title {
-    -webkit-mask: linear-gradient( to left, hsla(0,0%,0%,0), hsla(0,0%,0%,1) 1em) no-repeat;
-    -webkit-mask-position: -@modified-icon-width*.4 0;
   }
 }

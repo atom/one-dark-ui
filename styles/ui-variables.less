@@ -159,8 +159,10 @@
 @level-3-color: darken(@base-background-color, 3%);
 
 
-// Base -----------------
-@base-accent-color: hsl(@ui-hue, 100%, 66%);
+// Base Accent (Custom) -----------------
+@base-accent-color:            hsl(@ui-hue, 100%, 66%);
+@base-accent-text-color:       lighten(@base-accent-color, 6%); // A bit lighter when used for smaller things
+@base-accent-text-on-bg-color: contrast(@base-accent-color, white, hsl(@ui-hue,100%,10%), 33% );
 
 
 // Components (Custom) -----------------

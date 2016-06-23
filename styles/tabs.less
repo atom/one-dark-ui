@@ -87,23 +87,36 @@
     // Close icon ----------------------
 
     .close-icon {
-      top: 0;
-      right: 0;
+      top: .77em; // shoule be .75em but that messes up the pixel snapping
+      right: .77em;
       z-index: 2;
-      padding: 0 @tab-padding/1.25;
-      height: @ui-tab-height;
-      line-height: @ui-tab-height;
-      text-align: center;
+      font-size: 1em;
+      width: 1.5em;
+      height: 1.5em;
+      line-height: 1.5;
+      border-radius: @component-border-radius;
+      overflow: hidden;
       transform: scale(0);
       transition: transform .08s;
       &:hover {
-        opacity: .7;
+        color: @base-accent-text-on-bg-color;
+        background-color: @base-accent-color;
       }
       &:active {
-        opacity: .4;
+        background-color: fade(@base-accent-color, 50%);
       }
       &::before {
-        font-size: inherit;
+        content: "\f05d"; // plus icon has a smaller weight
+        position: absolute;
+        font-size: 4em; // blow it up
+        width: 1.5em; // same as parent
+        height: 1.5em; // same as parent
+        line-height: 1.5; // same as parent
+        text-align: center;
+        transform: translate(-37.5%, -37.5%) // center: - (1.5 / 4)
+                   rotate(45deg) // rotate (since it's the "+" icon)
+                   scale(.33)  ; // scale it down again
+        pointer-events: none;
       }
     }
     &:hover .close-icon {
@@ -155,19 +168,20 @@
 
   // Modified ----------------------
   .tab.modified {
-    .close-icon {
-      color: @text-color-info;
-      border: none;
-      border-bottom: @tab-border-size solid transparent;
+    &:hover .close-icon {
+      color: @base-accent-text-color;
+      &:hover {
+        color: @base-accent-text-on-bg-color;
+      }
     }
     &:not(:hover) .close-icon {
-      right: 0;
-      top: 0;
-      width: initial;
-      height: @ui-tab-height;
+      top: .75em;
+      right: .75em;
+      width: 1.5em;
+      height: 1.5em;
+      line-height: 1.5;
+      color: @base-accent-text-color;
       border: none;
-      border-bottom: @tab-border-size solid transparent;
-      border-radius: 0;
       transform: scale(1);
       &::before {
         content: "\f052";
