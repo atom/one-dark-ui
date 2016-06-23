@@ -62,7 +62,7 @@
 @level-3-color: darken(@base-background-color, 3%);
 
 
-// Base Accent (Custom) -----------------
+// Accent (Custom) -----------------
 @accent-color:            hsl(@ui-hue, 100%, 66%);
 @accent-text-color:       lighten(@accent-color, 6%); // A bit lighter when used for smaller things
 @accent-text-on-bg-color: contrast(@accent-color, white, hsl(@ui-hue,100%,10%), 33% );
@@ -99,7 +99,7 @@
 @tab-background-color-editor:       @ui-syntax-color;
 
 @tooltip-background-color:          @accent-color;
-@tooltip-text-color:                contrast(@tooltip-background-color, white, hsl(@ui-hue,100%,10%), 40% );
+@tooltip-text-color:                @accent-text-on-bg-color;
 @tooltip-text-key-color:            @tooltip-background-color;
 @tooltip-background-key-color:      @tooltip-text-color;
 
