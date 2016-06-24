@@ -121,6 +121,18 @@
 		.btn-variant(@accent-color);
 	}
 
+	input[type="checkbox"] {
+		background-color: @background-color-selected;
+		&:active,
+		&:checked {
+			background-color: @accent-color;
+		}
+		&:before,
+		&:after {
+			background-color: @accent-text-on-bg-color;
+		}
+	}
+
 	.search-container .btn {
 		font-size: @ui-input-size;
 	}
