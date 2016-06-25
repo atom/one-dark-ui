@@ -99,11 +99,11 @@
       transform: scale(0);
       transition: transform .08s;
       &:hover {
-        color: @base-accent-text-on-bg-color;
-        background-color: @base-accent-color;
+        color: @accent-text-on-bg-color;
+        background-color: @accent-color;
       }
       &:active {
-        background-color: fade(@base-accent-color, 50%);
+        background-color: fade(@accent-color, 50%);
       }
       &::before {
         content: "\f05d"; // plus icon has a smaller weight
@@ -169,9 +169,9 @@
   // Modified ----------------------
   .tab.modified {
     &:hover .close-icon {
-      color: @base-accent-text-color;
+      color: @accent-text-color;
       &:hover {
-        color: @base-accent-text-on-bg-color;
+        color: @accent-text-on-bg-color;
       }
     }
     &:not(:hover) .close-icon {
@@ -180,7 +180,7 @@
       width: 1.5em;
       height: 1.5em;
       line-height: 1.5;
-      color: @base-accent-text-color;
+      color: @accent-text-color;
       border: none;
       transform: scale(1);
       &::before {
@@ -204,7 +204,7 @@
   .placeholder {
     margin: 0;
     height: @ui-tab-height;
-    background: @base-accent-color;
+    background: @accent-color;
     pointer-events: none;
     &:after {
       top: @ui-tab-height/2;
@@ -213,7 +213,7 @@
       margin: -5px 0 0 0;
       border-radius: 0;
       border: 5px solid;
-      border-color: transparent transparent transparent @base-accent-color;
+      border-color: transparent transparent transparent @accent-color;
       background: transparent;
     }
 
@@ -222,7 +222,7 @@
 
       &:after {
         margin-left: -10px;
-        border-color: transparent @base-accent-color transparent transparent;
+        border-color: transparent @accent-color transparent transparent;
       }
     }
   }
@@ -242,7 +242,7 @@
   width: 2px;
   border-top-left-radius: inherit;
   border-radius: @component-border-radius 0;
-  background: @base-accent-color;
+  background: @accent-color;
   opacity: 0;
   transition: opacity .16s;
 

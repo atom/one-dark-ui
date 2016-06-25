@@ -9,7 +9,7 @@
   width: 1em;
   height: 1em;
   font-size: @size;
-  background: radial-gradient(@base-accent-color .1em, transparent .11em);
+  background: radial-gradient(@accent-color .1em, transparent .11em);
 
   &::before,
   &::after {
@@ -27,10 +27,10 @@
     -webkit-animation-fill-mode: backwards;
   }
   &::before {
-    border-color: @base-accent-color transparent transparent transparent;
+    border-color: @accent-color transparent transparent transparent;
   }
   &::after {
-    border-color: transparent lighten(@base-accent-color, 15%) transparent transparent;
+    border-color: transparent lighten(@accent-color, 15%) transparent transparent;
     -webkit-animation-delay: @spinner-duration/2;
   }
 
