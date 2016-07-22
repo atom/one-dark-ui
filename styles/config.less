@@ -1,3 +1,9 @@
+// Variables
+
+@auto-breakpoint-width: 1000px;
+@auto-breakpoint-height: 600px;
+
+
 // Compact mode ----------------------------------------------
 
 @theme-layoutmode: ~'theme-@{ui-theme-name}-layoutmode';
@@ -109,7 +115,7 @@ html { font-size: @font-size; }
   .compact-mode();
 }
 
-@media (max-width: 1280px), (max-height: 800px) {
+@media (max-width: @auto-breakpoint-width), (max-height: @auto-breakpoint-height) {
   [@{theme-layoutmode}="auto"] {
     .compact-mode();
   }
@@ -123,7 +129,7 @@ html { font-size: @font-size; }
   .minimum-width-tabs();
 }
 
-@media (max-width: 1280px), (max-height: 800px) {
+@media (max-width: @auto-breakpoint-width) {
   [@{theme-tabsizing}="auto"] {
     .minimum-width-tabs();
   }
