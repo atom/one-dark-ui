@@ -11,6 +11,10 @@ atom-pane-container {
     .item-views {
       border: 1px solid @pane-item-border-color;
       border-top: none;
+
+      // prevent atom-text-editor from leaking ouside
+      // might improve performance
+      overflow: hidden;
     }
   }
 
