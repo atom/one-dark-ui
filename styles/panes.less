@@ -1,14 +1,22 @@
 
 atom-pane-container {
+  // box-shadow: inset -1px 0 0 @pane-item-border-color;
+  // border-right: 1px solid @pane-item-border-color;
+
   atom-pane {
     position: relative;
     padding-top: @ui-padding-pane;
-    padding-right: @ui-padding-pane;
+    padding-left: @ui-padding-pane;
 
     .item-views {
       border: 1px solid @pane-item-border-color;
       border-top: none;
     }
+  }
+
+  & > atom-pane:first-child,
+  & > atom-pane-axis:first-child > atom-pane:first-child {
+    padding-left: 0;
   }
 
   // make resize-handles fill the space
