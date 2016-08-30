@@ -12,9 +12,14 @@ atom-panel-container {
 atom-panel {
   .text(normal);
   position: relative;
+
   &.top {
-  border: 1px solid @base-border-color;
-  border-top: none;
+    border: 1px solid @base-border-color;
+    border-top: none;
+  }
+  &.left {
+    border-bottom: 1px solid @base-border-color;
+    border-left: 1px solid @base-border-color;
   }
   &.right {
     border-bottom: 1px solid @base-border-color;
