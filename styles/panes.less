@@ -3,12 +3,21 @@ atom-pane-container {
   atom-pane {
     position: relative;
     padding-top: @ui-padding-pane;
-    padding-right: @ui-padding-pane;
+    padding-left: @ui-padding-pane;
 
     .item-views {
       border: 1px solid @pane-item-border-color;
       border-top: none;
+
+      // prevent atom-text-editor from leaking ouside
+      // might improve performance
+      overflow: hidden;
     }
+  }
+
+  & > atom-pane:first-child,
+  & > atom-pane-axis:first-child > atom-pane:first-child {
+    padding-left: 0;
   }
 
   // make resize-handles fill the space

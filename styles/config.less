@@ -35,10 +35,11 @@ html { font-size: @font-size; }
   }
 
   atom-pane-container {
+    border-left: 1px solid @base-border-color;
+
     atom-pane {
-      padding-top: 0;
-      padding-right: 0;
-      border-left: 1px solid @base-border-color;
+      padding: 0;
+      border-right: 1px solid @base-border-color;
       border-bottom: 1px solid @base-border-color;
       .item-views {
         border: none;
@@ -52,6 +53,13 @@ html { font-size: @font-size; }
     atom-pane-axis.vertical > atom-pane-resize-handle {
       height: 8px;
       margin-top: -4px;
+    }
+  }
+
+  atom-panel-container {
+    &.left,
+    &.right {
+      min-width: 0;
     }
   }
 
@@ -75,13 +83,15 @@ html { font-size: @font-size; }
     .tab::after {
       border-top: none;
       border-radius: 0;
+      background-image: none;
+      box-shadow: inset 0 1px 0 hsla(0,0%,100,.04);
     }
     .tab:first-of-type::after {
       border-left: none;
     }
     .tab:last-of-type::after {
       border-right: none;
-      box-shadow: inset 0 1px 1px hsla(0,0%,100,.06), 1px 0 0 @base-border-color;
+      box-shadow: inset 0 1px 0 hsla(0,0%,100,.04), 1px 0 0 @base-border-color;
     }
   }
 
