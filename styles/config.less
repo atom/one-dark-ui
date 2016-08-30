@@ -45,14 +45,15 @@ html { font-size: @font-size; }
         border: none;
       }
     }
+
     // make resize-handles fill the space
-    atom-pane-axis.horizontal > atom-pane-resize-handle {
+    atom-pane-axis.horizontal > atom-pane-resize-handle:before {
       width: 8px;
-      margin-left: -4px;
+      left: -4px;
     }
-    atom-pane-axis.vertical > atom-pane-resize-handle {
+    atom-pane-axis.vertical > atom-pane-resize-handle:before {
       height: 8px;
-      margin-top: -4px;
+      top: -4px;
     }
   }
 

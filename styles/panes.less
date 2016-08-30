@@ -21,12 +21,12 @@ atom-pane-container {
   }
 
   // make resize-handles fill the space
-  atom-pane-axis.horizontal > atom-pane-resize-handle {
+  atom-pane-axis.horizontal > atom-pane-resize-handle:before {
     width: @ui-padding-pane;
-    margin-left: -@ui-padding-pane;
+    left: -@ui-padding-pane;
   }
-  atom-pane-axis.vertical > atom-pane-resize-handle {
+  atom-pane-axis.vertical > atom-pane-resize-handle:before {
     height: @ui-padding-pane;
-    margin-top: 0;
+    top: 0;
   }
 }
