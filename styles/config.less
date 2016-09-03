@@ -35,10 +35,10 @@ html { font-size: @font-size; }
   }
 
   atom-pane-container {
+    padding-top: 0;
     border-left: 1px solid @base-border-color;
 
     atom-pane {
-      padding: 0;
       border-right: 1px solid @base-border-color;
       border-bottom: 1px solid @base-border-color;
       .item-views {
@@ -46,14 +46,19 @@ html { font-size: @font-size; }
       }
     }
 
-    // make resize-handles fill the space
-    atom-pane-axis.horizontal > atom-pane-resize-handle:before {
-      width: 8px;
-      left: -4px;
+    atom-pane-resize-handle.horizontal.horizontal {
+      width: initial;
+      &:before {
+        width: 8px;
+        left: -4px;
+      }
     }
-    atom-pane-axis.vertical > atom-pane-resize-handle:before {
-      height: 8px;
-      top: -4px;
+    atom-pane-resize-handle.vertical.vertical {
+      height: initial;
+      &:before {
+        height: 8px;
+        top: -4px;
+      }
     }
   }
 
