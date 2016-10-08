@@ -55,27 +55,29 @@ code {
 
 .highlight-mixin {
   padding: 1px 4px;
-  font-weight: bold;
-  text-shadow: none;
-  border-radius: @component-border-radius;
-  color: @text-color-highlight;
+  border-radius: 2px;
 }
 
 .highlight {
   .highlight-mixin();
+  font-weight: 700;
+  color: @text-color-highlight;
   background-color: @background-color-highlight;
 }
 
-.highlight-color(@name, @color, @text-color) {
+.highlight-color(@name, @background-color) {
   .highlight-@{name} {
     .highlight-mixin();
-    background-color: fadeout(@color, 50%);
+    font-weight: 500;
+    color: white;
+    text-shadow: 0 1px 0px hsla(0,0%,0%,.2);
+    background-color: @background-color;
   }
 }
-.highlight-color(info, @background-color-info, @text-color-info);
-.highlight-color(warning, @background-color-warning, @text-color-warning);
-.highlight-color(error, @background-color-error, @text-color-error);
-.highlight-color(success, @background-color-success, @text-color-success);
+.highlight-color(   info, @background-color-info);
+.highlight-color(warning, @background-color-warning);
+.highlight-color(  error, @background-color-error);
+.highlight-color(success, @background-color-success);
 
 .results-view .path-details.list-item {
   color: darken(@text-color-highlight, 18%);
