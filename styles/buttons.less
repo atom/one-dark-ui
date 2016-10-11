@@ -42,10 +42,10 @@
     @text-color-highlight
   );
   color: @_text-color;
-  text-shadow: 0 1px 0 hsla(0,0%,0%,.2);
 
   & when (@ui-lightness > 50%) {
     border-color: transparent; // hide border on light backgrounds
+    text-shadow: 0 1px 0 hsla(0,0%,0%,.2);
   }
 
   &:hover,
@@ -74,7 +74,7 @@
 }
 
 .btn.btn-primary {
-  .btn-variant(@accent-color);
+  .btn-variant(@accent-bg-color);
 }
 .btn.btn-info {
   .btn-variant(@background-color-info);

@@ -99,7 +99,7 @@
       transform: scale(0);
       transition: transform .08s;
       &:hover {
-        color: @accent-text-on-bg-color;
+        color: @accent-text-color;
         background-color: @accent-color;
       }
       &:active {
@@ -169,9 +169,9 @@
   // Modified ----------------------
   .tab.modified {
     &:hover .close-icon {
-      color: @accent-text-color;
+      color: @accent-color;
       &:hover {
-        color: @accent-text-on-bg-color;
+        color: @accent-bg-text-color;
       }
     }
     &:not(:hover) .close-icon {
@@ -180,7 +180,7 @@
       width: 1.5em;
       height: 1.5em;
       line-height: 1.5;
-      color: @accent-text-color;
+      color: @accent-color;
       border: none;
       transform: scale(1);
       &::before {
