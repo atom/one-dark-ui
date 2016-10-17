@@ -2,9 +2,6 @@ atom-text-editor[mini] {
   line-height: @component-line-height;
   max-height: @component-line-height + 2; // +2 for borders
   overflow: auto;
-}
-
-atom-text-editor[mini] {
   font-size: @ui-input-size;
   line-height: @ui-line-height;
   max-height: none;
@@ -14,22 +11,18 @@ atom-text-editor[mini] {
   border: 1px solid @input-border-color;
   background-color: @input-background-color;
 
-  &,
-  &::shadow {
-    .placeholder-text {
-      color: @text-color-subtle;
-    }
-    .selection .region {
-      background-color: @input-selection-color;
-    }
-    .cursor {
-      border-color: @accent-color;
-      border-width: 2px;
-    }
+  .placeholder-text {
+    color: @text-color-subtle;
+  }
+  .selection .region {
+    background-color: @input-selection-color;
+  }
+  .cursor {
+    border-color: @accent-color;
+    border-width: 2px;
   }
 
-  &.is-focused,
-  &.is-focused::shadow {
+  &.is-focused {
     .focus();
     background-color: @input-background-color-focus;
     .selection .region {
