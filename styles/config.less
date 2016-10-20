@@ -69,6 +69,9 @@ html { font-size: @font-size; }
   }
 
   atom-panel {
+    &.top {
+      border-right: none;
+    }
     &.left {
       border-left: none;
       border-right: 1px solid @base-border-color;
@@ -76,10 +79,13 @@ html { font-size: @font-size; }
         border-right: none;
       }
     }
-    &.right:first-child:not(:empty) {
+    &.right:first-child {
       border-left: 1px solid @base-border-color;
     }
-    &:empty {
+    &.bottom {
+      border-right: none;
+    }
+    &.tool-panel:empty {
       border: none;
     }
   }

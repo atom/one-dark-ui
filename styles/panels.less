@@ -13,6 +13,9 @@ atom-panel {
   .text(normal);
   position: relative;
 
+  &.header {
+    border-bottom: 1px solid @base-border-color;
+  }
   &.top {
     border: 1px solid @base-border-color;
     border-top: none;
@@ -35,7 +38,10 @@ atom-panel {
     border: 1px solid @base-border-color;
     border-top: none;
   }
-  &:empty {
+  &.footer:not(:last-child) {
+    border-bottom: 1px solid @base-border-color;
+  }
+  &.tool-panel:empty {
     border: none;
   }
 }
