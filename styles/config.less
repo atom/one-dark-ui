@@ -36,10 +36,9 @@ html { font-size: @font-size; }
 
   atom-pane-container {
     padding-top: 0;
-    border-left: 1px solid @base-border-color;
 
     atom-pane {
-      border-right: 1px solid @base-border-color;
+      border-left: 1px solid @base-border-color;
       border-bottom: 1px solid @base-border-color;
       .item-views {
         border: none;
@@ -66,6 +65,28 @@ html { font-size: @font-size; }
     &.left,
     &.right {
       min-width: 0;
+    }
+  }
+
+  atom-panel {
+    &.top {
+      border-right: none;
+    }
+    &.left {
+      border-left: none;
+      border-right: 1px solid @base-border-color;
+      &:last-child {
+        border-right: none;
+      }
+    }
+    &.right:first-child {
+      border-left: 1px solid @base-border-color;
+    }
+    &.bottom {
+      border-right: none;
+    }
+    &.tool-panel:empty {
+      border: none;
     }
   }
 
