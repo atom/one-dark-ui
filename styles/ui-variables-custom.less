@@ -82,9 +82,9 @@
 
 @checkbox-background-color:         fade(@accent-bg-color, 33%);
 
-@input-background-color-focus:      fadein(@input-background-color, 6%);
-@input-selection-color:             darken(@background-color-selected, 6%);
-@input-selection-color-focus:       @background-color-selected;
+@input-background-color-focus:      mix(@accent-bg-color, @input-background-color, 10%);
+@input-selection-color:             mix(@accent-color, @input-background-color, 25%);
+@input-selection-color-focus:       mix(@accent-color, @input-background-color, 50%);
 
 @key-binding-border-color:          hsla(0,0%,100%,.1);
 @key-binding-background-color:      hsla(0,0%,100%,.1);
