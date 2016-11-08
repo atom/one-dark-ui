@@ -71,6 +71,40 @@
   }
 }
 
+// Colorize find-and-replace based on results
+& when (@ui-hue >= 190) and (@ui-hue <= 340) {
+  .find-and-replace {
+    &.has-no-results .find-container atom-text-editor[mini].is-focused {
+      border-color: @text-color-error;
+      box-shadow: 0 0 0 1px @text-color-error;
+      background-color: mix(@text-color-error, @input-background-color, 10%);
+      .selection .region {
+        background-color: mix(@text-color-error, @input-background-color, 50%);
+      }
+      .cursor {
+        border-color: @text-color-error;
+      }
+    }
+
+    &.has-results .find-container atom-text-editor[mini].is-focused {
+      border-color: @text-color-success;
+      box-shadow: 0 0 0 1px @text-color-success;
+      background-color: mix(@text-color-success, @input-background-color, 10%);
+      .selection .region {
+        background-color: mix(@text-color-success, @input-background-color, 50%);
+      }
+      .cursor {
+        border-color: @text-color-success;
+      }
+    }
+
+    &.has-results    .find-container .result-counter { color: @text-color-success; }
+    &.has-no-results .find-container .result-counter { color: @text-color-error; }
+  }
+}
+
+
+
 
 // Timecop ---------------------------
 
