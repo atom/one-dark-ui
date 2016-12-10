@@ -3,6 +3,7 @@
 // ----------------------------------------------
 
 @import "syntax-variables";
+
 .ui-syntax-color() { @syntax-background-color: hsl(220,24%,20%); } .ui-syntax-color(); // fallback color
 @ui-syntax-color: @syntax-background-color;
 
@@ -71,8 +72,10 @@
 
 // used for button, tooltip (larger things)
 @accent-bg-color:         mix( hsv( @ui-hue, 66%, 66%), hsl( @ui-hue, 66%, 60%), @accent-luma * 2 ); // mix hsv + hsl (favor hsl for dark, hsv for light colors)
-@accent-bg-text-color:    contrast(@accent-bg-color, hsl(@ui-hue,100%,10%), #fff, 25% );
+@accent-bg-text-color:    contrast(@accent-bg-color, hsl(@ui-hue,100%,10%), #fff, 30% );
 
+// used for text only
+@accent-only-text-color: mix( hsv( @ui-hue, 100%, 66%), hsl( @ui-hue, 100%, 77%), @accent-luma ); // mix hsv + hsl (favor mostly hsl)
 
 // Components (Custom) -----------------
 @badge-background-color:            lighten(@background-color-highlight, 6%);
@@ -85,9 +88,6 @@
 @input-background-color-focus:      mix(@accent-bg-color, @input-background-color, 10%);
 @input-selection-color:             mix(@accent-color, @input-background-color, 25%);
 @input-selection-color-focus:       mix(@accent-color, @input-background-color, 50%);
-
-@key-binding-border-color:          hsla(0,0%,100%,.1);
-@key-binding-background-color:      hsla(0,0%,100%,.1);
 
 @overlay-backdrop-color:            hsl(@ui-hue,@ui-saturation,10%);
 @overlay-backdrop-opacity:          .9;
