@@ -1,3 +1,14 @@
+
+// Editor in a panel
+
+atom-panel-container atom-text-editor.is-focused {
+  .focus();
+}
+
+
+// Mini
+// Usually just single line inputs
+
 atom-text-editor[mini] {
   overflow: auto;
   font-size: @ui-input-size;
@@ -12,9 +23,11 @@ atom-text-editor[mini] {
   .placeholder-text {
     color: @text-color-subtle;
   }
+
   .selection .region {
     background-color: @input-selection-color;
   }
+
   .cursor {
     border-color: @accent-color;
     border-width: 2px;
