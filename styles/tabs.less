@@ -59,6 +59,10 @@
       box-shadow: inset 0 1px 1px hsla(0,0%,100,.06);
       transition: opacity .16s;
       opacity: 0;
+
+      // Make sure that the :after pseudoelement doesn't get the click instead
+      // of the element with the [data-path] attribute.
+      pointer-events: none;
     }
     &.active::after {
       opacity: 1;
