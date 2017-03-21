@@ -61,3 +61,18 @@
     background-color: @accent-text-color;
   }
 }
+
+
+
+// States -------------------------
+
+.input-text,
+.input-search,
+.input-number,
+.input-textarea,
+.input-select,
+.input-color {
+  &:focus {
+    .focus();
+  }
+}
