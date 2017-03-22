@@ -201,6 +201,19 @@
     }
   }
 
+  // Tabs in the docks ----------------------
+
+  atom-dock & {
+    .tab.active {
+      background-color: @tool-panel-background-color;
+      &::after {
+        border-bottom-color: @tool-panel-background-color;
+      }
+      .title {
+        background-color: @tool-panel-background-color;
+      }
+    }
+  }
 
   // Dragging ----------------------
 
