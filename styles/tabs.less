@@ -181,9 +181,22 @@
       background: transparent;
     }
 
+    &:first-child {
+      position: absolute;
+      left: 0;
+
+      &:after {
+        transform: none;
+        margin-left: 2px;
+        border-color: transparent transparent transparent @accent-color;
+      }
+    }
+
     // revert direction when last child
     &:last-child {
-      margin-left: -2px;
+      position: absolute;
+      right: 2px;
+
       &:after {
         transform: none;
         margin-left: -8px;
