@@ -1,198 +1,106 @@
-// Variables
 
-@auto-breakpoint-width: 1000px;
-@auto-breakpoint-height: 600px;
-
-
-// Compact mode ----------------------------------------------
-
-@theme-layoutmode: ~'theme-@{ui-theme-name}-layoutmode';
-
-// Default
-html { font-size: @font-size; }
-
-
-// Large screen (>= 27")
-@media (min-width: 2560px) {
-  [@{theme-layoutmode}="auto"] { font-size: @font-size + 2px; }
-}
-
-// Medium screen (>= 20")
-@media (min-width: 1920px) {
-  [@{theme-layoutmode}="auto"] { font-size: @font-size + 1px; }
-}
-
-// Small screen (<= 13")
-
-.compact-mode() {
-  font-size: @font-size - 1px;
-
-  atom-workspace {
-    padding-right: 0;
-    atom-panel-container.left:empty {
-      padding-left: 0;
-    }
-  }
-
-  atom-pane-container {
-    padding-top: 0;
-
-    atom-pane {
-      border-left: 1px solid @base-border-color;
-      border-bottom: 1px solid @base-border-color;
-      .item-views {
-        border: none;
-      }
-    }
-
-    atom-pane-resize-handle.horizontal.horizontal {
-      width: initial;
-      &:before {
-        width: 8px;
-        left: -4px;
-      }
-    }
-    atom-pane-resize-handle.vertical.vertical {
-      height: initial;
-      &:before {
-        height: 8px;
-        top: -4px;
-      }
-    }
-  }
-
-  atom-panel-container {
-    &.left,
-    &.right {
-      min-width: 0;
-    }
-  }
-
-  atom-panel {
-    &.top {
-      border-right: none;
-    }
-    &.left {
-      border-left: none;
-      border-right: 1px solid @base-border-color;
-      &:last-child {
-        border-right: none;
-      }
-    }
-    &.right:first-child {
-      border-left: 1px solid @base-border-color;
-    }
-    &.bottom {
-      border-right: none;
-    }
-    &.tool-panel:empty {
-      border: none;
-    }
-  }
-
-  .tab-bar {
-    .tab {
-      border-radius: 0;
-    }
-    .tab::before {
-      border-radius: 0;
-      top: 0;
-      bottom: 0;
-
-      .theme-one-dark-ui & {
-        left: 1px;
-      }
-    }
-
-    .tab:first-of-type::before {
-      left: 0;
-    }
-    .tab::after {
-      border-top: none;
-      border-radius: 0;
-      background-image: none;
-      box-shadow: inset 0 1px 0 hsla(0,0%,100,.04);
-    }
-    .tab:first-of-type::after {
-      border-left: none;
-    }
-    .tab:last-of-type::after {
-      border-right: none;
-      box-shadow: inset 0 1px 0 hsla(0,0%,100,.04), 1px 0 0 @base-border-color;
-    }
-  }
-
-
-  // tree-view
-  .tree-view::before {
-    margin-top: 0;
-  }
-
-  .tree-view .project-root.project-root {
-    padding-top: 0;
-    &:before {
-      height: @ui-tab-height;
-    }
-  }
-  .theme-one-dark-ui .tree-view .project-root.project-root::before {
-    border-top: none;
-  }
-}
-
-[@{theme-layoutmode}="compact"] {
-  .compact-mode();
-}
-
-@media (max-width: @auto-breakpoint-width), (max-height: @auto-breakpoint-height) {
-  [@{theme-layoutmode}="auto"] {
-    .compact-mode();
-  }
-}
-
-// Small tabs mode ----------------------------------------------
+// Tabs ----------------------------------------------
 
 @theme-tabsizing: ~'theme-@{ui-theme-name}-tabsizing';
+@theme-dockButtons: ~'theme-@{ui-theme-name}-dock-buttons';
 
-[@{theme-tabsizing}="minimum"] {
-  .minimum-width-tabs();
-}
+@tab-min-width: 7em; // ~ icon + 6 characters
 
-@media (max-width: @auto-breakpoint-width) {
-  [@{theme-tabsizing}="auto"] {
-    .minimum-width-tabs();
+
+// Even (default) ---------------
+
+.tab-bar {
+  .tab,
+  .tab.active {
+    flex: 1 1 0;
+    max-width: none;
+    min-width: @tab-min-width;
   }
+
+  // TODO: Turn this into a config
+  // Truncates the beginning instead
+  // .title.title.title {
+  //   direction: rtl; // change direction
+  // }
 }
 
-.minimum-width-tabs() {
-  // auto-size tabs
+
+// Minimum (show long paths) ---------------
+
+[@{theme-tabsizing}="minimum"] .tab-bar {
   .tab,
   .tab.active {
     flex: 0 0 auto;
-    min-width: @ui-tab-height;
+    min-width: 2.75em;
+    max-width: @tab-min-width * 3.3;
+  }
+  atom-dock {
+    .tab,
+    .tab.active {
+      max-width: @tab-min-width * 2;
+    }
+  }
+}
+
+
+
+// Hide docks toggle buttons ------------------------------
+// Only when not dragging a tab
+
+[@{theme-dockButtons}="hidden"] {
+
+  // Transparent handle
+  .atom-dock-resize-handle {
+    background-color: transparent;
   }
 
-  .tab .close-icon.close-icon.close-icon {
-    top: .86em; // should be .875em but that messes up the pixel snapping
-    right: .46em; // again some random number helps with pixel snapping of the width
-    width: 1.25em;
-    height: 1.25em;
-    line-height: 1.25;
+  // Remove min space
+  atom-dock.left,
+  atom-dock.right {
+    min-width: 0;
   }
-  .tab .close-icon::before {
-    width: 1.25em;
-    height: 1.25em;
-    line-height: 1.25;
+  atom-dock.bottom {
+    min-height: 0;
   }
 
-  .tab .title {
-    -webkit-mask: none;
-    margin-left: 1.25em;
-    margin-right: 1.25em;
+  // Hide docks when not open
+  .atom-dock-inner:not(.atom-dock-open) {
+    display: none;
   }
 
-  .tab.modified .title,
-  .tab:hover .title {
-    -webkit-mask: linear-gradient( to left, hsla(0,0%,0%,0), hsla(0,0%,0%,1) 1em) no-repeat;
-    -webkit-mask-position: -@modified-icon-width*.6 0;
+  // Hide toggle buttons
+  .atom-dock-toggle-button {
+    display: none;
+  }
+
+  // Make handles not take up any space when dock is open
+  .atom-dock-resize-handle {
+    position: absolute;
+    z-index: 2;
+
+    &.left {
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+    &.right {
+      top: 0;
+      left: 0;
+      bottom: 0;
+    }
+    &.bottom {
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+
+  // Add borders
+  .atom-dock-inner.atom-dock-open.left {
+    border-right: 1px solid @base-border-color;
+  }
+  .atom-dock-inner.atom-dock-open.right {
+    border-left: 1px solid @base-border-color;
   }
 }

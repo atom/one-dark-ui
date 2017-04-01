@@ -1,0 +1,19 @@
+
+// Docks ------------------------------
+
+// Make resize handle appear like a big border
+.atom-dock-resize-handle,
+.atom-dock-toggle-button .atom-dock-toggle-button-inner {
+  background-color: @base-border-color;
+}
+
+
+// Makes sure docks don't cover git markers in the center
+// TODO: Move to core
+atom-dock.left,
+atom-dock.right {
+  min-width: 4px;
+}
+atom-dock.bottom {
+  min-height: 4px;
+}

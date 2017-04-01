@@ -1,45 +1,25 @@
 
 // Panels
 
-// Keep at least some padding when there are no panels
-atom-panel-container {
-  &.left,
-  &.right {
-    min-width: @ui-padding-pane;
-  }
-}
-
 atom-panel {
   .text(normal);
   position: relative;
+  border-bottom: 1px solid @base-border-color;
 
-  &.header {
-    border-bottom: 1px solid @base-border-color;
-  }
   &.top {
-    border: 1px solid @base-border-color;
-    border-top: none;
+    border-right: 1px solid @base-border-color;
   }
   &.left {
-    border-bottom: 1px solid @base-border-color;
     border-right: 1px solid @base-border-color;
-    &:last-child {
-      border-right: none;
-    }
   }
   &.right {
-    border-bottom: 1px solid @base-border-color;
     border-left: 1px solid @base-border-color;
-    &:first-child {
-      border-left: none;
-    }
   }
   &.bottom {
-    border: 1px solid @base-border-color;
-    border-top: none;
+    border-right: 1px solid @base-border-color;
   }
-  &.footer:not(:last-child) {
-    border-bottom: 1px solid @base-border-color;
+  &.footer:last-child {
+    border-bottom: none;
   }
   &.tool-panel:empty {
     border: none;

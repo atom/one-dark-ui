@@ -1,78 +1,22 @@
 
 atom-pane-container {
-  padding-top: @ui-padding-pane;
 
   atom-pane {
     position: relative;
+    border-right: 1px solid @base-border-color;
+    border-bottom: 1px solid @base-border-color;
 
     .item-views {
-      border: 1px solid @pane-item-border-color;
-      border-top: none;
-
-      // prevent atom-text-editor from leaking ouside
-      // might improve performance
+      // prevent atom-text-editor from leaking ouside might improve performance
       overflow: hidden;
     }
   }
 
-  // TODO: Remove once it lands in core
-  atom-pane-axis {
-    & > atom-pane-resize-handle {
-      position: relative;
-      &:before {
-        content: "";
-        position: absolute;
-        z-index: 3;
-      }
-    }
-  }
+}
 
-  atom-pane-axis.vertical {
-    & > atom-pane-resize-handle {
-      &:before {
-        height: 8px;
-        top: -4px;
-        left: 0;
-        right: 0;
-        cursor: row-resize;
-      }
-    }
-  }
-
-  atom-pane-axis.horizontal {
-    & > atom-pane-resize-handle {
-      &:before {
-        width: 8px;
-        left: -4px;
-        top: 0;
-        bottom: 0;
-        cursor: col-resize;
-      }
-    }
-  }
-
-
-  // Add some space between panes
-  atom-pane-resize-handle.horizontal.horizontal,
-  atom-pane-resize-handle.vertical.vertical {
-    margin: 0;
-  }
-  atom-pane-resize-handle.horizontal.horizontal {
-    width: @ui-padding-pane;
-    height: initial;
-  }
-  atom-pane-resize-handle.vertical.vertical {
-    width: initial;
-    height: @ui-padding-pane;
-  }
-
-  atom-pane-resize-handle.horizontal.horizontal:before {
-    width: inherit;
-    left: initial;
-  }
-  atom-pane-resize-handle.vertical.vertical:before {
-    height: inherit;
-    top: initial;
-  }
-
+// Hide right-most border
+atom-pane:only-child,
+atom-pane-axis.pane-row > atom-pane:last-child,
+atom-pane-axis.pane-column:last-child > atom-pane {
+  border-right: none;
 }
