@@ -13,6 +13,10 @@ describe "One Dark UI theme", ->
     expect(document.documentElement.style.fontSize).toBe ''
 
   it "allows the tab sizing to be set via config", ->
+    atom.config.set('one-dark-ui.tabSizing', 'Maximum')
+    expect(document.documentElement.getAttribute('theme-one-dark-ui-tabsizing')).toBe 'maximum'
+
+  it "allows the tab sizing to be set via config", ->
     atom.config.set('one-dark-ui.tabSizing', 'Minimum')
     expect(document.documentElement.getAttribute('theme-one-dark-ui-tabsizing')).toBe 'minimum'
 
