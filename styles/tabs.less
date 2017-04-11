@@ -44,7 +44,7 @@
       box-shadow: none;
     }
     &:first-of-type {
-      border-left: none;
+      border-left-color: transparent;
     }
     &:last-of-type {
       // use box-shadow to not take up any space
@@ -181,25 +181,13 @@
       background: transparent;
     }
 
-    &:first-child {
-      position: absolute;
-      left: 0;
-
-      &:after {
-        transform: none;
-        margin-left: 2px;
-        border-color: transparent transparent transparent @accent-color;
-      }
-    }
-
-    // revert direction when last child
     &:last-child {
-      position: absolute;
-      right: 2px;
-
+      &:before {
+        margin-left: -2px;
+      }
       &:after {
         transform: none;
-        margin-left: -8px;
+        margin-left: -10px;
         border-color: transparent @accent-color transparent transparent;
       }
     }
