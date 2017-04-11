@@ -13,8 +13,14 @@
   .tab,
   .tab.active {
     flex: 1 1 0;
-    max-width: none;
+    max-width: 22em;
     min-width: @tab-min-width;
+  }
+  atom-dock & {
+    .tab,
+    .tab.active {
+      max-width: none;
+    }
   }
 
   // TODO: Turn this into a config
@@ -22,6 +28,16 @@
   // .title.title.title {
   //   direction: rtl; // change direction
   // }
+}
+
+
+// Maximum (full width) ---------------
+
+[@{theme-tabsizing}="maximum"] .tab-bar {
+  .tab,
+  .tab.active {
+    max-width: none;
+  }
 }
 
 
