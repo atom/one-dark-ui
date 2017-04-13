@@ -61,23 +61,8 @@
 
 
 // Hide docks toggle buttons ------------------------------
-// Only when not dragging a tab
 
 [@{theme-dockButtons}="hidden"] {
-
-  // Transparent handle
-  .atom-dock-resize-handle {
-    background-color: transparent;
-  }
-
-  // Remove min space
-  atom-dock.left,
-  atom-dock.right {
-    min-width: 0;
-  }
-  atom-dock.bottom {
-    min-height: 0;
-  }
 
   // Hide docks when not open
   .atom-dock-inner:not(.atom-dock-open) {
@@ -89,34 +74,4 @@
     display: none;
   }
 
-  // Make handles not take up any space when dock is open
-  .atom-dock-resize-handle {
-    position: absolute;
-    z-index: 11; // same as toggle buttons
-
-    &.left {
-      top: 0;
-      right: 0;
-      bottom: 0;
-    }
-    &.right {
-      top: 0;
-      left: 0;
-      bottom: 0;
-    }
-    &.bottom {
-      top: 0;
-      left: 0;
-      right: 0;
-    }
-  }
-
-
-  // Add borders
-  .atom-dock-inner.atom-dock-open.left {
-    border-right: 1px solid @base-border-color;
-  }
-  .atom-dock-inner.atom-dock-open.right {
-    border-left: 1px solid @base-border-color;
-  }
 }
