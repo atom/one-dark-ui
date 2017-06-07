@@ -241,3 +241,20 @@ atom-dock .tab-bar .tab::before {
     background-color: @tab-background-color-editor; // Match syntax background color
   }
 }
+
+// Swap close button on OSX --------------
+
+.platform-darwin {
+  .tab-bar .tab .close-icon {
+    left: 0;
+    right: auto;
+  }
+  .tab-bar .tab:hover .title {
+    -webkit-mask: linear-gradient( to right, hsla(0,0%,0%,0), hsla(0,0%,0%,1) 1em) no-repeat;
+    -webkit-mask-position: 1em 0;
+    // Remove file icon on :hover
+    &::before {
+        content: "";
+    }
+  }
+}
