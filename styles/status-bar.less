@@ -13,7 +13,8 @@
   }
 
   // underlines should only be used for external links
-  a:hover {
+  a:hover,
+  a:focus {
     text-decoration: none;
     cursor: default;
   }
@@ -48,5 +49,33 @@
   	width: auto;
     height: 16px;
     margin-right: 4px;
+  }
+}
+
+
+// Package overrides -------------------------------
+
+.status-bar.status-bar {
+
+  // Read-only -> Remove hover effect
+  status-bar-launch-mode,
+  status-bar-cursor,
+  busy-signal {
+    &:hover,
+    &:active,
+    .inline-block:hover,
+    .inline-block:active {
+      background-color: transparent;
+    }
+  }
+
+  // Remove underline
+  .package-updates-status-view,
+  .github-ChangedFilesCount {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      cursor: default;
+    }
   }
 }
