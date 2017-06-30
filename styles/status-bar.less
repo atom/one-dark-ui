@@ -9,30 +9,74 @@
   background-color: @level-3-color;
 
   .flexbox-repaint-hack {
-    padding: 0 @status-bar-padding/2;
+    padding: 0; // override default
+  }
+
+  // underlines should only be used for external links
+  a:hover,
+  a:focus {
+    text-decoration: none;
+    cursor: default;
   }
 
   .inline-block {
-    margin-right: @status-bar-padding;
+    margin: 0; // override default
+    padding: 0 @status-bar-padding/2;
     vertical-align: top;
+
+    &:hover {
+      background-color: @level-3-color-hover;
+    }
+    &:active {
+      background-color: @level-3-color-active;
+    }
+
+    // reset on child inline-block
+    .inline-block {
+      margin: 0;
+      padding: 0;
+    }
   }
 
   .status-bar-right {
     .inline-block {
-      margin-right: 0;
-      margin-left: @status-bar-padding;
-      & > .inline-block {
-        margin-left: 0;
-      }
-    }
-    .icon {
-      margin-right: @status-bar-padding/8;
+      margin-left: 0; // override default
     }
   }
 
   .icon::before {
     font-size: 16px; // keeps them sharp
-  	width: 16px;
+  	width: auto;
     height: 16px;
+    margin-right: 4px;
+  }
+}
+
+
+// Package overrides -------------------------------
+
+.status-bar.status-bar {
+
+  // Read-only -> Remove hover effect
+  .is-read-only, // <- use this class in packages
+  status-bar-launch-mode,
+  status-bar-cursor,
+  busy-signal {
+    &:hover,
+    &:active,
+    .inline-block:hover,
+    .inline-block:active {
+      background-color: transparent;
+    }
+  }
+
+  // Remove underline
+  .package-updates-status-view,
+  .github-ChangedFilesCount {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      cursor: default;
+    }
   }
 }
