@@ -43,12 +43,15 @@
       margin-left: 0; // override default
     }
   }
-
+  .icon {
+    vertical-align: middle;
+  }
   .icon::before {
-    font-size: 16px; // keeps them sharp
-  	width: auto;
-    height: 16px;
-    margin-right: 4px;
+    font-size: 1.33333em; // should be 16px with a default of 12px
+  	width: auto; // use natural width
+    height: auto;
+    margin-right: .25em;
+    top: auto;
   }
 }
 
