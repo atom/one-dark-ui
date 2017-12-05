@@ -15,7 +15,12 @@
   }
 
   .selected:before {
-    background: @tree-view-background-selected-color;
+    background: @background-color-selected;
+  }
+
+  &:focus .selected:before {
+    color: contrast(@button-background-color-selected);
+    background: @button-background-color-selected;
   }
 }
 
@@ -69,23 +74,4 @@
 }
 .tree-view .project-root-header.project-root-header.project-root-header.project-root-header::before {
   line-height: @ui-tab-height;
-}
-
-// Active tree-view marker --------------
-
-.tree-view::before {
-  content: "";
-  position: fixed;
-  pointer-events: none;
-  z-index: 1;
-  height: @ui-tab-height;
-  width: 2px;
-  background: @accent-color;
-  opacity: 0;
-  transition: opacity .16s;
-}
-
-.tree-view:focus::before {
-  opacity: 1;
-  transition-duration: .32s;
 }
