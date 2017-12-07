@@ -62,6 +62,10 @@
       margin: 0 @title-padding;
     }
 
+    // VCS coloring ----------------------
+    &:not(.active) .status-added { color: fade(@text-color-success, 55%) }
+    &:not(.active) .status-modified { color: fade(@text-color-warning, 55%) }
+
 
     // Icons ----------------------
 
