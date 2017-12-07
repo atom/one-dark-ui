@@ -35,3 +35,15 @@
   border-color: @accent-color;
   box-shadow: 0 0 0 1px @accent-color;
 }
+
+.valid() {
+  border-color: @text-color-success;
+  box-shadow: 0 0 0 1px @text-color-success;
+  background-color: mix(@text-color-success, @input-background-color, 10%);
+}
+
+.invalid() {
+  border-color: @text-color-error;
+  box-shadow: 0 0 0 1px @text-color-error;
+  background-color: mix(@text-color-error, @input-background-color, 10%);
+}
