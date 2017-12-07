@@ -63,8 +63,8 @@
     }
 
     // VCS coloring ----------------------
-    &:not(.active) .status-added { color: fade(@text-color-success, 55%) }
-    &:not(.active) .status-modified { color: fade(@text-color-warning, 55%) }
+    &:not(.active) .status-added    { color: @tab-inactive-status-added; }
+    &:not(.active) .status-modified { color: @tab-inactive-status-modified; }
 
 
     // Icons ----------------------
