@@ -85,8 +85,12 @@
 
   // Remove margin for icon without text
   status-bar-launch-mode::before, // Launch mode
+  .about-release-notes::before, // New release squirrel
   .PortalStatusBarIndicator .icon::before, // Teletype
   .icon.is-icon-only::before {
     margin-right: 0;
+  }
+  .github-PushPull-label.is-push:empty { // GitHub package when nothing to push
+    margin-right: -.25em;
   }
 }
