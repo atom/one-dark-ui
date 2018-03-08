@@ -20,14 +20,10 @@
   "configSchema": {
     "fontSize": {
       "title": "Font Size",
-      "description": "Change the UI font size. Needs to be between 8 and 20. In Auto mode, the Font Size will automatically change based on the window size.",
-      "type": [
-        "integer",
-        "string"
-      ],
-      "minimum": 8,
-      "maximum": 20,
-      "default": "Auto",
+      "description": "Change the font size for the UI.",
+      "type": "integer",
+      "default": 12,
+      "enum": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
       "order": 1
     },
     "tabSizing": {

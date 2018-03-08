@@ -4,13 +4,10 @@ describe "One Dark UI theme", ->
       atom.packages.activatePackage('one-dark-ui')
 
   it "allows the font size to be set via config", ->
-    expect(document.documentElement.style.fontSize).toBe ''
+    expect(document.documentElement.style.fontSize).toBe '12px'
 
     atom.config.set('one-dark-ui.fontSize', '10')
     expect(document.documentElement.style.fontSize).toBe '10px'
-
-    atom.config.set('one-dark-ui.fontSize', 'Auto')
-    expect(document.documentElement.style.fontSize).toBe ''
 
   it "allows the tab sizing to be set via config", ->
     atom.config.set('one-dark-ui.tabSizing', 'Maximum')
