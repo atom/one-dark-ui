@@ -25,10 +25,7 @@ module.exports =
 # Font Size -----------------------
 
 setFontSize = (currentFontSize) ->
-  if Number.isInteger(currentFontSize)
-    root.style.fontSize = "#{currentFontSize}px"
-  else if currentFontSize is 'Auto'
-    unsetFontSize()
+  root.style.fontSize = "#{currentFontSize}px"
 
 unsetFontSize = ->
   root.style.fontSize = ''
