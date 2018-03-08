@@ -82,4 +82,11 @@
       cursor: default;
     }
   }
+
+  // Remove margin for icon without text
+  status-bar-launch-mode::before, // Launch mode
+  .PortalStatusBarIndicator .icon::before, // Teletype
+  .icon.is-icon-only::before {
+    margin-right: 0;
+  }
 }
