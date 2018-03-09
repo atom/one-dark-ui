@@ -1,7 +1,7 @@
 {
   "name": "one-dark-ui",
   "theme": "ui",
-  "version": "1.10.11",
+  "version": "1.11.0",
   "description": "Atom One dark UI theme",
   "keywords": [
     "dark",
@@ -23,7 +23,19 @@
       "description": "Change the font size for the UI.",
       "type": "integer",
       "default": 12,
-      "enum": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+      "enum": [
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
       "order": 1
     },
     "tabSizing": {
