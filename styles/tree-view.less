@@ -83,3 +83,35 @@
 .tree-view .project-root-header.project-root-header.project-root-header.project-root-header::before {
   line-height: @ui-tab-height;
 }
+
+
+// Sticky Projects ------------------------------
+
+.tree-view {
+  .project-root-header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding-left: 5px;
+    padding-right: 10px;
+    border-bottom: 1px solid @base-border-color;
+    background-color: @tree-view-background-color;
+  }
+  .project-root.project-root {
+    margin-left: -5px;
+    margin-right: -10px;
+
+    // Disable selection
+    &::before {
+      display: none;
+    }
+
+    // Add selection back
+    &.selected .project-root-header {
+      background-color: @background-color-selected;
+    }
+  }
+  &:focus .selected .project-root-header.project-root-header  {
+    background: @button-background-color-selected;
+  }
+}
