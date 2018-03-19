@@ -20,3 +20,11 @@ describe "One Dark UI theme", ->
   it "allows the dock toggle buttons to be hidden via config", ->
     atom.config.set('one-dark-ui.hideDockButtons', true)
     expect(document.documentElement.getAttribute('theme-one-dark-ui-dock-buttons')).toBe 'hidden'
+
+  it "allows the tree-view headers to be sticky via config", ->
+    atom.config.set('one-dark-ui.stickyHeaders', true)
+    expect(document.documentElement.getAttribute('theme-one-dark-ui-sticky-headers')).toBe 'sticky'
+
+  it "allows the tree-view headers to not be sticky via config", ->
+    atom.config.set('one-dark-ui.stickyHeaders', false)
+    expect(document.documentElement.getAttribute('theme-one-dark-ui-sticky-headers')).toBe null
