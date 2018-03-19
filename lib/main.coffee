@@ -1,23 +1,25 @@
 root = document.documentElement
+themeName = 'one-dark-ui'
+
 
 module.exports =
   activate: (state) ->
-    atom.config.observe 'one-dark-ui.fontSize', (value) ->
+    atom.config.observe "#{themeName}.fontSize", (value) ->
       setFontSize(value)
 
-    atom.config.observe 'one-dark-ui.tabSizing', (value) ->
+    atom.config.observe "#{themeName}.tabSizing", (value) ->
       setTabSizing(value)
 
-    atom.config.observe 'one-dark-ui.hideDockButtons', (value) ->
+    atom.config.observe "#{themeName}.hideDockButtons", (value) ->
       setHideDockButtons(value)
 
-    atom.config.observe 'one-dark-ui.stickyHeaders', (value) ->
+    atom.config.observe "#{themeName}.stickyHeaders", (value) ->
       setStickyHeaders(value)
 
     # DEPRECATED: This can be removed at some point (added in Atom 1.17/1.18ish)
     # It removes `layoutMode`
-    if atom.config.get('one-dark-ui.layoutMode')
-      atom.config.unset('one-dark-ui.layoutMode')
+    if atom.config.get("#{themeName}.layoutMode")
+      atom.config.unset("#{themeName}.layoutMode")
 
   deactivate: ->
     unsetFontSize()
@@ -38,31 +40,31 @@ unsetFontSize = ->
 # Tab Sizing -----------------------
 
 setTabSizing = (tabSizing) ->
-  root.setAttribute('theme-one-dark-ui-tabsizing', tabSizing.toLowerCase())
+  root.setAttribute("theme-#{themeName}-tabsizing", tabSizing.toLowerCase())
 
 unsetTabSizing = ->
-  root.removeAttribute('theme-one-dark-ui-tabsizing')
+  root.removeAttribute("theme-#{themeName}-tabsizing")
 
 
 # Dock Buttons -----------------------
 
 setHideDockButtons = (hideDockButtons) ->
   if hideDockButtons
-    root.setAttribute('theme-one-dark-ui-dock-buttons', 'hidden')
+    root.setAttribute("theme-#{themeName}-dock-buttons", 'hidden')
   else
     unsetHideDockButtons()
 
 unsetHideDockButtons = ->
-  root.removeAttribute('theme-one-dark-ui-dock-buttons')
+  root.removeAttribute("theme-#{themeName}-dock-buttons")
 
 
 # Sticky Headers -----------------------
 
 setStickyHeaders = (stickyHeaders) ->
   if stickyHeaders
-    root.setAttribute('theme-one-dark-ui-sticky-headers', 'sticky')
+    root.setAttribute("theme-#{themeName}-sticky-headers", 'sticky')
   else
     unsetStickyHeaders()
 
 unsetStickyHeaders = ->
-  root.removeAttribute('theme-one-dark-ui-sticky-headers')
+  root.removeAttribute("theme-#{themeName}-sticky-headers")
