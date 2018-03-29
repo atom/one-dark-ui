@@ -10,6 +10,9 @@ module.exports =
     atom.config.observe "#{themeName}.tabSizing", (value) ->
       setTabSizing(value)
 
+    atom.config.observe "#{themeName}.tabCloseButton", (value) ->
+      setTabCloseButton(value)
+
     atom.config.observe "#{themeName}.hideDockButtons", (value) ->
       setHideDockButtons(value)
 
@@ -24,6 +27,7 @@ module.exports =
   deactivate: ->
     unsetFontSize()
     unsetTabSizing()
+    unsetTabCloseButton()
     unsetHideDockButtons()
     unsetStickyHeaders()
 
@@ -44,6 +48,18 @@ setTabSizing = (tabSizing) ->
 
 unsetTabSizing = ->
   root.removeAttribute("theme-#{themeName}-tabsizing")
+
+
+# Tab Close Button -----------------------
+
+setTabCloseButton = (tabCloseButton) ->
+  if tabCloseButton is 'Left'
+    root.setAttribute("theme-#{themeName}-tab-close-button", 'left')
+  else
+    unsetTabCloseButton()
+
+unsetTabCloseButton = ->
+  root.removeAttribute("theme-#{themeName}-tab-close-button")
 
 
 # Dock Buttons -----------------------

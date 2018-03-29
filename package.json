@@ -50,18 +50,29 @@
       ],
       "order": 2
     },
+    "tabCloseButton": {
+      "title": "Tab Close Button",
+      "description": "Choose the position of the close button shown in tabs.",
+      "type": "string",
+      "default": "Right",
+      "enum": [
+        "Left",
+        "Right"
+      ],
+      "order": 3
+    },
     "hideDockButtons": {
       "title": "Hide dock toggle buttons",
       "description": "Note: When hiding the toggle buttons, opening a dock needs to be done by using the keyboard or other alternatives.",
       "type": "boolean",
       "default": "false",
-      "order": 3
+      "order": 4
     },
     "stickyHeaders": {
       "title": "Make tree-view project headers sticky",
       "type": "boolean",
       "default": "true",
-      "order": 4
+      "order": 5
     }
   }
 }
