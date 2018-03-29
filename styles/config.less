@@ -109,5 +109,11 @@
     &:focus .selected .project-root-header.project-root-header  {
       background: @button-background-color-selected;
     }
+
+    // Fix sticky header from covering auto-revealed items
+    .list-item.selected {
+      padding-top: @ui-tab-height;
+      margin-top: -@ui-tab-height;
+    }
   }
 }
