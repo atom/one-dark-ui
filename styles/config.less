@@ -1,14 +1,18 @@
 
-// Tabs ----------------------------------------------
+// Theme config
+// This gets changed from the theme settings
 
 @theme-tabsizing: ~'theme-@{ui-theme-name}-tabsizing';
 @theme-dockButtons: ~'theme-@{ui-theme-name}-dock-buttons';
 @theme-stickyHeaders: ~'theme-@{ui-theme-name}-sticky-headers';
+@theme-closeButton: ~'theme-@{ui-theme-name}-tab-close-button';
+
+
+// Tabs ----------------------------------------------
 
 @tab-min-width: 7em; // ~ icon + 6 characters
 
-
-// Even (default) ---------------
+// Even (default)
 
 .tab-bar {
   .tab,
@@ -32,7 +36,7 @@
 }
 
 
-// Maximum (full width) ---------------
+// Maximum (full width)
 
 [@{theme-tabsizing}="maximum"] .tab-bar {
   .tab,
@@ -42,7 +46,7 @@
 }
 
 
-// Minimum (show long paths) ---------------
+// Minimum (show long paths)
 
 [@{theme-tabsizing}="minimum"] .tab-bar {
   .tab,
@@ -59,6 +63,19 @@
   }
 }
 
+
+// Tabs: close button position  ------------------------------
+
+[@{theme-closeButton}="left"] {
+
+  .tab-bar .tab {
+    .close-icon {
+      right: auto;
+      left: @icon-padding-right;
+    }
+  }
+
+}
 
 
 // Hide docks toggle buttons ------------------------------

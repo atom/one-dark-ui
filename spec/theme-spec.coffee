@@ -19,6 +19,10 @@ describe "#{themeName} theme", ->
     atom.config.set("#{themeName}.tabSizing", 'Minimum')
     expect(document.documentElement.getAttribute("theme-#{themeName}-tabsizing")).toBe 'minimum'
 
+  it "allows the tab close button to be shown on the left via config", ->
+    atom.config.set("#{themeName}.tabCloseButton", 'Left')
+    expect(document.documentElement.getAttribute("theme-#{themeName}-tab-close-button")).toBe 'left'
+
   it "allows the dock toggle buttons to be hidden via config", ->
     atom.config.set("#{themeName}.hideDockButtons", true)
     expect(document.documentElement.getAttribute("theme-#{themeName}-dock-buttons")).toBe 'hidden'
