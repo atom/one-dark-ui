@@ -207,9 +207,16 @@
     }
     .Select-option {
       &.is-focused {
-        color: @accent-bg-text-color;
-        background-color: @accent-bg-color;
+        color: @accent-text-color;
+        background-color: @accent-color;
       }
+    }
+    .Select-menu-outer {
+      left: -2px;
+      right: -2px;
+      bottom: 100%;
+      border: 2px solid @accent-color;
+      background-color: @overlay-background-color;
     }
   }
 
