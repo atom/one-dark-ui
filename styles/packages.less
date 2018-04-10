@@ -175,3 +175,42 @@
     border-color: @level-3-color;
   }
 }
+
+
+
+// GitHub package ---------------------------------------------------
+
+.github {
+
+  // Fix focus styles
+  // Since it's not possible to add a padding to <atom-text-editor>
+  // a pseudo element is used to add the border when focused.
+  &-CommitView-editor atom-text-editor.is-focused {
+    box-shadow: none;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      border: 2px solid;
+      border-color: inherit;
+      border-radius: @component-border-radius;
+    }
+  }
+
+  // Add focus styles since :focus doesn't work
+  &-CommitView-coAuthorEditor {
+    &.is-focused {
+      .focus();
+    }
+    .Select-option {
+      &.is-focused {
+        color: @accent-bg-text-color;
+        background-color: @accent-bg-color;
+      }
+    }
+  }
+
+}
