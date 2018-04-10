@@ -205,8 +205,16 @@
     &.is-focused {
       .focus();
     }
+    &.is-open {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+
     .Select-option {
       &.is-focused {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
         color: @accent-text-color;
         background-color: @accent-color;
       }
