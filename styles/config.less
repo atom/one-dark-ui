@@ -127,10 +127,22 @@
       background: @button-background-color-selected;
     }
 
-    // Fix sticky header from covering auto-revealed items
-    .list-item.selected {
+    // Fix sticky header from covering auto-revealed files
+    .entry.file.selected {
       padding-top: @ui-tab-height;
       margin-top: -@ui-tab-height;
+    }
+
+    // Fix sticky header from covering auto-revealed directories when using up/down keys
+    // for directories, scroll test moves to .header, see https://github.com/atom/tree-view/blob/d2857ad4d7eeb7dad5cf94b33257a8740211480e/lib/tree-view.coffee#L839
+    .entry.directory.selected:not(.project-root) {
+      & > .header {
+        padding-top: @ui-tab-height;
+        margin-top: -@ui-tab-height;
+      }
+      &::before {
+        margin-top: @ui-tab-height;
+      }
     }
   }
 }
