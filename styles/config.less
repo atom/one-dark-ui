@@ -144,5 +144,14 @@
         margin-top: @ui-tab-height;
       }
     }
+
+    // Fix above directory is not being clickable
+    .entry.directory {
+      z-index: 1;
+      position: relative;
+      &.selected {
+        z-index: 0;
+      }
+    }
   }
 }
