@@ -71,7 +71,7 @@
     "stickyHeaders": {
       "title": "Make tree-view project headers sticky",
       "type": "boolean",
-      "default": "true",
+      "default": "false",
       "order": 5
     }
   }
