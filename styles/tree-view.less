@@ -30,6 +30,13 @@
       background: @button-background-color-selected;
     }
   }
+
+  .file:not(.selected),
+  .directory:not(.selected) > .header {
+    &:hover {
+      background: @background-color-selected;
+    }
+  }
 }
 
 .theme-one-dark-ui .tree-view .project-root.project-root::before {
