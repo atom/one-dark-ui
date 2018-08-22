@@ -103,7 +103,7 @@
     .project-root-header {
       position: sticky;
       top: 0;
-      z-index: 1;
+      z-index: 3;
       padding-left: 5px;
       padding-right: 10px;
       border-bottom: 1px solid @base-border-color;
@@ -146,12 +146,11 @@
     }
 
     // Fix above directory is not being clickable
-    .entry.directory {
+    .entry.directory:not(.project-root) > .header {
+      z-index: 2;
+    }
+    .entry.directory.selected:not(.project-root) > .header {
       z-index: 1;
-      position: relative;
-      &.selected {
-        z-index: 0;
-      }
     }
   }
 }
