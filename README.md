@@ -1,5 +1,7 @@
 ## One Dark UI theme [![Build Status](https://travis-ci.org/atom/one-dark-ui.svg?branch=master)](https://travis-ci.org/atom/one-dark-ui)
 
+### This package is now a part of the [core Atom repository](https://github.com/atom/atom/tree/master/packages/one-dark-ui), please direct all issues and pull requests there in the future!
+
 A dark UI theme that adapts to most syntax themes.
 
 ![One dark UI](https://cloud.githubusercontent.com/assets/378023/26246818/08255b76-3cd6-11e7-9f6d-6ae3e16a89a9.png)
